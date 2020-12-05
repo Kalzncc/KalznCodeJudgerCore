@@ -13,7 +13,7 @@ g++ -std=c++11 Killer.h Killer.cpp -o killer
 保证生成的可执行文件Judger、 runner、 killer在同一目录下。
 输入
 ```sh
-./Judger <可执行文件路径> <输入数据文件路径> <输出文件路径>
+./Judger <可执行文件路径> <输入数据文件路径> <输出数据文件路径>
 ```
 即可完成测试，评测结果在同目录下的1.txt。
 
