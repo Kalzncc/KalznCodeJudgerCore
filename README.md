@@ -114,5 +114,19 @@ public:
 };
 
 ```
+返回的结果有
 
+```cpp
+class JudgerResult{
+public:
+    const static int ACCEPTED = 0;  // 答案正确
+    const static int WRONG_ANSWER = 1; // 答案错误
+    const static int TIME_LIMIT_EXCEEDED = 2; //时间超限(CPU时间超限)
+    const static int MEMORY_LIMIT_EXCEEDED = 3; //内存超限
+    const static int RUNTIME_ERROR = 4; // 运行时错误
+    const static int PRESENTATION_ERROR = 5;  // 格式错误(只在严格评测模式)
+    const static int OUTPUT_LIMIT_EXCEEDED = 6;  //输出超限
+    const static int SYSTEM_ERROR = 7; //系统错误(错误信息查看RunConfig中的ResultDetail)
+};
+```
 ## 只是玩具!!!
