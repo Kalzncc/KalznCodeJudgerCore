@@ -214,7 +214,7 @@ int main(int argc, char * argv[]) {
     config.MaxMemory=1000000000;
     config.ExePath = argv[1];
     config.InputDataPath = argv[2];
-    config.OutputDataPath = argv[3];
+    config.StdAnswerPath = argv[3];
     Judger::run(config, &result, "runner", "killer");
     freopen("1.txt", "w", stdout);
     cout << result.UseCPUTime << "ms" << endl;
