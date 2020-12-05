@@ -55,7 +55,7 @@ public:
     
 };
 ```
-第二个参数为JudgeConfig，存入评测结果：
+第二个参数为RunConfig，存入评测结果：
 ```cpp
 class RunConfig {
 public:
