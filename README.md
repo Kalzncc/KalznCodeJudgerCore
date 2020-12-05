@@ -24,7 +24,7 @@
 
 4、Output limit exceeded的判定没有实现。
 
-
+5、对评测信息，尤其事system error进行log（懒）。
 
 目前只在centOS7测试过，理论适用于所有Linux。
 
