@@ -156,6 +156,8 @@ public:
 ```
 ## 只是玩具!!!
 
+#Eng (chinglish) ver
+
 This is just a toy made by me. It is very simple and implement the base function of code test.
 
 #### what the program can do so far:
