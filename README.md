@@ -168,7 +168,7 @@ This is just a toy made by me. It is very simple and implement the base function
 5) Compare the resource consumed and limited, test the program whether exceed the limitation of time or memory.
 6) Two judge mode--strict and not strict is supplied.
 
-#### what the program plan to do but not been implemented so far:
+#### what the program plan to do but is not implemented so far:
 1) Monitor stack consumption.
 2) Connect a SPJ program to test the file.
 3) Kill memory limitation exceed process (have no idea to monitor the memory consumption during process is running).
