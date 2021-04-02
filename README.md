@@ -175,4 +175,4 @@ This is just a toy made by me. It is very simple and implement the base function
 4) The judgement of "Output limit exceeded" is not implemented.
 5) Log information of judgement particular the system error.
 
-Just debug in centOS7, suit all Liunx Release version.
+Just debug in centOS7, suit all Liunx Release version theoretically.
