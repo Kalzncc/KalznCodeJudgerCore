@@ -175,4 +175,13 @@ This is just a toy made by me. It is very simple and implement the base function
 4) The judgement of "Output limit exceeded" is not implemented.
 5) Log information of judgement particular the system error.
 
-Just debug in centOS7, suit all Liunx Release version theoretically.
+Just debug in centOS7, suit all Liunx release version theoretically.
+
+#### start try to use
+Enter in the directory
+```sh
+g++ -std=c++11 Judger.h Judger.cpp -o Judger
+g++ -std=c++11 Runner.h Runner.cpp -o runner
+g++ -std=c++11 Killer.h Killer.cpp -o killer
+```
+Wait for updating.
