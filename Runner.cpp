@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
     }
     string g(argv[1]);
     
-    // 开始之前待测程序。
+    // 开始执行待测程序。
     execl(argv[1], ("./"+g).c_str(), NULL);
     
     // 无法启动待测程序，raise一个SIGUSR1（后期由主进程接受处理），终止运行。
