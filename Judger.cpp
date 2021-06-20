@@ -140,6 +140,11 @@ void Judger::GetResultSPJ(RunConfig* result, int status, rusage resource_usage) 
         result->ResultDetail = "SPJ.";
         return;
     }
+    if ( (int) (resource_usage.ru_utime.tv_sec * 1000 + resource_usage.ru_utime.tv_usec / 1000) > Judger::SPJ_MAX_TIME) {
+        result->Result = JudgerResult::WRONG_ANSWER;
+        result->ResultDetail = "SPJ.";
+        return;
+    }
     result->Result = WEXITSTATUS(status); // 参见SPJ程序实例的说明
     result->ResultDetail = "SPJ.";
 }
