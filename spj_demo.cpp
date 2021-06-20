@@ -30,9 +30,9 @@ int SPJ_RESULT = 0;
 
 int main(int argc, char * argv[]) {
     
-	FILE * input = fopen(argv[1], "r");
-	FILE * output = fopen(argv[2], "r");
-	FILE * stdoutput = fopen(argv[3], "r");
+    FILE * input = fopen(argv[1], "r");
+    FILE * output = fopen(argv[2], "r");
+    FILE * stdoutput = fopen(argv[3], "r");
 
 // Begin write code.... 
     
