@@ -34,11 +34,11 @@ int main(int argc, char * argv[]) {
     FILE * output = fopen(argv[2], "r");
     FILE * stdoutput = fopen(argv[3], "r");
 
-// Begin write code.... 
+// Begin to write code.... 
     
     SPJ_RESULT =  ACCEPTED;
 
-// End  write code.....
+// End to write code......
 
 
     fclose(input);
