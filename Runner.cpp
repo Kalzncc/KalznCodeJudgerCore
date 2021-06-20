@@ -3,7 +3,7 @@
 using namespace std;
 
 int main(int argc, char* argv[])
-{ // runner进程程序，作为待测程度的容器
+{ // runner进程程序，作为待测程序的容器
     
     // 先进行初始化，输入文件指向stdin，将stdout指向输出文件
     if (freopen(argv[2], "r", stdin) == NULL || freopen(argv[3], "w", stdout) == NULL)  {
