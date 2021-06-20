@@ -110,7 +110,7 @@ void Judger::GetResult(RunConfig* result, int status, rusage resource_usage) {
     result->UseMemory = resource_usage.ru_maxrss * 1024;
 	
     
-    if (result->ExitSignal == SIGSEGV) { // 信号量为SIGSEGV 证明程序为正常终止。
+    if (result->ExitSignal == SIGSEGV) { // 信号量为SIGSEGV 证明程序为异常终止。
         
         if (result->UseMemory > config.MaxMemory ) { // 由于内存需求过大，无法分配导致的崩溃，如果超过题目要求，属于内存超限
             result->Result = JudgerResult::MEMORY_LIMIT_EXCEEDED;
