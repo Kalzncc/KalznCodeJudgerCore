@@ -77,38 +77,41 @@ public:
 class Judger {
 private:
     static JudgeConfig config;
-    const static int MAXBUF = 1e6; //数据字符最大缓存
-    const static int MAX_OVERFLOW_MULTIPLE = 2; //输出最大倍数
+    const static int MAXBUF = 1e9; //数据字符最大缓存
+    const static int MAX_OVERFLOW_MULTIPLE = 1000; //输出最大倍数
+    const static int SPJ_MAX_TIME = 10000;
     /*
     在评测时，首先读入标准答案，然后读入待评测程序的输出，如果待评测程序的输出大小大于标准答案的MAX_OVERFLOW_MULTIPLE倍，
     即返回结果OUTPUT_LIMIT_EXCEEDED 输出超限
     */
-
-
-    const static bool StrictMode = true;
+    const static bool StrictMode = false;
+    const static bool AbsolteOutputLimitMode = true;
     /*
     严格评测模式：
     如果为true，则启用严格评测模式，在严格模式下，按照以下顺序比对答案和输出：
-    1、如果输出或者答案最后有一个'\n'，则删掉一个'\n'。
-    2、如果输出和答案相等，则AC。
-    3、否则：将答案和输出的所有连续空白字符都用一个空格替代。
-    4、如果此时输出和答案相等，则PE。
-    5、否则WA。
+    1、对字符串进行变换，把答案和输出数据中的"\r\n"，用"\n"替代
+    2、如果输出或者答案最后有一个'\n'，则删掉一个'\n'。
+    3、如果输出和答案相等，则AC。
+    4、否则：将答案和输出的所有连续空白字符都用一个空格替代。
+    5、如果此时输出和答案相等，则PE。
+    6、否则WA。
 
     在非严格模式下：
     1、如果输出或者答案最后有一个'\n'，则删掉一个'\n'。
-    3、将答案和输出的所有连续空白字符都用一个空格替代。
-    4、如果此时输出和答案相等，则AC。
-    5、否则WA。
-
+    2、将答案和输出的所有连续空白字符都用一个空格替代。
+    3、如果此时输出和答案相等，则AC。
+    4、否则WA。
     */
     static string ansbuf, outbuf;
     static RunConfig CreateSystemError(string me);
     static void ExecKiller(string KillerExePath, pid_t RunnerId, int KillTime);
     static void ExecRunner(string RunnerExePath, string ExePath, string InputDataPath, string OutputDataPath);
+    static void ExecSPJ(string RunnerExePath, string ExePath, string InputDataPath, string OutputDataPath);
     static void GetResult(RunConfig* result, int status, rusage resource_usage);
+    static void GetResultSPJ(RunConfig* result, int status, rusage resource_usage);
     static void CheckAnswer( RunConfig* result);
     static void FormatString (string &s);
+    static void StrictFormatWindowsString(string & s);
 public:
     static void run(JudgeConfig task, RunConfig* result, const string & RunnerExePath, const string & KillerExePath);
 };
