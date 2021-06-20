@@ -218,18 +218,31 @@ int main()
 
 编写spj
 ```cpp
-int main(int argc, char * argv[])
-{
+int main(int argc, char * argv[]) {
+    
 	FILE * input = fopen(argv[1], "r");
 	FILE * output = fopen(argv[2], "r");
 	FILE * stdoutput = fopen(argv[3], "r");
-	double a, b;
+
+// Begin write code.... 
+    
+    	double a, b;
 	fscanf(output, "%lf", &a);
 	fscanf(stdoutput, "%lf", &b);
 	if (abs(a - b) <= 1e-4) {
-		return ACCEPTED;
+		SPJ_RESULT = ACCEPTED;
 	}
-	return WRONG_ANSWER;
+	SPJ_RESULT = WRONG_ANSWER;
+
+// End  write code.....
+
+
+    fclose(input);
+    fclose(output);
+    fclose(stdoutput);
+
+    return SPJ_RESULT;
+
 }
 ```
 
