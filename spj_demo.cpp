@@ -7,7 +7,7 @@
  * argv[3] is the std output data file path.
  * 
  * 
- * If Sepcial Judge Program can not exit in some seconds, or crash
+ * If Sepcial Judge Program crash or can not exit in some seconds(default is 10s)
  * system will regard that is Wrong Answer.
  * 
  * Good Luck.
