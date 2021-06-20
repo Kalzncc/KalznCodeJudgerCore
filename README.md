@@ -76,7 +76,7 @@ g++ -std=c++11 Killer.h Killer.cpp -o killer
 而runner， killer是两个辅助进程。runner用于执行待评测程序，killer是超时截断。
 调用run函数是需指明两个辅助可执行文件的路径。
 
-你可以把runner程序和killer程序，想象成两个正在赛跑的人。谁先运行完，就会把对方截断掉，由此实现进程的超时截断。其中killer开始运行时，会阻塞至题目要求的最大时限，当被唤醒时就立刻对runner进行截断，因为此时runner已经超时了。而对于runner，它进行初始化完成后，将开始执行待测程序，如果没有在规定时间内执行完成，就会被killer截断。虽然runner进程本身没有能力直接截断killer进程，但是主进程（Judger进程）会阻塞并wait runner进程，当runner结束，Judger会收集runner的信息，并对killer进行截断。
+你可以把runner程序和killer的进程，想象成两个正在赛跑的人。谁先运行完，就会把对方截断掉，由此实现进程的超时截断。其中killer开始运行时，会阻塞至题目要求的最大时限，当被唤醒时就立刻对runner进行截断，因为此时runner已经超时了。而对于runner，它进行初始化完成后，将开始执行待测程序，如果没有在规定时间内执行完成，就会被killer截断。虽然runner进程本身没有能力直接截断killer进程，但是主进程（Judger进程）会阻塞并wait runner进程，当runner结束，Judger会收集runner的信息，并对killer进行截断。
 
 调用函数：
 ```cpp
