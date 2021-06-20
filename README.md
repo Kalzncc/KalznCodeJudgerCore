@@ -186,7 +186,7 @@ public:
 ```
 
 ## SPJ 说明
-spj由可由c++编写，这里占用spj程序的main返回值判定情况，原则上只有AC和WA。实际上spj返回JudgerResult类中的对应的数字，可以得到包括system error在内的所有错误，但是由spj自行返回的system error不做log。
+spj由可由c++编写，这里占用spj进程的ExitCode判定情况，原则上只有AC和WA。实际上spj返回JudgerResult类中的对应的数字，可以得到包括system error在内的所有错误，但是由spj自行返回的system error不做log。
 代码中spj_demo.cpp展示了一个spj程序代码的实例。（注意，JudgerConfig中的SPJExePath指的是编译过后可执行的spj程序的路径，而非代码路径。）
 
 ## 演示
