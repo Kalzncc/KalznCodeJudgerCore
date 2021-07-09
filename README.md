@@ -346,5 +346,154 @@ public class Main {
 
 然后配置json文件
 ```json
+{
 
+    "Judger": { 
+
+        "maxCharBuffer" : "10000000"
+
+    },
+
+    "Task" : {
+
+        "taskID":"100031",
+
+        "workSpacePath":"/home/kalzn/Desktop/testworkspace/",
+
+        "logPath":"/home/kalzn/Desktop/testworkspace/log.log",
+
+        "translator": {
+
+            "mode": 2,
+
+            "compilerPath": "/usr/bin/javac",
+
+            "compilerOptions":[
+
+                "javac", "Main.java"
+
+            ],
+
+            "compilerProductName":"Main.class",
+
+
+
+            "interpreterPath":"/usr/bin/java",
+
+            "interpreterOptions":[
+
+                "java", "Main"
+
+            ]
+
+
+
+        },
+
+        "data" : [
+
+            {
+
+                "inputData":"data/1.in",
+
+                "outputData":"data/output.out",
+
+                "stdAnswer":"data/1.out",
+
+                
+
+                "maxCPUTime": 1000,
+
+                "maxMemory" : "102400000000",
+
+                "maxStack" : 1024000
+
+            },
+
+            {
+
+                "inputData":"data/2.in",
+
+                "outputData":"data/output.out",
+
+                "stdAnswer":"data/2.out",
+
+                
+
+                "maxCPUTime": 1000,
+
+                "maxMemory" : "102400000000",
+
+                "maxStack" : 1024000
+
+            },
+
+            {
+
+                "inputData":"data/3.in",
+
+                "outputData":"data/output.out",
+
+                "stdAnswer":"data/3.out",
+
+                
+
+                "maxCPUTime": 1000,
+
+                "maxMemory" : "102400000000",
+
+                "maxStack" : 1024000
+
+            },
+
+            {
+
+                "inputData":"data/4.in",
+
+                "outputData":"data/output.out",
+
+                "stdAnswer":"data/4.out",
+
+                
+
+                "maxCPUTime": 1000,
+
+                "maxMemory" : "102400000000",
+
+                "maxStack" : 1024000
+
+            }
+
+        ]
+
+    }
+
+}
+```
+评测结束后，工作区目录下生成文件
+
+![image](https://user-images.githubusercontent.com/44296812/125085358-147cc100-e0fd-11eb-9a1a-bb9a203b922d.png)
+
+其中``result.txt`` 内容如下
+```
+data 0 :-----------
+result : 0(AC)
+time(ms) : 54
+mem(byte) : 37904384
+detail : No info
+data 1 :-----------
+result : 0(AC)
+time(ms) : 33
+mem(byte) : 37883904
+detail : No info
+data 2 :-----------
+result : 0(AC)
+time(ms) : 48
+mem(byte) : 37314560
+detail : No info
+data 3 :-----------
+result : 0(AC)
+time(ms) : 30
+mem(byte) : 37634048
+detail : No info
 ```
