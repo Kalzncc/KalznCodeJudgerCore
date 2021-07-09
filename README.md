@@ -341,3 +341,10 @@ public class Main {
 }
  ```
  这里将``Main.java``以及对其评测的数据放到同一目录下，组成工作区。
+ 
+ ![image](https://user-images.githubusercontent.com/44296812/125082918-5c4e1900-e0fa-11eb-8d2d-e3bff7327065.png)
+
+然后配置json文件
+```json
+
+```
