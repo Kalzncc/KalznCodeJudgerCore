@@ -12,29 +12,19 @@ void initRunConfig(RunConfig * result) {
     result->errorCode = result->exitCode = result->exitSignal = 0;
     result->result = SKIP;
     result->useCPUTime = result->useMemory = 0;
+    result->resultDetail = (char * )malloc(sizeof(char) * MAX_DETAIL_LENGTH);
+    strcpy(result->resultDetail, "No info");
 }
 void check(RunConfig *result, int status, const struct rusage *resourceUsage, int timeLimit, long long memoryLimit,  const char * logPath ) {
     
     result->exitSignal = WTERMSIG(status);
-    if (result->exitSignal == BOX_DATA_REDIRECT_FAILED) {
-        createSystemError(result, BOX_DATA_REDIRECT_FAILED, "Can't redirect data file", logPath);
+#ifdef __DEBUG
+    printf("box_exit_signal : %d\n", result->exitSignal);
+#endif
+    if (result->exitSignal == SIGUSR1) {
+        result->result = SYSTEM_ERROR;
+        strcpy(result->resultDetail, "Check log file to know detail");
         return ;
-    }
-    if (result->exitSignal == BOX_EXE_RUN_FAILED) {
-        createSystemError(result, BOX_DATA_REDIRECT_FAILED, "Can't run pending pending file/interpreter", logPath);
-        return;
-    }
-    if (result->exitSignal == BOX_SECURITY_CONFIG_LOAD_FAILED) {
-        createSystemError(result, BOX_SECURITY_CONFIG_LOAD_FAILED, "Load security config failed", logPath);
-        return;
-    }
-    if (result->exitSignal == BOX_SET_LIMIT_FAILED) {
-        createSystemError(result, BOX_SET_LIMIT_FAILED, "Set resource limit failed", logPath);
-        return;
-    }
-    if (result->exitSignal == BOX_SET_UID_FATLED) {
-        createSystemError(result, BOX_SET_UID_FATLED, "Set uid/gid failed", logPath);
-        return;
     }
     result->exitCode =  WEXITSTATUS(status);
     result->useCPUTime = (int) (resourceUsage->ru_utime.tv_sec * 1000 + resourceUsage->ru_utime.tv_usec / 1000);
@@ -45,7 +35,6 @@ void check(RunConfig *result, int status, const struct rusage *resourceUsage, in
         strcpy(result->resultDetail, "No zero return");
         return;
     }
-
     if (result->exitSignal != 0) {
         result->result = RUNTIME_ERROR;
     }
@@ -59,12 +48,15 @@ void check(RunConfig *result, int status, const struct rusage *resourceUsage, in
 }   
 RunConfig* judge(const JudgerConfig * judgerConfig, const JudgeConfig *judgeConfig) {
     
-    RunConfig *result = (RunConfig*) malloc (sizeof(RunConfig*)*judgeConfig->caseNumber );
+    RunConfig *result = (RunConfig*) malloc (sizeof(RunConfig)* judgeConfig->caseNumber );
     int curCase;
+    
     for (curCase = 0; curCase < judgeConfig->caseNumber; curCase++) {
+        
         initRunConfig(&result[curCase]);
         result[curCase].taskID = judgeConfig->taskID;
     }
+    
     if (getuid()!=0) {
         createSystemError(&result[0], PERMISSION_ERROR, "No root", judgeConfig->logPath);
         return result;
@@ -91,14 +83,19 @@ RunConfig* judge(const JudgerConfig * judgerConfig, const JudgeConfig *judgeConf
         FILE *fp;
         if ( (fp = fopen(judgeConfig->translator.compilerProductName, "r")) == NULL) {
             result[0].result = COMPILE_ERROR;
+
+            strcpy(result[0].resultDetail, "Code compile failed");
             return result;
         } else {
             fclose(fp);
         }
     }
     
-/*
+
     for (curCase = 0; curCase < judgeConfig->caseNumber; curCase++) {
+#ifdef __DEBUG
+        printf("begin to judge data : %d\n", curCase);
+#endif
         if (judgeConfig->maxCPUTime[curCase]<1 || judgeConfig->maxCPUTime[curCase] > MAX_TIME_LIMIT
         || judgeConfig->maxMemory[curCase]<1 || judgeConfig->maxMemory[curCase] > MAX_MEMORY_LIMIT
         || judgeConfig->maxStack[curCase]<1 || judgeConfig->maxStack[curCase]> MAX_STACK_LIMIT
@@ -144,13 +141,15 @@ RunConfig* judge(const JudgerConfig * judgerConfig, const JudgeConfig *judgeConf
                     return result;
                 }
                 kill(killerID, SIGKILL);
-
-                check(&result[curCase], status, &resourceuUsage,  judgeConfig->maxCPUTime[curCase], judgeConfig->maxCPUTime[curCase],  judgeConfig->logPath);
+                
+                check(&result[curCase], status, &resourceuUsage,  judgeConfig->maxCPUTime[curCase], judgeConfig->maxMemory[curCase],  judgeConfig->logPath);
                 if (result[curCase].result == SYSTEM_ERROR) return result;
-
-                if (result[curCase].result == ACCEPTED) {
+                
+                if (result[curCase].result == SKIP) {
                     if (judgeConfig->isSPJ == 0) {
+                        
                         matchResult(judgerConfig, judgeConfig, curCase, &result[curCase]);
+                        
                     } else {
                         matchWithSPJ(judgerConfig, judgeConfig, curCase, &result[curCase], judgeConfig->logPath);
                     }
@@ -161,7 +160,7 @@ RunConfig* judge(const JudgerConfig * judgerConfig, const JudgeConfig *judgeConf
             return result;
         }
     }
-    */
+    
     return result;
 
 }

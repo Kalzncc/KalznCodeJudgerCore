@@ -12,12 +12,16 @@ void monitor(pid_t pid, int time) {
 
     if (sleep(time) != 0) {
         kill(pid, SIGKILL);
-        raise(KILLER_SLEEP_FAILED);
-        return;
+        raise(SIGUSR1);
+        exit(EXIT_FAILURE);
+        
     }
     if (kill(pid, SIGKILL)) {
-        raise(KILLER_KILL_FAILED);
+        raise(SIGUSR1);
+        exit(EXIT_FAILURE);
     }
+
+    exit(0);
     return;
 }
 

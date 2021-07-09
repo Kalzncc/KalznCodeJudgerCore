@@ -15,32 +15,39 @@ JudgeResult formatMatch(const char *std,  const char *out) {
         else chOut = ' ';
         while(isspace(*out)) out++;
 
+        
+        
         if (chStd != chOut) return WRONG_ANSWER;
-        chStd++; chOut++;
+        std++; out++;
     }
     if (*std != *out) return WRONG_ANSWER;
     return ACCEPTED;
 }
 void matchResult(const JudgerConfig *judgerConfig, const JudgeConfig * config, int curCase, RunConfig * result) {
+    
+    
     FILE *stdFile = NULL;
     FILE *outFile = NULL;
+    
     stdFile = fopen(config->stdAnswer[curCase], "r");
+    
     if (config->iOMode == STD_IO) {
         outFile = fopen(config->outputData[curCase], "r");
     } else {
         outFile = fopen(FILEIO_INPUT_PATH, "r");
     }
-
+    
     if (stdFile == NULL || outFile == NULL) {
         createSystemError(result, MATCHER_OPEN_DATA_FAILED, "Can't open data file", config->logPath);
         return;
     }
-
+    
     char *stdbuf = (char * ) malloc(sizeof(char *) *judgerConfig->maxCharBuffer);
     char *outbuf = (char * ) malloc(sizeof(char *) *judgerConfig->maxCharBuffer);
+    
     char ch;
     int stdCnt = 0, outCnt = 0;
-    while((ch = fgetc(stdFile))) {
+    while((ch = fgetc(stdFile)) != EOF) {
         stdbuf[stdCnt++] = ch;
         if (stdCnt>judgerConfig->maxCharBuffer) {
             createSystemError(result, MATCHER_STD_DATA_TOO_LARGE,"The std answer is too large", config->logPath);
@@ -48,47 +55,44 @@ void matchResult(const JudgerConfig *judgerConfig, const JudgeConfig * config, i
         }
     }
     stdbuf[stdCnt] = '\0';
-    while((ch = fgetc(outFile))) {
+
+    while((ch = fgetc(outFile)) != EOF) {
         outbuf[outCnt++] = ch;
         if (outCnt > judgerConfig->maxCharBuffer) {
             result->result = OUTPUT_LIMIT_EXCEEDED;
             return;
         }
     }
-    stdbuf[outCnt] = '\0';
+    outbuf[outCnt] = '\0';
+    
+
     if (outbuf[outCnt-1] == '\n') outbuf[--outCnt] = '\0';
     if (stdbuf[stdCnt-1] == '\n') stdbuf[--stdCnt] = '\0';
+
     if (config->strictMode == STRICT_MODE) {
+        
         if (strcmp(outbuf, stdbuf) == 0) {
             result->result = ACCEPTED;
             return;
         }
     }
+    
     while(stdCnt > 0 && isspace(stdbuf[stdCnt-1])) stdCnt--;
     stdbuf[stdCnt] = '\0';
     while(outCnt > 0 && isspace(outbuf[outCnt-1])) outCnt--;
     outbuf[outCnt] = '\0';
     result->result = formatMatch(stdbuf, outbuf);
-    if (result->result=ACCEPTED && config->strictMode == STRICT_MODE) result->result = PERMISSION_ERROR;
+    
+    if (result->result == ACCEPTED && config->strictMode == STRICT_MODE) result->result = PRESENTATION_ERROR;
+    
     return;
 }
 void checkSPJ(const JudgerConfig * judgerConfig, const JudgeConfig * judgeConfig, RunConfig * result, int status, const struct rusage * resourceUsage) {
     int exitSignal = WTERMSIG(status);
-    if (exitSignal == BOX_EXE_RUN_FAILED) {
-        createSystemError(result, BOX_DATA_REDIRECT_FAILED, "Can't run spj", judgeConfig->logPath);
-        return;
-    }
-    if (exitSignal == BOX_SECURITY_CONFIG_LOAD_FAILED) {
-        createSystemError(result, BOX_SECURITY_CONFIG_LOAD_FAILED, "Load security config failed", judgeConfig->logPath);
-        return;
-    }
-    if (exitSignal == BOX_SET_LIMIT_FAILED) {
-        createSystemError(result, BOX_SET_LIMIT_FAILED, "Set resource limit failed", judgeConfig->logPath);
-        return;
-    }
-    if (exitSignal == BOX_SET_UID_FATLED) {
-        createSystemError(result, BOX_SET_UID_FATLED, "Set uid/gid failed", judgeConfig->logPath);
-        return;
+    if (exitSignal == SIGUSR1) {
+        result->result = SYSTEM_ERROR;
+        strcpy(result->resultDetail, "Check log file to know detail");
+        return ;
     }
     if (exitSignal > 0) {
         result->result = WRONG_ANSWER;
@@ -136,6 +140,7 @@ void matchWithSPJ(const JudgerConfig * judgerConfig, const JudgeConfig * config,
                 createSystemError( &result[curCase], WAIT_BOX_FAILED, "Can't wait box proccess", config->logPath);
                 return;
             }
+            
             kill(killerID, SIGKILL);
             checkSPJ(judgerConfig, config, result, status, &resourceUsage);
         }

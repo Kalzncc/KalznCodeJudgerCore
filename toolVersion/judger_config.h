@@ -49,7 +49,7 @@
 #define MAX_DATA_CASE_NUMBER 1024
 #define MAX_PATH_LENGTH 1024
 #define MAX_CMD_STR_LENGTH 1024
-
+#define MAX_DETAIL_LENGTH 128
 
 enum JudgeErrorEnum {
     

@@ -8,6 +8,7 @@
 
 void logSystemErrorWithResult(const char * path, const RunConfig* result);
 void logSystemErrorWithMessage(const char * path, JudgeError error, const char * message);
+void logSystemErrorWithTaskID(const char * path, int taskID, JudgeError error, const char * message);
 void createSystemError(RunConfig * result, JudgeError error, const char * message, const char * logPath);
 
 #endif

@@ -5,7 +5,7 @@
 
 
 /*
-gcc  -D__LINUX_RUN judger_config.h securitylib.h securitylib.c  compilerlib.h compilerlib.c  judger_config.c loglib.h loglib.c cjson/cJSON.h cjson/cJSON.c killerlib.h killerlib.c boxlib.h boxlib.c judgerlib.h judgerlib.c matcherlib.h matcherlib.c main.c -o main.exe -lseccomp
+gcc  -D__LINUX_RUN -D__DEBUG judger_config.h securitylib.h securitylib.c  compilerlib.h compilerlib.c  judger_config.c loglib.h loglib.c cjson/cJSON.h cjson/cJSON.c killerlib.h killerlib.c boxlib.h boxlib.c judgerlib.h judgerlib.c matcherlib.h matcherlib.c main.c -o bbc -lseccomp
 main.exe json/JudgeConfig.json
 */
 
@@ -462,14 +462,59 @@ int main(int argc, char *argv[]) {
     }
     
     judgeConfig.caseNumber = dataCnt;
+#ifdef __DEBUG
     print();
-
+#endif
 
     
     RunConfig * result = judge(&judgerConfig, &judgeConfig);
     
-    
-    
+    char resultp[128];
+    strcpy(resultp, judgeConfig.workSpacePath);
+    strcat(resultp, "result.txt");
+    freopen(resultp, "w", stdout);
 
+    for (i = 0; i < dataCnt; i++) {
+        printf("data %d :-----------\n", i);
+        printf("result : %d(", result[i].result);
+        switch (result[i].result)
+        {
+        case ACCEPTED:
+            puts("AC)");
+            break;
+        case WRONG_ANSWER:
+            puts("WA)");
+            break;
+        case TIME_LIMIT_EXCEEDED:
+            puts("TLE)");
+            break;
+        case MEMORY_LIMIT_EXCEEDED:
+            puts("MLE)");
+            break;
+        case RUNTIME_ERROR:
+            puts("RE)");
+            break;
+        case PRESENTATION_ERROR:
+            puts("PE)");
+            break;
+        case OUTPUT_LIMIT_EXCEEDED:
+            puts("OLE)");
+            break;
+        case COMPILE_ERROR:
+            puts("CE)");
+            break;
+        case SKIP:
+            puts("SP)");
+            break;
+        case SYSTEM_ERROR:
+            puts("SE)");
+            break;
+        default:
+            break;
+        }
+        printf("time(ms) : %d\n", result[i].useCPUTime);
+        printf("mem(byte) : %lld\n", result[i].useMemory);
+        printf("detail : %s\n", result[i].resultDetail);
+    }
     return 0;
 }
