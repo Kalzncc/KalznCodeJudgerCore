@@ -327,3 +327,17 @@ int main(int argc, char * argv[]) {
 ```
 
 ## 简单演示
+
+这里对一个java源程序进行评测，源代码如下
+ ```java
+ import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int a = in.nextInt(), b = in.nextInt();
+		System.out.println(a+b);
+		System.out.println(a-b);
+	}
+}
+ ```
+ 这里将``Main.java``以及对其评测的数据放到同一目录下，组成工作区。
