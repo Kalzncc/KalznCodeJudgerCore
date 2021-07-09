@@ -152,7 +152,7 @@ Judger评测完成后，会在工作区目录下生成一个result.txt文件。
     </tr>
     <tr>
         <td>
-            SINGLE_RESULT_MODE
+            POINTS_MODE
         </td>
         <td>
             积分模式，返回每个样例的结果，即使某样例没有AC，也会接着评测后面的样例。
