@@ -1,7 +1,7 @@
 # Kalzn_Code_Judger
 这是一个自己做着玩的玩具，很简单，完成了代码评测机基本功能。
 
-目前项目正在全部使用纯c语言重写，重写后的项目将并入[KalznOJ](https://github.com/Kalzncc/KalznOnlineJudge)项目，作为KalznOJ的评测沙箱。重写将着重实现评测机的安全配置，以及资源限制。
+目前项目正在全部使用纯c语言重写，重写后的项目将并入[KalznOJ](https://github.com/Kalzncc/KalznOnlineJudge)项目，作为KalznOJ的评测沙箱。重写将着重实现评测机的安全配置，以及资源限制。重写部分位于toolVersion中。
 
 #### 就目前而言，本程序可以：
 
