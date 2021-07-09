@@ -277,7 +277,7 @@ SPJ程序使用C++书写，这里占用SPJ程序的Exit Code作为评测的结�
 int main(int argc, char * argv[]) {
     START_JUDGE();
 
-s
+
 //------------SPJ--CODE--------------------
     int a; fscanf(input, "%d", &a);
     int b; fscanf(output, "%d", &b);
