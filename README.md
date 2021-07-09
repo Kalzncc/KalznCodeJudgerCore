@@ -31,34 +31,55 @@ Judger评测完成后，会在工作区目录下生成一个result.txt文件。
 ```json
 {
     "Judger": {  // 评测机相关配置
+
         "maxCharBuffer" : "10000000",  //字符串最大缓存 必选项
+
         "maxSPJTime" : 10000, // SPJ时限，默认为 MAX_SPJ_TIME_LIMIT
+
         "maxSPJMemory": "102400000" // SPJ内存限制 默认 MAX_SPJ_MEMORY_LIMIT
+
         
     },
     "Task" : { // 任务相关配置
+
         "taskID":"100031", // 任务ID号 必选项，务必从1开始。0视为无效ID号。
+
         "judgeMode": 0, // 评测模式 默认为SINGLE_RESULT_MODE 具体见下表格 
+
         "iOMode": 0,  // IO模式 默认为STD_IO 见下表
+
         "gid" : 65534, // gid 默认为DEFAULT_UID 评测时的进程的effective gid
+
         "uid" : 65534,// uid 默认为DEFAULT_UID 评测时的进程的effective uid
+
         "strictMode" : true, // 严格模式，默认为NOT_STRICT_MODE 见下表
+
         "workSpacePath":"/home/kalzn/Desktop/testworkspace/", 
         // 工作区目录 必选项 评测该任务的工作区目录，以下涉及到目录的配置，均必须是相对工作区的目录，或者绝对目录。
+
         "logPath":"/home/kalzn/Desktop/testworkspace/log.log", // log目录 必选项
+
         "isSPJ": true, // 是否启用SPJ，默认为false
+
         "spjExePath":"/home/kalzn/Desktop/testworkspace/spj", // SPJ目录，当isSPJ=true时，必填项
+
         "spjExeName":"spj", // SPJ可执行文件名字，当isSPJ=true时，必填项
+
         "translator": { // 翻译选项
+
             "mode": 2, // 翻译模式 必选项 见下表
+
             "compilerPath": "/usr/bin/javac", // 编译器路径 当翻译模式!=INTERPRETER_MODE时，必选项
+
             "compilerOptions":[ // 编译器选项 当翻译模式!=INTERPRETER_MODE时，必选项
                 "javac", "Main.java"
             ],
+
             "compilerProductName":"Main.class",
             // 编译产物名 当翻译模式!=INTERPRETER_MODE时，必选项，Judger编译后，将确认工作区目录下是否生成了名为compilerProductName的文件，以此判定编译是否正确。
 
             "interpreterPath":"/usr/bin/java", // 解释器路径，当翻译模式!=COMPILER_MODE时 必选项。
+
             "interpreterOptions":[ // 解释器选项，当翻译模式!=COMPILER_MODE时 必选项。
                 "java", "Main"
             ]
@@ -67,11 +88,15 @@ Judger评测完成后，会在工作区目录下生成一个result.txt文件。
         "data" : [ // 数据配置，这里数据的数量不超过MAX_DATA_CASE_NUMBER个
             {
                 "inputData":"data/1.in", // 输入数据
+
                 "outputData":"data/output.out", // 输出文件（一般所有数据填一个即可）
+
                 "stdAnswer":"data/1.out", // 标准输出
                 
                 "maxCPUTime": 1000, //时限
+
                 "maxMemory" : "102400000000", // 内存限制
+                
                 "maxStack" : 1024000 //Stack数量限制。
             },
             {
