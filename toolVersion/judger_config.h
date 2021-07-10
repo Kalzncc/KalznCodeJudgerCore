@@ -226,13 +226,9 @@ struct JudgeConfig {
 
 
     //用户组设置
-#ifdef __LINUX_RUN
     uid_t uid;
     gid_t gid;
-#else
-    int uid;
-    int gid;
-#endif
+
 
     int caseNumber;
     //路径设置
