@@ -24,10 +24,10 @@ int interpreterOptionCnt;
 
 
 void printnum(const char * str, long long value) {
-    printf("%s : %lld\n", str, value);
+    fprintf(stderr, "%s : %lld\n", str, value);
 }
 void prints(const char * str, const char* value) {
-    printf("%s : %s\n", str, value);
+    fprintf(stderr, "%s : %s\n", str, value);
 }
 void print() {
     printnum("maxCharBuffer", judgerConfig.maxCharBuffer);
@@ -50,25 +50,25 @@ void print() {
     if (judgeConfig.translator.mode != INTERPRETER_MOD) {
         prints("compilerPath", judgeConfig.translator.compilerPath);
         int i;
-        printf("compilerOption : ");
+        fprintf(stderr, "compilerOption : ");
         for (i = 0; i < compilerOptionCnt; i++) {
             printf("%s ", judgeConfig.translator.compilerOptions[i]);
         }
-        puts("");
+        fputs("", stderr);
         prints("compilerProductName", judgeConfig.translator.compilerProductName);
     }
     if (judgeConfig.translator.mode != COMPILER_MOD) {
         prints("interpreterPath", judgeConfig.translator.interpreterPath);
         int i;
-        printf("interpreterOptions : ");
+        fprintf(stderr, "interpreterOptions : ");
         for (i = 0; i < interpreterOptionCnt; i++) {
-            printf("%s ", judgeConfig.translator.interpreterOptions[i]);
+            fprintf(stderr, "%s ", judgeConfig.translator.interpreterOptions[i]);
         }
-        puts("");
+        fputs("", stderr);
     }
     int i;
     for (i = 0; i < dataCnt; i++) {
-        printf("data %d ------- : \n", i);
+        fprintf(stderr, "data %d ------- : \n", i);
         prints("inputData", judgeConfig.inputData[i]);
         prints("outputData", judgeConfig.outputData[i]);
         prints("stdAnswer", judgeConfig.stdAnswer[i]);
@@ -463,59 +463,60 @@ int main(int argc, char *argv[]) {
     }
     
     judgeConfig.caseNumber = dataCnt;
-#ifdef __DEBUG
-    print();
-#endif
 
+#ifdef __DEBUG
+   // print();
+    logDebugInfoWithMessage(judgeConfig.logPath, "Load json success.");
+#endif
+    
     
     RunConfig * result = judge(&judgerConfig, &judgeConfig);
-    
-    char resultp[128];
-    strcpy(resultp, judgeConfig.workSpacePath);
-    strcat(resultp, "result.txt");
-    freopen(resultp, "w", stdout);
 
-    for (i = 0; i < dataCnt; i++) {
-        printf("data %d :-----------\n", i);
-        printf("result : %d(", result[i].result);
-        switch (result[i].result)
-        {
-        case ACCEPTED:
-            puts("AC)");
-            break;
-        case WRONG_ANSWER:
-            puts("WA)");
-            break;
-        case TIME_LIMIT_EXCEEDED:
-            puts("TLE)");
-            break;
-        case MEMORY_LIMIT_EXCEEDED:
-            puts("MLE)");
-            break;
-        case RUNTIME_ERROR:
-            puts("RE)");
-            break;
-        case PRESENTATION_ERROR:
-            puts("PE)");
-            break;
-        case OUTPUT_LIMIT_EXCEEDED:
-            puts("OLE)");
-            break;
-        case COMPILE_ERROR:
-            puts("CE)");
-            break;
-        case SKIP:
-            puts("SP)");
-            break;
-        case SYSTEM_ERROR:
-            puts("SE)");
-            break;
-        default:
-            break;
-        }
-        printf("time(ms) : %d\n", result[i].useCPUTime);
-        printf("mem(byte) : %lld\n", result[i].useMemory);
-        printf("detail : %s\n", result[i].resultDetail);
+#ifdef __DEBUG
+    logDebugInfoWithMessage(judgeConfig.logPath, "Judge success");
+#endif
+    
+    cJSON* resultJson =cJSON_CreateObject();
+    cJSON * taskIDjson = cJSON_CreateNumber(result[0].taskID);
+    cJSON_AddItemToObject(resultJson, "taskID", taskIDjson);
+
+    char datetime[128];
+    time_t nowTime;
+    nowTime = time(NULL);
+    strftime(datetime, MAX_LOG_LENGTH-1, "%Y-%m-%d %H:%M:%S", localtime(&nowTime));
+    cJSON * doneTimeJson = cJSON_CreateString(datetime);
+    cJSON_AddItemToObject(resultJson, "time", doneTimeJson);
+    cJSON* dataArrJson = cJSON_CreateArray();
+    cJSON_AddItemToObject(resultJson, "result", dataArrJson);
+    int curData;
+    for (curData = 0; curData < dataCnt; curData++) {
+        cJSON* eixtSignal = cJSON_CreateNumber(result->exitSignal);
+        cJSON* exitCode = cJSON_CreateNumber(result->exitCode);
+        cJSON* judgeResult = cJSON_CreateNumber(result->result);
+        cJSON* useCPUTime = cJSON_CreateNumber(result->useCPUTime);
+        cJSON* useMemory = cJSON_CreateSNumber(result->useMemory / 1024);
+        cJSON* detail = cJSON_CreateString(result->resultDetail);
+
+        cJSON* dataJson =cJSON_CreateObject();
+        cJSON_AddItemToObject(dataJson, "time", useCPUTime);
+        cJSON_AddItemToObject(dataJson, "memory", useMemory);
+        cJSON_AddItemToObject(dataJson, "signal", eixtSignal);
+        cJSON_AddItemToObject(dataJson, "code", exitCode);
+        cJSON_AddItemToObject(dataJson, "detail", detail);
+
+        cJSON_AddItemToArray(dataArrJson, dataJson);
     }
+
+    FILE *resultFile = NULL;
+    if ((resultFile = fopen(RESULT_FILE_PATH, "w")) == NULL) {
+        logSystemErrorWithTaskID(judgeConfig.logPath, judgeConfig.taskID, WRITE_RESULT_FILE_FAILED, "Can't open result file");
+        eixt(EXIT_FAILURE);
+    }
+#ifdef __DEBUG
+    fprintf(result, "%s", cJSON_Print(result));
+#else 
+    fprintf(result, "%s", cJSON_PrintUnformatted(result));
+#endif
+    fclose(resultFile);
     return 0;
 }
