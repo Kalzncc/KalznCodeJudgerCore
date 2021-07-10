@@ -18,15 +18,18 @@ void initRunConfig(RunConfig * result) {
 void check(RunConfig *result, int status, const struct rusage *resourceUsage, int timeLimit, long long memoryLimit,  const char * logPath ) {
     
     result->exitSignal = WTERMSIG(status);
-#ifdef __DEBUG
-    printf("box_exit_signal : %d\n", result->exitSignal);
-#endif
     if (result->exitSignal == SIGUSR1) {
         result->result = SYSTEM_ERROR;
         strcpy(result->resultDetail, "Check log file to know detail");
         return ;
     }
     result->exitCode =  WEXITSTATUS(status);
+#ifdef __DEBUG
+    char buffer[MAX_DEBUG_INFO_LENGTH];
+    sprintf(buffer, "Box exit signal : %d, exit code : %d", result->exitSignal, result->exitCode);
+    logDebugInfoWithMessage(logPath, buffer);
+#endif
+
     result->useCPUTime = (int) (resourceUsage->ru_utime.tv_sec * 1000 + resourceUsage->ru_utime.tv_usec / 1000);
     result->useMemory = resourceUsage->ru_maxrss * 1024;
 
@@ -50,13 +53,17 @@ RunConfig* judge(const JudgerConfig * judgerConfig, const JudgeConfig *judgeConf
     
     RunConfig *result = (RunConfig*) malloc (sizeof(RunConfig)* judgeConfig->caseNumber );
     int curCase;
-    
+#ifdef __DEBUG
+    logDebugInfoWithMessage(judgeConfig->logPath, "Initializing result config");
+#endif
     for (curCase = 0; curCase < judgeConfig->caseNumber; curCase++) {
         
         initRunConfig(&result[curCase]);
         result[curCase].taskID = judgeConfig->taskID;
     }
-    
+#ifdef __DEBUG
+    logDebugInfoWithMessage(judgeConfig->logPath, "Checking judger config");
+#endif
     if (getuid()!=0) {
         createSystemError(&result[0], PERMISSION_ERROR, "No root", judgeConfig->logPath);
         return result;
@@ -64,7 +71,7 @@ RunConfig* judge(const JudgerConfig * judgerConfig, const JudgeConfig *judgeConf
     if (chdir(judgeConfig->workSpacePath)!=0) {
         createSystemError(&result[0], ACCESS_WORKSPACE_FAILED, "Can't access workspace.", judgeConfig->logPath);
     }
-    
+
     if (judgerConfig->maxCharBuffer<1 || judgerConfig->maxCharBuffer>MAX_OUTPUT_CHAR_BUFFER
         || judgerConfig->maxSPJMemory<1 || judgerConfig->maxSPJMemory>MAX_SPJ_MEMORY_LIMIT
         || judgerConfig->maxSPJTime<1 || judgerConfig->maxSPJTime>MAX_SPJ_TIME_LIMIT
@@ -73,13 +80,15 @@ RunConfig* judge(const JudgerConfig * judgerConfig, const JudgeConfig *judgeConf
         createSystemError(&result[0], INVALID_JUDGE_CONFIG, "Judger limit is invalid", judgeConfig->logPath);
         return result;
     }
-    
+
     if (judgeConfig->translator.mode != INTERPRETER_MOD) {
+#ifdef __DEBUG
+    logDebugInfoWithMessage(judgeConfig->logPath, "Compileing code");
+#endif
         if (compileCode(judgeConfig->translator.compilerPath, judgeConfig->translator.compilerOptions)) {
             createSystemError(&result[0], COMPILER_RUN_FAILED, "Cant't run compiler", judgeConfig->logPath);
             return result;
         }
-        
         FILE *fp;
         if ( (fp = fopen(judgeConfig->translator.compilerProductName, "r")) == NULL) {
             result[0].result = COMPILE_ERROR;
@@ -94,7 +103,9 @@ RunConfig* judge(const JudgerConfig * judgerConfig, const JudgeConfig *judgeConf
 
     for (curCase = 0; curCase < judgeConfig->caseNumber; curCase++) {
 #ifdef __DEBUG
-        printf("begin to judge data : %d\n", curCase);
+    char buffer[MAX_DEBUG_INFO_LENGTH];
+    sprintf(buffer, "Begin to judge data %d", curCase);
+    logDebugInfoWithMessage(judgeConfig->logPath, buffer);
 #endif
         if (judgeConfig->maxCPUTime[curCase]<1 || judgeConfig->maxCPUTime[curCase] > MAX_TIME_LIMIT
         || judgeConfig->maxMemory[curCase]<1 || judgeConfig->maxMemory[curCase] > MAX_MEMORY_LIMIT
