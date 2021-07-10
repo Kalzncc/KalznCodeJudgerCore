@@ -1,0 +1,33 @@
+{
+	"taskID":	100031,
+	"time":	"2021-07-10 03:35:56",
+	"result":	[{
+			"time":	65,
+			"memory":	37664,
+			"signal":	0,
+			"code":	0,
+			"result":	0,
+			"detail":	"No info"
+		}, {
+			"time":	74,
+			"memory":	37524,
+			"signal":	0,
+			"code":	0,
+			"result":	1,
+			"detail":	"No info"
+		}, {
+			"time":	0,
+			"memory":	0,
+			"signal":	0,
+			"code":	0,
+			"result":	8,
+			"detail":	"No info"
+		}, {
+			"time":	0,
+			"memory":	0,
+			"signal":	0,
+			"code":	0,
+			"result":	8,
+			"detail":	"No info"
+		}]
+}
