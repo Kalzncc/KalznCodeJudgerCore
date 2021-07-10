@@ -32,6 +32,7 @@
 #define INTERPRETER_INFO_PATH "interpreter.log"
 #define FILEIO_INPUT_PATH "input.in"
 #define FILEIO_OUTPUT_PATH "output.out"
+#define RESULT_FILE_PATH "result.json"
 #define MAX_JSON_CHAR_NUM 0x10000 // json文件的最大字符数
 #define DEFAULT_UID 65534
 #define MAX_TIME_LIMIT 30000
@@ -44,6 +45,10 @@
 #define MAX_PATH_LENGTH 1024
 #define MAX_CMD_STR_LENGTH 1024
 #define MAX_DETAIL_LENGTH 128
+#define MAX_DEBUG_INFO_LENGTH 128
+
+
+#define __DEBUG
 
 enum JudgeErrorEnum {
     
@@ -63,6 +68,8 @@ enum JudgeErrorEnum {
     PERMISSION_ERROR = -110, //judge进程不是root
     ACCESS_WORKSPACE_FAILED = -111, 
     FILE_IO_INIT_FAILED = -112,
+    WRITE_RESULT_FILE_FAILED = -113 
+
     // box 进程产生错误
     BOX_SECURITY_CONFIG_LOAD_FAILED = -200, // 安全配置加载失败
     BOX_DATA_REDIRECT_FAILED = -201, //评测数据重定向失败
