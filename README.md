@@ -28,3 +28,4 @@ sudo ./Judger <json file path> [log path]
 Judger评测完成后，会在工作区目录下生成一个result.txt文件。
  
 JSON配置和选项说明见[Wiki](https://github.com/Kalzncc/KalznCodeJudger/wiki)
+
