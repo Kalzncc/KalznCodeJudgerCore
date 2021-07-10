@@ -93,7 +93,7 @@ enum JudgeErrorEnum {
 
 };
 typedef enum JudgeErrorEnum JudgeError;
-
+ 
 enum JudgeResultEnum {
     // 当本次评测的JudgeError的不为SUCCESS时，JudgeResult一定是SYSTEM_ERROR。
     // 当本次评测的JudgeError为SUCCESS时，JudgeResult一定不是SYSTEM_ERROR。
