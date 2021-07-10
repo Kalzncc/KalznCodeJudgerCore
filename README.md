@@ -27,3 +27,4 @@ sudo ./Judger <json file path> [log path]
 其中如果省略``log path``，在json解析成功之前，log目录将默认设置为Judger同目录下的``log.log``，当json解析成功后，log路径将采用json配置中的log。这里不建议省略``log path``，建议指令中``log path``与json中配置的````log path````保持一致。
 Judger评测完成后，会在工作区目录下生成一个result.txt文件。
  
+JSON配置和选项说明见Wiki
