@@ -19,9 +19,7 @@ int compileCode(const char * compilerPath,  char ** argv) {
     
     strcat(cmdBuffer, " 2>");
     strcat(cmdBuffer, COMPILER_INFO_PATH);
-#ifdef __DEBUG
-    printf("compiler cmd : %s\n", cmdBuffer);
-#endif
+
     system(cmdBuffer);
     return 0;
 }
