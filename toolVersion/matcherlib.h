@@ -1,7 +1,7 @@
 #ifndef MATCHERLIB_H
 #define MATCHERLIB_H
 
-#include "judgerlib.h"
+#include "judger_config.h"
 
 
 

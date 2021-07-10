@@ -516,7 +516,7 @@ int main(int argc, char *argv[]) {
 #ifdef __DEBUG
     fprintf(resultFile, "%s", cJSON_Print(resultJson));
 #else 
-    fprintf(resultFile, "%s", cJSON_PrintUnformatted(result));
+    fprintf(resultFile, "%s", cJSON_PrintUnformatted(resultJson));
 #endif
     fclose(resultFile);
     return 0;

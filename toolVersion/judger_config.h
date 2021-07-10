@@ -48,7 +48,6 @@
 #define MAX_DEBUG_INFO_LENGTH 128
 
 
-#define __DEBUG
 
 enum JudgeErrorEnum {
     
