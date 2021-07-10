@@ -144,7 +144,7 @@ Judger评测完成后，会在工作区目录下生成一个result.txt文件。
     </tr>
     <tr>
         <td>
-            SINGLE_RESULT_MODE
+            SINGLE_RESULT_MODE(0)
         </td>
         <td>
             单一结果模式，且若某样例没有AC，之后的样例直接跳过
@@ -152,7 +152,7 @@ Judger评测完成后，会在工作区目录下生成一个result.txt文件。
     </tr>
     <tr>
         <td>
-            POINTS_MODE
+            POINTS_MODE(1)
         </td>
         <td>
             积分模式，返回每个样例的结果，即使某样例没有AC，也会接着评测后面的样例。
@@ -165,7 +165,7 @@ Judger评测完成后，会在工作区目录下生成一个result.txt文件。
     </tr>
     <tr>
         <td>
-            STD_IO
+            STD_IO(0)
         </td>
         <td>
             评测时使用标准读入输出
@@ -173,7 +173,7 @@ Judger评测完成后，会在工作区目录下生成一个result.txt文件。
     </tr>
     <tr>
         <td>
-            FILE_IO
+            FILE_IO(1)
         </td>
         <td>
             评测时使用文件读入输出，文件路径为FILEIO_INPUT_PATH以及FILEIO_OUTPUT_PATH
@@ -186,7 +186,7 @@ Judger评测完成后，会在工作区目录下生成一个result.txt文件。
     </tr>
     <tr>
         <td>
-            NOT_STRICT_MODE
+            NOT_STRICT_MODE(0)
         </td>
         <td>
 		 非严格模式：<br/>
@@ -199,7 +199,7 @@ Judger评测完成后，会在工作区目录下生成一个result.txt文件。
     </tr>
     <tr>
         <td>
-            STRICT_MODE
+            STRICT_MODE(1)
         </td>
         <td>
            严格评测模式：<br/>
@@ -219,7 +219,7 @@ Judger评测完成后，会在工作区目录下生成一个result.txt文件。
     </tr>
     <tr>
         <td >
-            COMPILER_MOD
+            COMPILER_MOD(0)
         </td>
         <td>
             待测代码是工作区下Main.x, x为后缀名<br/>
@@ -232,7 +232,7 @@ compilerProductName的文件，以判定编译是否成功。如果失败则报�
     </tr>
     <tr>
         <td>
-            INTERPRETER_MOD
+            INTERPRETER_MOD(1)
         </td>
         <td>
         2、interpreter mode 解释模式<br/>
@@ -242,7 +242,7 @@ compilerProductName的文件，以判定编译是否成功。如果失败则报�
     </tr>
     <tr>
         <td>
-            COMPILER_INTERPRETER_MOD
+            COMPILER_INTERPRETER_MOD(2)
         </td>
         <td>
         3、compiler interpreter mode 编译解释模式<br/>
