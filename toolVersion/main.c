@@ -490,18 +490,19 @@ int main(int argc, char *argv[]) {
     cJSON_AddItemToObject(resultJson, "result", dataArrJson);
     int curData;
     for (curData = 0; curData < dataCnt; curData++) {
-        cJSON* eixtSignal = cJSON_CreateNumber(result->exitSignal);
-        cJSON* exitCode = cJSON_CreateNumber(result->exitCode);
-        cJSON* judgeResult = cJSON_CreateNumber(result->result);
-        cJSON* useCPUTime = cJSON_CreateNumber(result->useCPUTime);
-        cJSON* useMemory = cJSON_CreateSNumber(result->useMemory / 1024);
-        cJSON* detail = cJSON_CreateString(result->resultDetail);
+        cJSON* eixtSignal = cJSON_CreateNumber(result[curData].exitSignal);
+        cJSON* exitCode = cJSON_CreateNumber(result[curData].exitCode);
+        cJSON* judgeResult = cJSON_CreateNumber(result[curData].result);
+        cJSON* useCPUTime = cJSON_CreateNumber(result[curData].useCPUTime);
+        cJSON* useMemory = cJSON_CreateNumber(result[curData].useMemory / 1024);
+        cJSON* detail = cJSON_CreateString(result[curData].resultDetail);
 
         cJSON* dataJson =cJSON_CreateObject();
         cJSON_AddItemToObject(dataJson, "time", useCPUTime);
         cJSON_AddItemToObject(dataJson, "memory", useMemory);
         cJSON_AddItemToObject(dataJson, "signal", eixtSignal);
         cJSON_AddItemToObject(dataJson, "code", exitCode);
+        cJSON_AddItemToObject(dataJson, "result", judgeResult);
         cJSON_AddItemToObject(dataJson, "detail", detail);
 
         cJSON_AddItemToArray(dataArrJson, dataJson);
@@ -510,12 +511,12 @@ int main(int argc, char *argv[]) {
     FILE *resultFile = NULL;
     if ((resultFile = fopen(RESULT_FILE_PATH, "w")) == NULL) {
         logSystemErrorWithTaskID(judgeConfig.logPath, judgeConfig.taskID, WRITE_RESULT_FILE_FAILED, "Can't open result file");
-        eixt(EXIT_FAILURE);
+        exit(EXIT_FAILURE);
     }
 #ifdef __DEBUG
-    fprintf(result, "%s", cJSON_Print(result));
+    fprintf(resultFile, "%s", cJSON_Print(resultJson));
 #else 
-    fprintf(result, "%s", cJSON_PrintUnformatted(result));
+    fprintf(resultFile, "%s", cJSON_PrintUnformatted(result));
 #endif
     fclose(resultFile);
     return 0;

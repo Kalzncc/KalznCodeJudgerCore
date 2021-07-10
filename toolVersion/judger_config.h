@@ -68,7 +68,7 @@ enum JudgeErrorEnum {
     PERMISSION_ERROR = -110, //judge进程不是root
     ACCESS_WORKSPACE_FAILED = -111, 
     FILE_IO_INIT_FAILED = -112,
-    WRITE_RESULT_FILE_FAILED = -113 
+    WRITE_RESULT_FILE_FAILED = -113 ,
 
     // box 进程产生错误
     BOX_SECURITY_CONFIG_LOAD_FAILED = -200, // 安全配置加载失败
