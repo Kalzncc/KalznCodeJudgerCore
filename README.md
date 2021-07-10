@@ -13,7 +13,7 @@ sudo apt install libseccomp-dev libseccomp2 seccomp
 ## 编译代码
 请连接seccomp库进行编译。在toolVersion目录下
 ```sh
-gcc  -D__LINUX_RUN  judger_config.h securitylib.h securitylib.c  compilerlib.h compilerlib.c  judger_config.c loglib.h loglib.c cjson/cJSON.h cjson/cJSON.c killerlib.h killerlib.c boxlib.h boxlib.c judgerlib.h judgerlib.c matcherlib.h matcherlib.c main.c -o Judger -lseccomp
+gcc  judger_config.h securitylib.h securitylib.c  compilerlib.h compilerlib.c  judger_config.c loglib.h loglib.c cjson/cJSON.h cjson/cJSON.c killerlib.h killerlib.c boxlib.h boxlib.c judgerlib.h judgerlib.c matcherlib.h matcherlib.c main.c -o Judger -lseccomp
 ```
 另外如果想在屏幕上显示一些调试信息，请加入``-D__DEBUG``编译参数。编译后，可执行文件为目录下的Judger。
 

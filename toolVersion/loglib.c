@@ -1,7 +1,6 @@
 #include "judger_config.h"
 #include "loglib.h"
 
-#ifdef __NOT_DEBUG
 
 void createSystemError(RunConfig * result, JudgeError error, const char * message, const char * logPath) {
     result->errorCode = error;
@@ -34,6 +33,9 @@ void logSystemErrorWithResult(const char * path, const RunConfig* result) {
     }
     fclose(logFile);
     fclose(logFile);
+#ifdef __DEBUG
+    fprintf(stderr, buffer);
+#endif
 }
 void logSystemErrorWithMessage(const char * path, JudgeError error, const char * message) {
     FILE * logFile = fopen(path, "a+");
@@ -57,6 +59,9 @@ void logSystemErrorWithMessage(const char * path, JudgeError error, const char *
         fprintf(stderr, "Error : Can't flock log file");
     }
     fclose(logFile);
+#ifdef __DEBUG
+    fprintf(stderr, buffer);
+#endif
 }
 void logSystemErrorWithTaskID(const char * path, int taskID, JudgeError error, const char * message) {
     FILE * logFile = fopen(path, "a+");
@@ -80,16 +85,8 @@ void logSystemErrorWithTaskID(const char * path, int taskID, JudgeError error, c
         fprintf(stderr, "Error : Can't flock log file");
     }
     fclose(logFile);
-}
-
-#else
-void logSystemErrorWithResult(const RunConfig * result) {
-    freopen("1.log", "a+", stdin);
-    printf("%s\n", result->resultDetail);
-}
-void logSystemErrorWithMessage(JudgeError error, const char * message) {
-    freopen("1.log", "a+", stdin);
-    printf("%d %s\n", error, message);
-
-}
+#ifdef __DEBUG
+    fprintf(stderr, buffer);
 #endif
+}
+
