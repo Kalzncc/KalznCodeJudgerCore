@@ -28,11 +28,6 @@
 
 
 
-#ifndef __NOT_DEBUG
-#define __NOT_DEBUG
-#endif
-
-
 #define DEFAULT_LOG_PATH "judge_log.log" 
 #define COMPILER_INFO_PATH "compiler.log"
 #define INTERPRETER_INFO_PATH "interpreter.log"
