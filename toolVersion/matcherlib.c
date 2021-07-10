@@ -14,8 +14,7 @@ JudgeResult formatMatch(const char *std,  const char *out) {
         if (!isspace(*out)) chOut = *out;
         else chOut = ' ';
         while(isspace(*out)) out++;
-
-        
+ 
         
         if (chStd != chOut) return WRONG_ANSWER;
         std++; out++;
@@ -25,7 +24,12 @@ JudgeResult formatMatch(const char *std,  const char *out) {
 }
 void matchResult(const JudgerConfig *judgerConfig, const JudgeConfig * config, int curCase, RunConfig * result) {
     
-    
+#ifdef __DEBUG
+    char buffer[MAX_DEBUG_INFO_LENGTH];
+    sprintf(buffer, "Matching output and std output");
+    logDebugInfoWithMessage(config->logPath, buffer);
+#endif
+
     FILE *stdFile = NULL;
     FILE *outFile = NULL;
     
@@ -88,6 +92,9 @@ void matchResult(const JudgerConfig *judgerConfig, const JudgeConfig * config, i
     return;
 }
 void checkSPJ(const JudgerConfig * judgerConfig, const JudgeConfig * judgeConfig, RunConfig * result, int status, const struct rusage * resourceUsage) {
+
+
+
     int exitSignal = WTERMSIG(status);
     if (exitSignal == SIGUSR1) {
         result->result = SYSTEM_ERROR;
@@ -101,6 +108,11 @@ void checkSPJ(const JudgerConfig * judgerConfig, const JudgeConfig * judgeConfig
     int exitCode =  WEXITSTATUS(status);
     int useCPUTime = (int) (resourceUsage->ru_utime.tv_sec * 1000 + resourceUsage->ru_utime.tv_usec / 1000);
     long long useMemory = resourceUsage->ru_maxrss * 1024;
+#ifdef __DEBUG
+    char buffer[MAX_DEBUG_INFO_LENGTH];
+    sprintf(buffer, "Box (spj) exit signal : %d, exit code : %d", exitSignal, exitCode);
+    logDebugInfoWithMessage(judgeConfig->logPath, buffer);
+#endif
 
     if (useCPUTime > judgerConfig->maxSPJTime) {
         result->result = WRONG_ANSWER;
@@ -117,6 +129,12 @@ void checkSPJ(const JudgerConfig * judgerConfig, const JudgeConfig * judgeConfig
 }   
 
 void matchWithSPJ(const JudgerConfig * judgerConfig, const JudgeConfig * config, int curCase, RunConfig * result, const char * logPath) {
+#ifdef __DEBUG
+    char buffer[MAX_DEBUG_INFO_LENGTH];
+    sprintf(buffer, "Running spj to judge");
+    logDebugInfoWithMessage(config->logPath, buffer);
+#endif
+
     pid_t spjID = fork();
     if (spjID<0) {
         createSystemError(&result[curCase], FORK_SPJ_FAILED, "Can't fork spj proccess", config->logPath);
