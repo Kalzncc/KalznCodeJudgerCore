@@ -79,47 +79,47 @@ void run(const JudgerConfig* judgerConfig, const JudgeConfig *config, int curDat
      exit(EXIT_FAILURE);
 }
 void runSpj(const JudgerConfig * judgerConfig, const JudgeConfig *config, int curDataNum) {
-    // struct rlimit maxStackLimit;
-    // maxStackLimit.rlim_cur = maxStackLimit.rlim_max = (rlim_t)MAX_STACK_LIMIT;
-    // if (setrlimit(RLIMIT_STACK, &maxStackLimit) != 0) {
-    //     logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SET_LIMIT_FAILED, "Can't set limit (spj)");
-    //     raise(SIGUSR1);
-    //     exit(EXIT_FAILURE);
-    // }
+    struct rlimit maxStackLimit;
+    maxStackLimit.rlim_cur = maxStackLimit.rlim_max = (rlim_t)MAX_STACK_LIMIT;
+    if (setrlimit(RLIMIT_STACK, &maxStackLimit) != 0) {
+        logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SET_LIMIT_FAILED, "Can't set limit (spj)");
+        raise(SIGUSR1);
+        exit(EXIT_FAILURE);
+    }
 
-    // struct rlimit maxCPUTimeLimit;
-    // maxCPUTimeLimit.rlim_cur = maxCPUTimeLimit.rlim_max = (rlim_t) (judgerConfig->maxSPJTime + 500 / 1000 + 1);
-    // if (setrlimit(RLIMIT_CPU, &maxCPUTimeLimit) != 0) {
-    //     logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SET_LIMIT_FAILED, "Can't set limit");
-    //     raise(SIGUSR1);
-    //     exit(EXIT_FAILURE);
-    // }
+    struct rlimit maxCPUTimeLimit;
+    maxCPUTimeLimit.rlim_cur = maxCPUTimeLimit.rlim_max = (rlim_t) (judgerConfig->maxSPJTime + 500 / 1000 + 1);
+    if (setrlimit(RLIMIT_CPU, &maxCPUTimeLimit) != 0) {
+        logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SET_LIMIT_FAILED, "Can't set limit");
+        raise(SIGUSR1);
+        exit(EXIT_FAILURE);
+    }
 
-    // struct rlimit maxMemoryLimit;
-    // maxMemoryLimit.rlim_cur = maxMemoryLimit.rlim_max = (rlim_t) judgerConfig->maxSPJMemory * 2;
-    // if (setrlimit(RLIMIT_AS, &maxMemoryLimit) != 0) {
-    //     logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SET_LIMIT_FAILED, "Can't set limit");
-    //     raise(SIGUSR1);
-    //     exit(EXIT_FAILURE);
-    // }
+    struct rlimit maxMemoryLimit;
+    maxMemoryLimit.rlim_cur = maxMemoryLimit.rlim_max = (rlim_t) judgerConfig->maxSPJMemory * 2;
+    if (setrlimit(RLIMIT_AS, &maxMemoryLimit) != 0) {
+        logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SET_LIMIT_FAILED, "Can't set limit");
+        raise(SIGUSR1);
+        exit(EXIT_FAILURE);
+    }
 
-    // gid_t group_list[] = {config->gid};
-    // if (config->gid != -1 && (setgid(config->gid) == -1 || setgroups(sizeof(group_list) / sizeof(gid_t), group_list) == -1)) {
-    //     logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SET_UID_FATLED, "Can't set gid/uid (spj)");
-    //     raise(SIGUSR1);
-    //     exit(EXIT_FAILURE);
-    // }
-    // if (config->uid != -1 && setuid(config->uid) == -1) {
-    //     logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SET_UID_FATLED, "Can't set gid/uid (spj)");
-    //     raise(SIGUSR1);
-    //     exit(EXIT_FAILURE);
-    // }
+    gid_t group_list[] = {config->gid};
+    if (config->gid != -1 && (setgid(config->gid) == -1 || setgroups(sizeof(group_list) / sizeof(gid_t), group_list) == -1)) {
+        logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SET_UID_FATLED, "Can't set gid/uid (spj)");
+        raise(SIGUSR1);
+        exit(EXIT_FAILURE);
+    }
+    if (config->uid != -1 && setuid(config->uid) == -1) {
+        logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SET_UID_FATLED, "Can't set gid/uid (spj)");
+        raise(SIGUSR1);
+        exit(EXIT_FAILURE);
+    }
 
-    // if (loadSeccompRulesForSPJ(config) != 0) {
-    //     logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SECURITY_CONFIG_LOAD_FAILED, "Can't load security config (spj)");
-    //     raise(SIGUSR1);
-    //     exit(EXIT_FAILURE);
-    // }
+//     if (loadSeccompRulesForSPJ(config) != 0) {
+//         logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SECURITY_CONFIG_LOAD_FAILED, "Can't load security config (spj)");
+//         raise(SIGUSR1);
+//         exit(EXIT_FAILURE);
+//     }
     if (config->iOMode == STD_IO) {
         printf("%s %s %s %s %s\n", config->sPJPath, config->sPJName, config->inputData[curDataNum], config->stdAnswer[curDataNum], config->outputData[curDataNum]);
         execl(config->sPJPath, config->sPJName, config->inputData[curDataNum], config->stdAnswer[curDataNum], config->outputData[curDataNum], NULL);
