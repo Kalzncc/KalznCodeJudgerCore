@@ -112,7 +112,8 @@ typedef enum JudgeResultEnum JudgeResult;
 
 enum JudgeModeEnum {
     SINGLE_RESULT_MODE = 0, // 单一结果模式，且若某样例没有AC，之后的样例直接跳过
-    POINTS_MODE = 1 // 积分模式，返回每个样例的结果，即使某样例没有AC，也会接着评测后面的样例。
+    POINTS_MODE = 1, // 积分模式，返回每个样例的结果，即使某样例没有AC，也会接着评测后面的样例。
+    ONLY_COMPILE_MODE = 2 // 只编译模式 （详见文档 并发评测与解释 了解详情）
 };
 typedef enum JudgeModeEnum JudgeMode;
 
@@ -126,7 +127,8 @@ typedef enum IOMode IOMode;
 enum TranslationModeEnum {
     COMPILER_MODE = 0, // 编译型语言
     INTERPRETER_MODE = 1, // 解释型语言 
-    COMPILER_INTERPRETER_MODE = 2  // 半编译半解释
+    COMPILER_INTERPRETER_MODE = 2,  // 半编译半解释
+    DO_NOT_TANSLATE_MODE = 3 // 不做翻译模式
     /**
      * 待测代码是工作区下Main.x, x为后缀名
      * 
@@ -146,6 +148,8 @@ enum TranslationModeEnum {
      * compilerProductName的文件，以判定编译是否成功。如果失败则报告编译失败，否则执行runner开始评测。
      * 在runner初始化成功后，将会执行语句 [interpreterCmd], 启用解释器运行代码，报错退出将按照runner的自行处理。
      * 
+     * 4、do not tanslate mode 不做翻译模式
+     * 直接运行compilerProductName，不做任何处理，详见文档 并发评测与解释 了解详情
      * 
      * 不过要明确的是，此部分的配置应该由系统的部署人员完成，此部分的配置一般不会修改
      * 除非要改动OJ的编译指令，或者添加、删减某种语言。

@@ -50,14 +50,13 @@ void check(RunConfig *result, int status, const struct rusage *resourceUsage, in
     
 }   
 RunConfig* judge(const JudgerConfig * judgerConfig, const JudgeConfig *judgeConfig) {
-    
-    RunConfig *result = (RunConfig*) malloc (sizeof(RunConfig)* judgeConfig->caseNumber );
+    RunConfig *result = NULL;
+    result = (RunConfig*) malloc (sizeof(RunConfig)* judgeConfig->caseNumber );
     int curCase;
 #ifdef __DEBUG
     logDebugInfoWithMessage(judgeConfig->logPath, "Initializing result config");
 #endif
     for (curCase = 0; curCase < judgeConfig->caseNumber; curCase++) {
-        
         initRunConfig(&result[curCase]);
         result[curCase].taskID = judgeConfig->taskID;
     }
@@ -81,7 +80,7 @@ RunConfig* judge(const JudgerConfig * judgerConfig, const JudgeConfig *judgeConf
         return result;
     }
 
-    if (judgeConfig->translator.mode != INTERPRETER_MODE) {
+    if (judgeConfig->translator.mode != INTERPRETER_MODE && judgeConfig->translator.mode != DO_NOT_TANSLATE_MODE) {
 #ifdef __DEBUG
     logDebugInfoWithMessage(judgeConfig->logPath, "Compileing code");
 #endif
@@ -99,7 +98,10 @@ RunConfig* judge(const JudgerConfig * judgerConfig, const JudgeConfig *judgeConf
             fclose(fp);
         }
     }
-    
+    if (judgeConfig->judgeMode == ONLY_COMPILE_MODE) {
+        result->result = ACCEPTED;
+        return result;
+    }
 
     for (curCase = 0; curCase < judgeConfig->caseNumber; curCase++) {
 #ifdef __DEBUG

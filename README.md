@@ -72,18 +72,18 @@ sudo rm -f /usr/bin/kalznjudger
 
             "mode": 2, // 翻译模式 必选项 见下表
 
-            "compilerPath": "/usr/bin/javac", // 编译器路径 当翻译模式!=INTERPRETER_MODE时，必选项
+            "compilerPath": "/usr/bin/javac", // 编译器路径 当翻译模式==COMPILER_MODE或者COMPILER_INTERPRETER_MODE时，必选项
 
-            "compilerOptions":[ // 编译器选项 当翻译模式!=INTERPRETER_MODE时，必选项
+            "compilerOptions":[ // 编译器选项 当翻译模式==COMPILER_MODE或者COMPILER_INTERPRETER_MODE时，必选项
                 "javac", "Main.java"
             ],
 
             "compilerProductName":"Main.class",
             // 编译产物名 当翻译模式!=INTERPRETER_MODE时，必选项，Judger编译后，将确认工作区目录下是否生成了名为compilerProductName的文件，以此判定编译是否正确。
 
-            "interpreterPath":"/usr/bin/java", // 解释器路径，当翻译模式!=COMPILER_MODE时 必选项。
+            "interpreterPath":"/usr/bin/java", // 解释器路径，当翻译模式==INTERPRETER_MODE,或者COMPILER_INTERPRETER_MODE时 必选项。
 
-            "interpreterOptions":[ // 解释器选项，当翻译模式!=COMPILER_MODE时 必选项。
+            "interpreterOptions":[ // 解释器选项，当翻译模式==INTERPRETER_MODE或者或者COMPILER_INTERPRETER_MODE时 必选项。
                 "java", "Main"
             ]
 
@@ -141,7 +141,7 @@ sudo rm -f /usr/bin/kalznjudger
         <th> 意义</th>
     </tr>
     <tr>
-        <td rowspan='3'>
+        <td rowspan='4'>
             Task.judgeMode
         </td>
     </tr>
@@ -159,6 +159,14 @@ sudo rm -f /usr/bin/kalznjudger
         </td>
         <td>
             积分模式，返回每个样例的结果，即使某样例没有AC，也会接着评测后面的样例。
+        </td>
+    </tr>
+     <tr>
+        <td>
+            ONLY_COMPILE_MODE(2)
+        </td>
+        <td>
+           只编译模式 （详见文档  <a href="#a">并发评测与解释</a>  了解详情）
         </td>
     </tr>
     <tr>
@@ -216,7 +224,7 @@ sudo rm -f /usr/bin/kalznjudger
         </td>
     </tr>
     <tr>
-        <td rowspan='4'>
+        <td rowspan='5'>
             Task.translator.mode
         </td>
     </tr>
@@ -257,6 +265,15 @@ compilerProductName的文件，以判定编译是否成功。如果失败则报�
 除非要改动OJ的编译指令，或者添加、删减某种语言。<br/>
         </td>
     </tr>
+    <tr>
+        <td>
+            DO_NOT_TANSLATE_MODE(3)
+        </td>
+        <td>
+       4、do not tanslate mode 不做翻译模式<br/>
+       直接运行compilerProductName，不做任何处理，详见文档 <a href="#a">并发评测与解释</a> 了解详情
+        </td>
+    </tr>
 </table>
 
 编译和解释过程中产生的输出信息会分别记录到COMPILER_INFO_PATH 和 INTERPRETER_INFO_PATH下，它将和评测结果文件，一同交由高层的评测队列管理模块回收处理。<br/>
@@ -264,6 +281,23 @@ compilerProductName的文件，以判定编译是否成功。如果失败则报�
 
 ## 工作区
 工作区是Judger在评测时的工作目录，与评测有关的数据、待测源程序等最好都在此目录下，Judger所生成的编译器和解释器信息，以及最终结果都将会存储在此。当高层管理程序回收时，应该从工作区目录回收评测结果，并做好工作区的清理。
+
+<div id = "a"></div>
+
+## 并发评测与解释
+v0.2.0版本发布的重要功能
+
+相信大家都注意到了，在评测选项中，有几处看起来令人困惑的内容。
+
+第一处是Task.judgeMode，评测模式中的ONLY_COMPILE_MODE。在此模式下judger仅仅对目标代码进行编译，只返回编译成功或者编译失败。不进行真正的评测。
+
+第二处是Task.translator.mode，翻译模式的DO_NOT_TANSLATE_MODE，在此模式下，judger直接运行compilerProduct，而不进行编译或者解释工作。
+
+这两者都是为了高层的并发评测调度准备的。首先，为了更好的对大量任务进行评测，并发评测应由高层的任务队列管理器进行调配。究其原因是，高层的任务队列管理器知晓目前待测的所有任务，相较于底层judger，它可以更好的对任务调配。
+
+为了更好的利用处理机，judger允许高层将评测任务拆解为编译过程和执行过程。对于一个评测任务，它只要编译过一次，就可以对一组样例执行评测。
+
+试想这么一个场景：高层队列管理模组接收到一个c++代码的评测任务，它有10组数据。此时评测机不是太繁忙。所以高层决定对其并发评测。它先向judger发送一个评测模式为ONLY_COMPILE_MODE的任务。judger完成编译后就向高层返回编译是否正确。当编译正确时，高层并发地执行10个评测任务，每个包含1组样例。而这10个任务的翻译模式均为DO_NOT_TANSLATE_MODE。然后高层接受10组样例的返回结果就OK了。
 
 ## 评测结果
 | 结果名 | 结果代码 | 说明 |

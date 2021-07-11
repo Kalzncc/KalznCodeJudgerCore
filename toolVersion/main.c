@@ -281,7 +281,7 @@ int main(int argc, char *argv[]) {
     }
      
 
-    if (judgeConfig.translator.mode != INTERPRETER_MODE) {
+    if (judgeConfig.translator.mode == COMPILER_MODE || judgeConfig.translator.mode == COMPILER_INTERPRETER_MODE) {
          
         if ( ( temp = cJSON_GetObjectItem(translatorJson, "compilerPath") ) == NULL || !cJSON_IsString(temp)) {
             logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : compilerPath");
@@ -290,12 +290,9 @@ int main(int argc, char *argv[]) {
         } else {
             judgeConfig.translator.compilerPath = temp->valuestring;
              
-        }
-
-         
+        }         
         if ( ( temp = cJSON_GetObjectItem(translatorJson, "compilerOptions") ) == NULL || !cJSON_IsArray(temp)) {
-            logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : compilerOptions");
-             
+            logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : compilerOptions"); 
             errorExit();
         } else {
             compilerOptionCnt = cJSON_GetArraySize(temp);
@@ -312,8 +309,8 @@ int main(int argc, char *argv[]) {
             }
              
         }
-
-         
+    }
+    if (judgeConfig.translator.mode != INTERPRETER_MODE) {
         if ( ( temp = cJSON_GetObjectItem(translatorJson, "compilerProductName") ) == NULL || !cJSON_IsString(temp)) {
             logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : compilerProductName");
              
@@ -323,8 +320,7 @@ int main(int argc, char *argv[]) {
              
         }
     }
-    
-    if (judgeConfig.translator.mode != COMPILER_MODE) {
+    if (judgeConfig.translator.mode == INTERPRETER_MODE || judgeConfig.translator.mode == COMPILER_INTERPRETER_MODE) {
          
         if ( ( temp = cJSON_GetObjectItem(translatorJson, "interpreterPath") ) == NULL || !cJSON_IsString(temp)) {
             logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : interpreterPath");
@@ -371,6 +367,7 @@ int main(int argc, char *argv[]) {
         logSystemErrorWithMessage(logPath, INVALID_JUDGE_CONFIG, "Must to have least one data case");
         errorExit();
     }
+    if (judgeConfig.judgeMode == ONLY_COMPILE_MODE) dataCnt = 1;
     judgeConfig.inputData = (char **) malloc(sizeof(char *) * dataCnt);
     judgeConfig.outputData = (char **) malloc(sizeof(char *) * dataCnt);
     judgeConfig.stdAnswer = (char **) malloc(sizeof(char *) * dataCnt);
@@ -378,85 +375,84 @@ int main(int argc, char *argv[]) {
     judgeConfig.maxMemory = (long long *) malloc(sizeof(long long) * dataCnt);
     judgeConfig.maxStack = (int *) malloc(sizeof(int) * dataCnt);
     int i;
-    
-    for (i = 0; i < dataCnt; i++) {
+    if (judgeConfig.judgeMode != ONLY_COMPILE_MODE) {
+        for (i = 0; i < dataCnt; i++) {
+            temp = cJSON_GetArrayItem(dataJson, i);
+            char *inputData, *outputData, *stdAnswer;
+            int maxCPUTime, maxStack;
+            long long maxMemory;
 
-         
-        temp = cJSON_GetArrayItem(dataJson, i);
-        char *inputData, *outputData, *stdAnswer;
-        int maxCPUTime, maxStack;
-        long long maxMemory;
+            cJSON* atr;
+            if ((atr = cJSON_GetObjectItem(temp, "inputData")) == NULL || !cJSON_IsString(atr)) {
+                cJSON_Delete(atr);
+                logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
+                errorExit();
+            }
+            inputData = atr->valuestring;
+            
+            
+            if ((atr = cJSON_GetObjectItem(temp, "outputData")) == NULL || !cJSON_IsString(atr)) {
+                cJSON_Delete(atr);
+                logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
+                errorExit();
+            }
+            outputData = atr->valuestring;
+            
+            
+            if ((atr = cJSON_GetObjectItem(temp, "stdAnswer")) == NULL || !cJSON_IsString(atr)) {   
+                cJSON_Delete(atr);
+                logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
+                errorExit();
+            }
+            stdAnswer = atr->valuestring;
+            
 
-        cJSON* atr;
-        if ((atr = cJSON_GetObjectItem(temp, "inputData")) == NULL || !cJSON_IsString(atr)) {
-            cJSON_Delete(atr);
-            logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
-            errorExit();
-        }
-        inputData = atr->valuestring;
-        
-        
-        if ((atr = cJSON_GetObjectItem(temp, "outputData")) == NULL || !cJSON_IsString(atr)) {
-             cJSON_Delete(atr);
-            logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
-            errorExit();
-        }
-        outputData = atr->valuestring;
-           
-        
-        if ((atr = cJSON_GetObjectItem(temp, "stdAnswer")) == NULL || !cJSON_IsString(atr)) {   
-            cJSON_Delete(atr);
-            logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
-            errorExit();
-        }
-        stdAnswer = atr->valuestring;
-           
+            if ((atr = cJSON_GetObjectItem(temp, "maxMemory")) == NULL || !cJSON_IsNumber(atr)) {
+                cJSON_Delete(atr);
+                logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
+                errorExit();
+            }
+            maxMemory = atr->valueint;
+            if (maxMemory < 1){
+                cJSON_Delete(atr);
+                logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
+                errorExit();
+            }
 
-        if ((atr = cJSON_GetObjectItem(temp, "maxMemory")) == NULL || !cJSON_IsNumber(atr)) {
-            cJSON_Delete(atr);
-            logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
-            errorExit();
-        }
-        maxMemory = atr->valueint;
-        if (maxMemory < 1){
-            cJSON_Delete(atr);
-            logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
-            errorExit();
-        }
+            if ((atr = cJSON_GetObjectItem(temp, "maxCPUTime")) == NULL || !cJSON_IsNumber(atr)) {
+                cJSON_Delete(atr);
+                logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
+                errorExit();
+            }
+            maxCPUTime = atr->valueint;
+            if (maxCPUTime < 1){
+                cJSON_Delete(atr);
+                logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
+                errorExit();
+            }
 
-        if ((atr = cJSON_GetObjectItem(temp, "maxCPUTime")) == NULL || !cJSON_IsNumber(atr)) {
+            if ((atr = cJSON_GetObjectItem(temp, "maxStack")) == NULL || !cJSON_IsNumber(atr)) {
+                cJSON_Delete(atr);
+                logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
+                errorExit();
+            }
+            maxStack = atr->valueint;
+            if (maxStack < 1){
+                cJSON_Delete(atr);
+                logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
+                errorExit();
+            }
+            judgeConfig.inputData[i] = inputData;
+            judgeConfig.outputData[i] = outputData;
+            judgeConfig.stdAnswer[i] = stdAnswer;
+            judgeConfig.maxCPUTime[i] = maxCPUTime;
+            judgeConfig.maxMemory[i] = maxMemory;
+            judgeConfig.maxStack[i] = maxStack;
             cJSON_Delete(atr);
-            logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
-            errorExit();
+            
         }
-        maxCPUTime = atr->valueint;
-        if (maxCPUTime < 1){
-            cJSON_Delete(atr);
-            logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
-            errorExit();
-        }
-
-        if ((atr = cJSON_GetObjectItem(temp, "maxStack")) == NULL || !cJSON_IsNumber(atr)) {
-            cJSON_Delete(atr);
-            logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
-            errorExit();
-        }
-        maxStack = atr->valueint;
-        if (maxStack < 1){
-            cJSON_Delete(atr);
-            logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
-            errorExit();
-        }
-        judgeConfig.inputData[i] = inputData;
-        judgeConfig.outputData[i] = outputData;
-        judgeConfig.stdAnswer[i] = stdAnswer;
-        judgeConfig.maxCPUTime[i] = maxCPUTime;
-        judgeConfig.maxMemory[i] = maxMemory;
-        judgeConfig.maxStack[i] = maxStack;
-        cJSON_Delete(atr);
-        
     }
-    if (judgeConfig.translator.mode == COMPILER_MODE) {
+    if (judgeConfig.translator.mode == COMPILER_MODE || judgeConfig.translator.mode == DO_NOT_TANSLATE_MODE) {
         judgeConfig.translator.interpreterPath = judgeConfig.translator.compilerProductName;
         judgeConfig.translator.interpreterOptions = (char **) malloc(sizeof(char*));
         judgeConfig.translator.interpreterOptions[0] = NULL;
