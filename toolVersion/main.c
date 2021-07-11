@@ -363,8 +363,12 @@ int main(int argc, char *argv[]) {
         logSystemErrorWithMessage(logPath, INVALID_JUDGE_CONFIG, "Data case too many");
         errorExit();
     }
-    if (dataCnt < 1) {
-        logSystemErrorWithMessage(logPath, INVALID_JUDGE_CONFIG, "Must to have least one data case");
+    if (dataCnt < 0) {
+        logSystemErrorWithMessage(logPath, INVALID_JUDGE_CONFIG, "data config invalid");
+        errorExit();
+    }
+    if (dataCnt < 1 || judgeConfig.judgeMode != ONLY_COMPILE_MODE) {
+        logSystemErrorWithMessage(logPath, INVALID_JUDGE_CONFIG, "data config invalid");
         errorExit();
     }
     if (judgeConfig.judgeMode == ONLY_COMPILE_MODE) dataCnt = 1;
