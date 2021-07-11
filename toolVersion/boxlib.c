@@ -98,7 +98,7 @@ void runSpj(const JudgerConfig * judgerConfig, const JudgeConfig *config, int cu
     }
 
     struct rlimit maxMemoryLimit;
-    maxMemoryLimit.rlim_cur = maxMemoryLimit.rlim_max = (rlim_t) judgerConfig->maxSPJMemory * 2;
+    maxMemoryLimit.rlim_cur = maxMemoryLimit.rlim_max = (rlim_t) judgerConfig->maxSPJMemory * 1024 * 4;
     if (setrlimit(RLIMIT_AS, &maxMemoryLimit) != 0) {
         logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SET_LIMIT_FAILED, "Can't set limit");
         raise(SIGUSR1);
