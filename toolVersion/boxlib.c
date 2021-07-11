@@ -123,7 +123,7 @@ void runSpj(const JudgerConfig * judgerConfig, const JudgeConfig *config, int cu
 //         exit(EXIT_FAILURE);
 //     }
     if (config->iOMode == STD_IO) {
-        printf("%s %s %s %s %s\n", config->sPJPath, config->sPJName, config->inputData[curDataNum], config->stdAnswer[curDataNum], config->outputData[curDataNum]);
+        
         execl(config->sPJPath, config->sPJName, config->inputData[curDataNum], config->stdAnswer[curDataNum], config->outputData[curDataNum], NULL);
     } else {
         execl(config->sPJPath, config->sPJName, config->inputData[curDataNum], config->stdAnswer[curDataNum], FILEIO_OUTPUT_PATH, NULL);
