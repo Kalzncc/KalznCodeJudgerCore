@@ -69,6 +69,7 @@ void matchResult(const JudgerConfig *judgerConfig, const JudgeConfig * config, i
     }
     outbuf[outCnt] = '\0';
     
+    fclose(stdFile); fclose(outFile);
 
     if (outbuf[outCnt-1] == '\n') outbuf[--outCnt] = '\0';
     if (stdbuf[stdCnt-1] == '\n') stdbuf[--stdCnt] = '\0';
