@@ -81,7 +81,7 @@ RunConfig* judge(const JudgerConfig * judgerConfig, const JudgeConfig *judgeConf
         return result;
     }
 
-    if (judgeConfig->translator.mode != INTERPRETER_MOD) {
+    if (judgeConfig->translator.mode != INTERPRETER_MODE) {
 #ifdef __DEBUG
     logDebugInfoWithMessage(judgeConfig->logPath, "Compileing code");
 #endif
@@ -167,7 +167,7 @@ RunConfig* judge(const JudgerConfig * judgerConfig, const JudgeConfig *judgeConf
                 }
             }
         }
-        if (result[curCase].result != ACCEPTED && judgeConfig->judgeMode == SINGLE_RESULT_MODE) {
+        if (result[curCase].result != ACCEPTED && result[curCase].result != PRESENTATION_ERROR && judgeConfig->judgeMode == SINGLE_RESULT_MODE) {
             return result;
         }
     }
