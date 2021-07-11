@@ -122,9 +122,10 @@ void checkSPJ(const JudgerConfig * judgerConfig, const JudgeConfig * judgeConfig
         result->result = WRONG_ANSWER;
         return;
     }
-    
-
-    result->result = exitCode;
+    if (exitCode == ACCEPTED)
+        result->result = ACCEPTED;
+    else 
+        result->result = WRONG_ANSWER;
     return;
 }   
 
