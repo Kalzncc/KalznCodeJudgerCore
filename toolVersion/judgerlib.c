@@ -31,8 +31,8 @@ void check(RunConfig *result, int status, const struct rusage *resourceUsage, in
 #endif
 
     result->useCPUTime = (int) (resourceUsage->ru_utime.tv_sec * 1000 + resourceUsage->ru_utime.tv_usec / 1000);
-    result->useMemory = resourceUsage->ru_maxrss * 1024;
-
+    result->useMemory = resourceUsage->ru_maxrss;
+    
     if (result->exitCode != 0) {
         result->result = RUNTIME_ERROR;
         strcpy(result->resultDetail, "No zero return");

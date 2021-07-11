@@ -24,7 +24,7 @@
                 "outputData":"data/output.out",
                 "stdAnswer":"data/1.out",             
                 "maxCPUTime": 1000,
-                "maxMemory" : "102400000000",
+                "maxMemory" : 102400,
                 "maxStack" : 1024000
             },
             {
@@ -32,7 +32,7 @@
                 "outputData":"data/output.out",
                 "stdAnswer":"data/2.out",           
                 "maxCPUTime": 1000,
-                "maxMemory" : "102400000000",
+                "maxMemory" : 102400,
                 "maxStack" : 1024000
             },
             {
@@ -40,7 +40,7 @@
                 "outputData":"data/output.out",
                 "stdAnswer":"data/3.out",               
                 "maxCPUTime": 1000,
-                "maxMemory" : "102400000000",
+                "maxMemory" : 102400,
                 "maxStack" : 1024000
             },
             {
@@ -48,7 +48,7 @@
                 "outputData":"data/output.out",
                 "stdAnswer":"data/4.out",            
                 "maxCPUTime": 1000,
-                "maxMemory" : "102400000000",
+                "maxMemory" : 102400,
                 "maxStack" : 1024000
             }
         ]

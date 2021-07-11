@@ -165,10 +165,10 @@ int main(int argc, char *argv[]) {
     
     
      
-    if ( ( temp = cJSON_GetObjectItem(judgerConfigJson, "maxSPJMemory") ) == NULL || !cJSON_IsString(temp)) {
+    if ( ( temp = cJSON_GetObjectItem(judgerConfigJson, "maxSPJMemory") ) == NULL || !cJSON_IsNumber(temp)) {
         judgerConfig.maxSPJMemory = MAX_SPJ_MEMORY_LIMIT;
     }else {
-        judgerConfig.maxSPJMemory = atol(temp->valuestring);
+        judgerConfig.maxSPJMemory = temp->valueint;
     }
     if (judgerConfig.maxSPJMemory < 1) {
         judgerConfig.maxSPJMemory = MAX_SPJ_MEMORY_LIMIT;
@@ -412,12 +412,12 @@ int main(int argc, char *argv[]) {
         stdAnswer = atr->valuestring;
            
 
-        if ((atr = cJSON_GetObjectItem(temp, "maxMemory")) == NULL || !cJSON_IsString(atr)) {
+        if ((atr = cJSON_GetObjectItem(temp, "maxMemory")) == NULL || !cJSON_IsNumber(atr)) {
             cJSON_Delete(atr);
             logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
             errorExit();
         }
-        maxMemory = atol(atr->valuestring);
+        maxMemory = atr->valueint;
         if (maxMemory < 1){
             cJSON_Delete(atr);
             logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
@@ -494,7 +494,7 @@ int main(int argc, char *argv[]) {
         cJSON* exitCode = cJSON_CreateNumber(result[curData].exitCode);
         cJSON* judgeResult = cJSON_CreateNumber(result[curData].result);
         cJSON* useCPUTime = cJSON_CreateNumber(result[curData].useCPUTime);
-        cJSON* useMemory = cJSON_CreateNumber(result[curData].useMemory / 1024);
+        cJSON* useMemory = cJSON_CreateNumber(result[curData].useMemory);
         cJSON* detail = cJSON_CreateString(result[curData].resultDetail);
 
         cJSON* dataJson =cJSON_CreateObject();

@@ -23,10 +23,13 @@ void run(const JudgerConfig* judgerConfig, const JudgeConfig *config, int curDat
         raise(SIGUSR1);
         exit(EXIT_FAILURE);
     }
-
+    
     struct rlimit maxMemoryLimit;
-    maxMemoryLimit.rlim_cur = maxMemoryLimit.rlim_max = (rlim_t) config->maxMemory[curDataNum] * 2;
+    
+    maxMemoryLimit.rlim_cur = maxMemoryLimit.rlim_max = (rlim_t) config->maxMemory[curDataNum] * 1024 * 4;
+    
     if (setrlimit(RLIMIT_AS, &maxMemoryLimit) != 0) {
+        
         logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SET_LIMIT_FAILED, "Can't set limit");
         raise(SIGUSR1);
         exit(EXIT_FAILURE);
