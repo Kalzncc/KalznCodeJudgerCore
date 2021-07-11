@@ -367,7 +367,7 @@ int main(int argc, char *argv[]) {
         logSystemErrorWithMessage(logPath, INVALID_JUDGE_CONFIG, "data config invalid");
         errorExit();
     }
-    if (dataCnt < 1 || judgeConfig.judgeMode != ONLY_COMPILE_MODE) {
+    if (dataCnt < 1 && judgeConfig.judgeMode != ONLY_COMPILE_MODE ) {
         logSystemErrorWithMessage(logPath, INVALID_JUDGE_CONFIG, "data config invalid");
         errorExit();
     }
