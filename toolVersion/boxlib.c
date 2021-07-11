@@ -71,7 +71,6 @@ void run(const JudgerConfig* judgerConfig, const JudgeConfig *config, int curDat
     //     raise(SIGUSR1);
     //     exit(EXIT_FAILURE);
     // }
-    printf("%s\n", config->translator.interpreterOptions[1]);
     execv(config->translator.interpreterPath, config->translator.interpreterOptions);
     
     logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_EXE_RUN_FAILED, "Can't run pending exe or interpreter");
