@@ -124,9 +124,9 @@ typedef enum IOMode IOMode;
 
 
 enum TranslationModeEnum {
-    COMPILER_MOD = 0, // 编译型语言
-    INTERPRETER_MOD = 1, // 解释型语言 
-    COMPILER_INTERPRETER_MOD = 2  // 半编译半解释
+    COMPILER_MODE = 0, // 编译型语言
+    INTERPRETER_MODE = 1, // 解释型语言 
+    COMPILER_INTERPRETER_MODE = 2  // 半编译半解释
     /**
      * 待测代码是工作区下Main.x, x为后缀名
      * 

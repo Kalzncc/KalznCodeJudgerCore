@@ -47,7 +47,7 @@ void print() {
         prints("spjExeName", judgeConfig.sPJName);
     }
     printnum("translator-mode", judgeConfig.translator.mode);
-    if (judgeConfig.translator.mode != INTERPRETER_MOD) {
+    if (judgeConfig.translator.mode != INTERPRETER_MODE) {
         prints("compilerPath", judgeConfig.translator.compilerPath);
         int i;
         fprintf(stderr, "compilerOption : ");
@@ -57,7 +57,7 @@ void print() {
         fputs("", stderr);
         prints("compilerProductName", judgeConfig.translator.compilerProductName);
     }
-    if (judgeConfig.translator.mode != COMPILER_MOD) {
+    if (judgeConfig.translator.mode != COMPILER_MODE) {
         prints("interpreterPath", judgeConfig.translator.interpreterPath);
         int i;
         fprintf(stderr, "interpreterOptions : ");
@@ -275,13 +275,13 @@ int main(int argc, char *argv[]) {
 
      
     if ( ( temp = cJSON_GetObjectItem(translatorJson, "mode") ) == NULL || !cJSON_IsNumber(temp)) {
-        judgeConfig.translator.mode = COMPILER_MOD;
+        judgeConfig.translator.mode = COMPILER_MODE;
     } else {
         judgeConfig.translator.mode = temp->valueint;
     }
      
 
-    if (judgeConfig.translator.mode != INTERPRETER_MOD) {
+    if (judgeConfig.translator.mode != INTERPRETER_MODE) {
          
         if ( ( temp = cJSON_GetObjectItem(translatorJson, "compilerPath") ) == NULL || !cJSON_IsString(temp)) {
             logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : compilerPath");
@@ -324,7 +324,7 @@ int main(int argc, char *argv[]) {
         }
     }
     
-    if (judgeConfig.translator.mode != COMPILER_MOD) {
+    if (judgeConfig.translator.mode != COMPILER_MODE) {
          
         if ( ( temp = cJSON_GetObjectItem(translatorJson, "interpreterPath") ) == NULL || !cJSON_IsString(temp)) {
             logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : interpreterPath");
@@ -456,7 +456,7 @@ int main(int argc, char *argv[]) {
         cJSON_Delete(atr);
         
     }
-    if (judgeConfig.translator.mode == COMPILER_MOD) {
+    if (judgeConfig.translator.mode == COMPILER_MODE) {
         judgeConfig.translator.interpreterPath = judgeConfig.translator.compilerProductName;
         judgeConfig.translator.interpreterOptions = (char **) malloc(sizeof(char*));
         judgeConfig.translator.interpreterOptions[0] = NULL;
