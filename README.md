@@ -30,7 +30,7 @@ sudo kalznjudger <json file path> [log path]
 sudo rm -f /usr/bin/kalznjudger
 ```
 ### JSON文件
-这里使用一个JSON文件作为示例，数据项的意义及注意事项见注释。由于cJSON库对long long int 型变量不支持，这里long long int型变量用字符串表示。
+这里使用一个JSON文件作为示例，数据项的意义及注意事项见注释。
 ```json
 {
     "Judger": {  // 评测机相关配置
@@ -282,7 +282,7 @@ compilerProductName的文件，以判定编译是否成功。如果失败则报�
     </tr>
 </table>
 
-编译和解释过程中产生的输出信息会分别记录到COMPILER_INFO_PATH 和 INTERPRETER_INFO_PATH下，它将和评测结果文件，一同交由高层的评测队列管理模块回收处理。<br/>
+编译器和解释器输出以及评测结果文件，一同交由高层的评测队列管理模块回收处理。<br/>
 如果出现某种语言无法适配的情况，就劳烦自行编写了。这里推荐在judger.h中声明专用的编译流程函数，在box初始化后调用。目前来说，常规的语言都可以适配。<br/>
 
 ## 工作区
