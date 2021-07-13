@@ -37,9 +37,9 @@ sudo rm -f /usr/bin/kalznjudger
 
         "maxCharBuffer" : "10000000",  //字符串最大缓存 必选项
 
-        "maxSPJTime" : 10000, // SPJ时限，默认为 MAX_SPJ_TIME_LIMIT
+        "maxSPJTime" : 10000, // SPJ时限，单位为ms, 默认为 MAX_SPJ_TIME_LIMIT
 
-        "maxSPJMemory": "102400000" // SPJ内存限制 默认 MAX_SPJ_MEMORY_LIMIT
+        "maxSPJMemory": 102400 // SPJ内存限制 单位为kb, 默认 MAX_SPJ_MEMORY_LIMIT
 
         
     },
@@ -96,9 +96,9 @@ sudo rm -f /usr/bin/kalznjudger
 
                 "stdAnswer":"data/1.out", // 标准输出
                 
-                "maxCPUTime": 1000, //时限
+                "maxCPUTime": 1000, //时限 单位为ms
 
-                "maxMemory" : "102400000000", // 内存限制
+                "maxMemory" : 102400, // 内存限制, 单位为kb
                 
                 "maxStack" : 1024000 //Stack数量限制。
             },
@@ -108,7 +108,7 @@ sudo rm -f /usr/bin/kalznjudger
                 "stdAnswer":"data/2.out",
                 
                 "maxCPUTime": 1000,
-                "maxMemory" : "102400000000",
+                "maxMemory" : 102400,
                 "maxStack" : 1024000
             },
             {
@@ -117,7 +117,7 @@ sudo rm -f /usr/bin/kalznjudger
                 "stdAnswer":"data/3.out",
                 
                 "maxCPUTime": 1000,
-                "maxMemory" : "102400000000",
+                "maxMemory" : 102400,
                 "maxStack" : 1024000
             },
             {
@@ -126,7 +126,7 @@ sudo rm -f /usr/bin/kalznjudger
                 "stdAnswer":"data/4.out",
                 
                 "maxCPUTime": 1000,
-                "maxMemory" : "102400000000",
+                "maxMemory" : 102400,
                 "maxStack" : 1024000
             }
         ]
@@ -428,7 +428,7 @@ public class Main {
                 "outputData":"data/output.out",
                 "stdAnswer":"data/1.out",             
                 "maxCPUTime": 1000,
-                "maxMemory" : "102400000000",
+                "maxMemory" : 102400,
                 "maxStack" : 1024000
             },
             {
@@ -436,7 +436,7 @@ public class Main {
                 "outputData":"data/output.out",
                 "stdAnswer":"data/2.out",           
                 "maxCPUTime": 1000,
-                "maxMemory" : "102400000000",
+                "maxMemory" : 102400,
                 "maxStack" : 1024000
             },
             {
@@ -444,7 +444,7 @@ public class Main {
                 "outputData":"data/output.out",
                 "stdAnswer":"data/3.out",               
                 "maxCPUTime": 1000,
-                "maxMemory" : "102400000000",
+                "maxMemory" :102400,
                 "maxStack" : 1024000
             },
             {
@@ -452,7 +452,7 @@ public class Main {
                 "outputData":"data/output.out",
                 "stdAnswer":"data/4.out",            
                 "maxCPUTime": 1000,
-                "maxMemory" : "102400000000",
+                "maxMemory" : 102400,
                 "maxStack" : 1024000
             }
         ]
