@@ -120,23 +120,23 @@ int main(int argc, char *argv[]) {
     cjson = cJSON_Parse(jsonStr);
     judgerConfigJson = cJSON_GetObjectItem(cjson, "Judger");
     if (judgerConfigJson == NULL) {
-        logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Judger config not is found.");
+        logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Judger config not is invalid.");
         errorExit();
     }
     taskConfigJson = cJSON_GetObjectItem(cjson, "Task");
     if (taskConfigJson == NULL) {
-        logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Task config not is found.");
+        logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Task config not is invalid.");
         errorExit();
     }
     translatorJson = cJSON_GetObjectItem(taskConfigJson, "translator");
     if (translatorJson == NULL) {
-        logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "translator config not is found.");
+        logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "translator config not is invalid.");
         errorExit();
     }
     
     dataJson = cJSON_GetObjectItem(taskConfigJson, "data");
     if (dataJson == NULL) {
-        logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "data config not is found.");
+        logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "data config not is invalid.");
         errorExit();
     }
     if ( ( temp = cJSON_GetObjectItem(judgerConfigJson, "maxCharBuffer") ) == NULL || !cJSON_IsString(temp)) {
@@ -145,7 +145,7 @@ int main(int argc, char *argv[]) {
          
         errorExit();
     }
-    
+
     judgerConfig.maxCharBuffer = atol(temp->valuestring);
      
     if (judgerConfig.maxCharBuffer < 1) {
@@ -231,27 +231,27 @@ int main(int argc, char *argv[]) {
          
         errorExit();
     } else {
-        judgeConfig.workSpacePath = (char * ) malloc(temp->valuestring);
+        judgeConfig.workSpacePath = (char * ) malloc((strlen(temp->valuestring)+1) * sizeof(char));
         strcpy(judgeConfig.workSpacePath, temp->valuestring);
     }
 
     
     
     if ( ( temp = cJSON_GetObjectItem(taskConfigJson, "resultPath") ) == NULL || !cJSON_IsString(temp)) {
-        judgeConfig.resultPath = (char * ) malloc(COMPILER_INFO_PATH);
-        strcpy(judgeConfig.resultPath,COMPILER_INFO_PATH);
+        judgeConfig.resultPath = (char * ) malloc(sizeof(RESULT_FILE_PATH));
+        strcpy(judgeConfig.resultPath,RESULT_FILE_PATH);
 
     } else {
-        judgeConfig.log = (char * ) malloc(temp->valuestring);
+        judgeConfig.resultPath = (char * ) malloc((strlen(temp->valuestring)+1) * sizeof(char));
         strcpy(judgeConfig.resultPath, temp->valuestring);
     }
 
 
     if ( ( temp = cJSON_GetObjectItem(taskConfigJson, "logPath") ) == NULL || !cJSON_IsString(temp)) {
-        judgeConfig.logPath = (char * ) malloc(DEFAULT_LOG_PATH);
+        judgeConfig.logPath = (char * ) malloc(sizeof(DEFAULT_LOG_PATH));
         strcpy(judgeConfig.logPath,DEFAULT_LOG_PATH);
     } else {
-        judgeConfig.logPath = (char * )malloc(temp->valuestring);
+        judgeConfig.logPath = (char * )malloc((strlen(temp->valuestring)+1) * sizeof(char));
         strcpy(judgeConfig.logPath, temp->valuestring);
     }
      
@@ -270,7 +270,7 @@ int main(int argc, char *argv[]) {
              
         errorExit();
         } else {
-            judgeConfig.sPJPath = (char * )malloc(temp->valuestring);
+            judgeConfig.sPJPath = (char * )malloc((strlen(temp->valuestring)+1) * sizeof(char));
             strcpy(judgeConfig.sPJPath, temp->valuestring);
             
              
@@ -282,7 +282,7 @@ int main(int argc, char *argv[]) {
              
             errorExit();
         } else {
-            judgeConfig.sPJName = (char * )malloc(temp->valuestring);
+            judgeConfig.sPJName = (char * )malloc((strlen(temp->valuestring)+1) * sizeof(char));
             strcpy(judgeConfig.sPJName, temp->valuestring);
         }
     }
@@ -302,7 +302,7 @@ int main(int argc, char *argv[]) {
              
             errorExit();
         } else {
-            judgeConfig.translator.compilerPath = (char * )malloc(temp->valuestring);
+            judgeConfig.translator.compilerPath = (char * )malloc((strlen(temp->valuestring)+1) * sizeof(char));
             strcpy(judgeConfig.translator.compilerPath, temp->valuestring);
         }         
         if ( ( temp = cJSON_GetObjectItem(translatorJson, "compilerOptions") ) == NULL || !cJSON_IsArray(temp)) {
@@ -319,16 +319,16 @@ int main(int argc, char *argv[]) {
                      
                     errorExit();
                 }
-                judgeConfig.translator.compilerOptions[i] = (char * )malloc(cJSON_GetArrayItem(temp, i)->valuestring);
+                judgeConfig.translator.compilerOptions[i] = (char * )malloc((strlen(cJSON_GetArrayItem(temp, i)->valuestring)+1)*sizeof(char));
 
                 strcpy(judgeConfig.translator.compilerOptions[i], cJSON_GetArrayItem(temp, i)->valuestring);
             } 
         }
         if ( ( temp = cJSON_GetObjectItem(translatorJson, "compilerInfoPath") ) == NULL || !cJSON_IsString(temp)) {
-            judgeConfig.translator.compilerInfoPath = (char * )malloc(DEFAULT_COMPILER_INFO_PATH);
+            judgeConfig.translator.compilerInfoPath = (char * )malloc(sizeof(DEFAULT_COMPILER_INFO_PATH));
             strcpy(judgeConfig.translator.compilerInfoPath, DEFAULT_COMPILER_INFO_PATH);
         } else {
-            judgeConfig.translator.compilerInfoPath = (char * )malloc(temp->valuestring);
+            judgeConfig.translator.compilerInfoPath = (char * )malloc((strlen(temp->valuestring)+1) * sizeof(char));
             strcpy(judgeConfig.translator.compilerInfoPath, temp->valuestring);
         }
     }
@@ -338,7 +338,7 @@ int main(int argc, char *argv[]) {
              
             errorExit();
         } else {
-            judgeConfig.translator.compilerProductName = (char * )malloc(temp->valuestring);
+            judgeConfig.translator.compilerProductName = (char * )malloc((strlen(temp->valuestring)+1) * sizeof(char));
             strcpy(judgeConfig.translator.compilerProductName, temp->valuestring);
              
         }
@@ -350,7 +350,7 @@ int main(int argc, char *argv[]) {
              
             errorExit();
         } else {
-            judgeConfig.translator.interpreterPath = (char * )malloc(temp->valuestring);
+            judgeConfig.translator.interpreterPath = (char * )malloc((strlen(temp->valuestring)+1) * sizeof(char));
             strcpy(judgeConfig.translator.interpreterPath, temp->valuestring);
         }
 
@@ -370,16 +370,16 @@ int main(int argc, char *argv[]) {
                      
                     errorExit();
                 }
-                judgeConfig.translator.interpreterOptions[i] = (char * )malloc(cJSON_GetArrayItem(temp, i)->valuestring);
+                judgeConfig.translator.interpreterOptions[i] = (char * )malloc((strlen(cJSON_GetArrayItem(temp, i)->valuestring)+1)*sizeof(char));
                 strcpy(judgeConfig.translator.interpreterOptions[i], cJSON_GetArrayItem(temp, i)->valuestring);
             }
              
         }
         if ( ( temp = cJSON_GetObjectItem(translatorJson, "interpreterInfoPath") ) == NULL || !cJSON_IsString(temp)) {
-            judgeConfig.translator.interpreterInfoPath = (char * )malloc(DEFAULT_INTERPRETER_INFO_PATH);
-            strcpy(judgeConfig.interpreterInfoPath, DEFAULT_INTERPRETER_INFO_PATH);
+            judgeConfig.translator.interpreterInfoPath = (char * )malloc(sizeof(DEFAULT_INTERPRETER_INFO_PATH));
+            strcpy(judgeConfig.translator.interpreterInfoPath, DEFAULT_INTERPRETER_INFO_PATH);
         } else {
-            judgeConfig.translator.interpreterInfoPath = (char * )malloc(temp->valuestring);
+            judgeConfig.translator.interpreterInfoPath = (char * )malloc((strlen(temp->valuestring)+1) * sizeof(char));
             strcpy(judgeConfig.translator.interpreterInfoPath, temp->valuestring);
         }
     }
@@ -423,7 +423,7 @@ int main(int argc, char *argv[]) {
                 logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
                 errorExit();
             }
-            inputData = (char * )malloc(atr->valuestring);
+            inputData = (char * )malloc((strlen(atr->valuestring)+1) * sizeof(char));
             strcpy(inputData, atr->valuestring);
             
             
@@ -432,7 +432,7 @@ int main(int argc, char *argv[]) {
                 logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
                 errorExit();
             }
-            outputData = (char * )malloc(atr->valuestring);
+            outputData = (char * )malloc((strlen(atr->valuestring)+1) * sizeof(char));
             strcpy(outputData, atr->valuestring);
             
             
@@ -441,7 +441,7 @@ int main(int argc, char *argv[]) {
                 logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
                 errorExit();
             }
-            stdAnswer = (char * )malloc(atr->valuestring);
+            stdAnswer = (char * )malloc((strlen(atr->valuestring)+1) * sizeof(char));
             strcpy(stdAnswer, atr->valuestring);
             
 
@@ -480,13 +480,13 @@ int main(int argc, char *argv[]) {
                 logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : data");
                 errorExit();
             }
-            judgeConfig.inputData[i] = (char * )malloc(inputData);
+            judgeConfig.inputData[i] = (char * )malloc((strlen(inputData)+1) * sizeof(char));
             strcpy(judgeConfig.inputData[i], inputData);
             
-            judgeConfig.outputData[i] = (char * )malloc(outputData);
+            judgeConfig.outputData[i] = (char * )malloc((strlen(outputData)+1) * sizeof(char));
             strcpy(judgeConfig.outputData[i], outputData);
 
-            judgeConfig.stdAnswer[i]  = (char * )malloc(stdAnswer);
+            judgeConfig.stdAnswer[i]  = (char * )malloc((strlen(stdAnswer)+1) * sizeof(char));
             strcpy(judgeConfig.stdAnswer[i], stdAnswer);
 
             judgeConfig.maxCPUTime[i] = maxCPUTime;
@@ -497,9 +497,11 @@ int main(int argc, char *argv[]) {
         }
     }
     if (judgeConfig.translator.mode == COMPILER_MODE || judgeConfig.translator.mode == DO_NOT_TANSLATE_MODE) {
-        judgeConfig.translator.interpreterInfoPath = (char * )malloc(DEFAULT_INTERPRETER_INFO_PATH);
+        judgeConfig.translator.interpreterInfoPath = (char * )malloc(sizeof(DEFAULT_INTERPRETER_INFO_PATH));
         strcpy(judgeConfig.translator.interpreterInfoPath, DEFAULT_INTERPRETER_INFO_PATH);
         
+        judgeConfig.translator.interpreterPath = (char *) malloc((strlen(judgeConfig.translator.compilerProductName) + 1) * sizeof(char));
+        strcpy(judgeConfig.translator.interpreterPath, judgeConfig.translator.compilerProductName);
         judgeConfig.translator.interpreterOptions = (char **) malloc(sizeof(char*));
         judgeConfig.translator.interpreterOptions[0] = NULL;
 

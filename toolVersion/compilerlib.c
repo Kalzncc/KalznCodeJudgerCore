@@ -1,7 +1,7 @@
 #include "compilerlib.h"
 #include "judger_config.h"
 
-int compileCode(const char * compilerPath,  const char * compilerInfoPath, const char ** argv) {
+int compileCode(const char * compilerPath,  const char * compilerInfoPath, char ** argv) {
     
     char cmdBuffer[MAX_CMD_STR_LENGTH];
     

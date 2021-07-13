@@ -42,13 +42,15 @@ void run(const JudgerConfig* judgerConfig, const JudgeConfig *config, int curDat
         raise(SIGUSR1);
         exit(EXIT_FAILURE);
     }
+    
     if (config->iOMode == STD_IO) {
         
         if (freopen(config->inputData[curDataNum], "r", stdin) == NULL
             ||freopen(config->outputData[curDataNum], "w", stdout) == NULL
-            ||freopen(config->translator.interpreterPath, "w", stderr) == NULL
+            //||freopen(config->translator.interpreterInfoPath, "w", stderr) == NULL
         )
         {
+            
             logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_DATA_REDIRECT_FAILED, "Can't redirect data");
             raise(SIGUSR1);
             exit(EXIT_FAILURE);
@@ -74,11 +76,12 @@ void run(const JudgerConfig* judgerConfig, const JudgeConfig *config, int curDat
     //     raise(SIGUSR1);
     //     exit(EXIT_FAILURE);
     // }
-    execv(config->translator.interpreterPath, config->translator.interpreterOptions);
     
+    execv(config->translator.interpreterPath, config->translator.interpreterOptions);
+
     logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_EXE_RUN_FAILED, "Can't run pending exe or interpreter");
     raise(SIGUSR1);
-     exit(EXIT_FAILURE);
+    exit(EXIT_FAILURE);
 }
 void runSpj(const JudgerConfig * judgerConfig, const JudgeConfig *config, int curDataNum) {
     struct rlimit maxStackLimit;
