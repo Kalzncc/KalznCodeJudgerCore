@@ -46,7 +46,7 @@ void run(const JudgerConfig* judgerConfig, const JudgeConfig *config, int curDat
         
         if (freopen(config->inputData[curDataNum], "r", stdin) == NULL
             ||freopen(config->outputData[curDataNum], "w", stdout) == NULL
-            ||freopen(INTERPRETER_INFO_PATH, "w", stderr) == NULL
+            ||freopen(config->translator.interpreterPath, "w", stderr) == NULL
         )
         {
             logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_DATA_REDIRECT_FAILED, "Can't redirect data");

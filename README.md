@@ -60,6 +60,8 @@ sudo rm -f /usr/bin/kalznjudger
         "workSpacePath":"/home/kalzn/Desktop/testworkspace/", 
         // 工作区目录 必选项 评测该任务的工作区目录，以下涉及到目录的配置，均必须是相对工作区的目录，或者绝对目录。
 
+        "resultPath" : "result.json", //输出结果的json文件, 默认为RESULT_FILE_PATH
+
         "logPath":"/home/kalzn/Desktop/testworkspace/log.log", // log目录 必选项
 
         "isSPJ": true, // 是否启用SPJ，默认为false
@@ -73,6 +75,8 @@ sudo rm -f /usr/bin/kalznjudger
             "mode": 2, // 翻译模式 必选项 见下表
 
             "compilerPath": "/usr/bin/javac", // 编译器路径 当翻译模式==COMPILER_MODE或者COMPILER_INTERPRETER_MODE时，必选项
+            
+            "compilerInfoPath" : "compiler.log", // 编译器输出路径，默认为DEFAULT_COMPILER_INFO_PATH
 
             "compilerOptions":[ // 编译器选项 当翻译模式==COMPILER_MODE或者COMPILER_INTERPRETER_MODE时，必选项
                 "javac", "Main.java"
@@ -80,6 +84,8 @@ sudo rm -f /usr/bin/kalznjudger
 
             "compilerProductName":"Main.class",
             // 编译产物名 当翻译模式!=INTERPRETER_MODE时，必选项，Judger编译后，将确认工作区目录下是否生成了名为compilerProductName的文件，以此判定编译是否正确。
+
+            "interpreterInfoPath" : "interpreter.log", // 解释器输出路径，默认为DEFAULT_INTERPRETER_PATH
 
             "interpreterPath":"/usr/bin/java", // 解释器路径，当翻译模式==INTERPRETER_MODE,或者COMPILER_INTERPRETER_MODE时 必选项。
 

@@ -3,7 +3,6 @@
         "maxCharBuffer" : "10000000",
         "maxSPJTime" : 10000,
         "maxSPJMemory": "102400000"
-        
     },
     "Task" : {
         "taskID":"100031",
@@ -13,6 +12,7 @@
         "uid" : 65534,
         "strictMode" : true,
         "workSpacePath":"/home/kalzn/Desktop/testworkspace/",
+        "resultPath" : "result.json",
         "logPath":"/home/kalzn/Desktop/testworkspace/log.log",
         "isSPJ": true,
         "spjExePath":"/home/kalzn/Desktop/testworkspace/spj",
@@ -20,11 +20,12 @@
         "translator": {
             "mode": 2,
             "compilerPath": "/usr/bin/javac",
+            "compilerInfoPath" : "compiler.log",
             "compilerOptions":[
                 "javac", "Main.java"
             ],
             "compilerProductName":"Main.class",
-
+            "interpreterInfoPath" : "interpreter.log",
             "interpreterPath":"/usr/bin/java",
             "interpreterOptions":[
                 "java", "Main"

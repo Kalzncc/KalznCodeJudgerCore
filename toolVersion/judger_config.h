@@ -28,8 +28,8 @@
 
 
 #define DEFAULT_LOG_PATH "judge_log.log" 
-#define COMPILER_INFO_PATH "compiler.log"
-#define INTERPRETER_INFO_PATH "interpreter.log"
+#define DEFAULT_COMPILER_INFO_PATH "compiler.log"
+#define DEFAULT_INTERPRETER_INFO_PATH "interpreter.log"
 #define FILEIO_INPUT_PATH "input.in"
 #define FILEIO_OUTPUT_PATH "output.out"
 #define RESULT_FILE_PATH "result.json"
@@ -198,11 +198,11 @@ struct TranslatorConfig {
                              // "/usr/bin/g++ -std=c++11 Main.cpp -o $compilerProductName"
                              // compilerOptions[] = {"/usr/bin/g++", "-std=c++11", "Main.cpp", "-o", "$compilerProductName", NULL};
                              // 保证最后一个有一个NULL
-
+    char* compilerInfoPath; // 编译器输出路径
     char* compilerProductName;  // 编译产物名字，编译所生成的编译产物名字必须和其一致，否则Judger找不到目录下的对应文件，
                                 // 会视为编译错误。
     
-
+    char* interpreterInfoPath; // 解释器输出路径
     char* interpreterPath;       // 解释器路径 绝对路径
     char** interpreterOptions;  // 解释器指令，这是提供给runner用解释器运行程序的指令，这里给出一个java的示例。
                                  // java $compilerProductName
@@ -245,6 +245,7 @@ struct JudgeConfig {
     // 输入输出文件数组，一一对应，
     char* workSpacePath; // 评测区路径 绝对路径
                          //  Judger将会在这个路径下寻找数据文件路径, 也会把生成的临时文件存放在此。
+    char* resultPath; // result的json保存地址
     char** inputData; //输入数据文件路径
     char** outputData; //输出数据文件路径
     char** stdAnswer; //标准答案文件路径

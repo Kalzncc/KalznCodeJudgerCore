@@ -84,7 +84,7 @@ RunConfig* judge(const JudgerConfig * judgerConfig, const JudgeConfig *judgeConf
 #ifdef __DEBUG
     logDebugInfoWithMessage(judgeConfig->logPath, "Compileing code");
 #endif
-        if (compileCode(judgeConfig->translator.compilerPath, judgeConfig->translator.compilerOptions)) {
+        if (compileCode(judgeConfig->translator.compilerPath, judgeConfig->translator.compilerInfoPath, judgeConfig->translator.compilerOptions)) {
             createSystemError(&result[0], COMPILER_RUN_FAILED, "Cant't run compiler", judgeConfig->logPath);
             return result;
         }
