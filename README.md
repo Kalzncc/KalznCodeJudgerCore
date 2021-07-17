@@ -206,12 +206,11 @@ sudo rm -f /usr/bin/kalznjudger
             NOT_STRICT_MODE(0)
         </td>
         <td>
-		 非严格模式：<br/>
-1、对字符串进行变换，把答案和输出数据中的"\r\n"，用"\n"替代<br/>
-2、如果输出或者答案最后有一个'\n'，则删掉一个'\n'。<br/>
-3、将答案和输出的所有连续空白字符都用一个空格替代。<br/>
-4、如果此时输出和答案相等，则AC。<br/>
-5、否则WA。<br/>
+在答案和输出匹配时，按照以下执行：<br/>
+1、如果输出或者答案最后有一个'\n'，则删掉一个'\n'。<br/>
+2、将答案和输出的所有连续空白字符都用一个空格替代。<br/>
+3、如果此时输出和答案相等，则AC。<br/>
+4、否则WA。<br/>
         </td>
     </tr>
     <tr>
@@ -219,14 +218,12 @@ sudo rm -f /usr/bin/kalznjudger
             STRICT_MODE(1)
         </td>
         <td>
-           严格评测模式：<br/>
-如果为true，则启用严格评测模式，在严格模式下，按照以下顺序比对答案和输出：<br/>
-1、对字符串进行变换，把答案和输出数据中的"\r\n"，用"\n"替代<br/>
-2、如果输出或者答案最后有一个'\n'，则删掉一个'\n'。<br/>
-3、如果输出和答案相等，则AC。<br/>
-4、否则：将答案和输出的所有连续空白字符都用一个空格替代。<br/>
-5、如果此时输出和答案相等，则PE。<br/>
-6、否则WA。<br/>
+在答案和输出匹配时，按照以下执行：<br/>
+1、如果输出或者答案最后有一个'\n'，则删掉一个'\n'。<br/>
+2、如果输出和答案相等，则AC。<br/>
+3、否则：将答案和输出的所有连续空白字符都用一个空格替代。<br/>
+4、如果此时输出和答案相等，则PE。<br/>
+5、否则WA。<br/>
         </td>
     </tr>
     <tr>
@@ -239,12 +236,11 @@ sudo rm -f /usr/bin/kalznjudger
             COMPILER_MODE(0)
         </td>
         <td>
-            待测代码是工作区下Main.x, x为后缀名<br/>
-1、compiler mode, 编译模式<br/>
-此模式下，judger先切换到work space目录下，执行 [compilerCmd] 指令，
+compiler mode, 编译模式<br/>
+此模式下，judger先切换到work space目录下，根据设置的编译器路径及选项进行编译，
 这里规定产生物的名字应为compilerProductName，此后judger将检测目录下是否成功生成名字为
-compilerProductName的文件，以判定编译是否成功。如果失败则报告编译失败，否则执行runner开始评测。
-这里runner经初始化，会直接将进程execute到编译后的产物。<br/>
+compilerProductName的文件，以判定编译是否成功。编译信息会输出至设定的文件中。如果失败则报告编译失败，否则运行编译产物。
+这里box进程经初始化，会直接使用exec函数，运行编译后的产物。（例如C语言，属于此种模式）<br/>
         </td>
     </tr>
     <tr>
@@ -252,9 +248,8 @@ compilerProductName的文件，以判定编译是否成功。如果失败则报�
             INTERPRETER_MODE(1)
         </td>
         <td>
-        2、interpreter mode 解释模式<br/>
-此模式下，judger先切换到work space目录下，直接开始执行runner，在runner初始化成功后，将会执行语句
-[interpreterCmd] ,启用解释器运行代码，报错退出将按照runner的自行处理。
+        interpreter mode 解释模式<br/>
+此模式下，judger先切换到work space目录下，直接根据解释器路径和选项，执行解释器。在box进程初始化成功后，启用解释器运行代码，解释器报错将输出至设定的文件中。（例如python语言，属于此种模式）
         </td>
     </tr>
     <tr>
@@ -262,13 +257,8 @@ compilerProductName的文件，以判定编译是否成功。如果失败则报�
             COMPILER_INTERPRETER_MODE(2)
         </td>
         <td>
-        3、compiler interpreter mode 编译解释模式<br/>
-此模式下，judger先切换到work space目录下，执行 [compilerCmd] 指令
-这里规定产生物的名字应为compilerProductName，此后judger将检测目录下是否成功生成名字为
-compilerProductName的文件，以判定编译是否成功。如果失败则报告编译失败，否则执行runner开始评测。
-在runner初始化成功后，将会执行语句 [interpreterCmd], 启用解释器运行代码，报错退出将按照runner的自行处理。<br/>
-不过要明确的是，此部分的配置应该由系统的部署人员完成，此部分的配置一般不会修改
-除非要改动OJ的编译指令，或者添加、删减某种语言。<br/>
+        compiler interpreter mode 编译解释模式<br/>
+此模式下，judger先切换到work space目录下，先编译产生编译产物，然后用解释器运行编译产物。（例如java语言，属于此种模式）<br/>
         </td>
     </tr>
     <tr>
@@ -276,12 +266,13 @@ compilerProductName的文件，以判定编译是否成功。如果失败则报�
             DO_NOT_TANSLATE_MODE(3)
         </td>
         <td>
-       4、do not tanslate mode 不做翻译模式<br/>
-       直接运行compilerProductName，不做任何处理，详见文档 <a href="#a">并发评测与解释</a> 了解详情
+       do not tanslate mode 不做翻译模式<br/>
+       直接运行名为compilerProductName的可执行文件，不做任何处理，详见文档 <a href="#a">并发评测与解释</a> 了解详情
         </td>
     </tr>
 </table>
-
+不过要明确的是，此部分的配置应该由系统的部署人员完成，此部分的配置一般不会修改
+除非要改动OJ的编译指令，或者添加、删减某种语言。<br/>
 编译器和解释器输出以及评测结果文件，一同交由高层的评测队列管理模块回收处理。<br/>
 如果出现某种语言无法适配的情况，就劳烦自行编写了。这里推荐在judger.h中声明专用的编译流程函数，在box初始化后调用。目前来说，常规的语言都可以适配。<br/>
 
