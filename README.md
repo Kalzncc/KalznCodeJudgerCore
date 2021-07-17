@@ -11,7 +11,7 @@ sudo apt install libseccomp-dev libseccomp2 seccomp
 ```
 
 ## 编译代码
-请连接seccomp库进行编译。在toolVersion目录下
+请连接seccomp库进行编译。在judger目录下
 ```sh
 make
 ```
