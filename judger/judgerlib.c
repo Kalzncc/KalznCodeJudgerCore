@@ -41,12 +41,13 @@ void check(RunConfig *result, int status, const struct rusage *resourceUsage, in
     if (result->exitSignal != 0) {
         result->result = RUNTIME_ERROR;
     }
-    if (result->useCPUTime > timeLimit) {
-        result->result = TIME_LIMIT_EXCEEDED;
-    }
     if (result->useMemory > memoryLimit) {
         result->result = MEMORY_LIMIT_EXCEEDED;
     }
+    if (result->useCPUTime > timeLimit) {
+        result->result = TIME_LIMIT_EXCEEDED;
+    }
+    
     
 }   
 RunConfig* judge(const JudgerConfig * judgerConfig, const JudgeConfig *judgeConfig) {
