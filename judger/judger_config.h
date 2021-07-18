@@ -281,6 +281,7 @@ struct RunConfig {
     int exitCode;//退出代码
     JudgeError errorCode;//错误代码
 
+    int useRealTime;  //从待测程序启动，至待测程序结束所间隔时间。此项仅用于评估judger效率。 
 
     JudgeResult result;//结果
     char* resultDetail;//结果解释

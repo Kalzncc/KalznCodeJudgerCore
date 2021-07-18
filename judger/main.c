@@ -92,7 +92,10 @@ void errorExit() {
     exit(EXIT_FAILURE);
 }
 int main(int argc, char *argv[]) {
-    
+
+   struct timeval startTime, exitTime;
+   gettimeofday(&startTime, NULL);
+
     
     char *logPath = DEFAULT_LOG_PATH;
     FILE * jsonFile;
@@ -517,9 +520,12 @@ int main(int argc, char *argv[]) {
     
     RunConfig * result = judge(&judgerConfig, &judgeConfig);
 
-#ifdef __DEBUG
-    logDebugInfoWithMessage(judgeConfig.logPath, "Judge success");
-#endif
+    gettimeofday(&exitTime, NULL);
+    long realJudgeTime = (exitTime.tv_sec * 1000 + exitTime.tv_usec / 1000 - startTime.tv_sec * 1000 - startTime.tv_usec / 1000);
+    long totalTime = 0;
+    for (int i = 0; i < dataCnt; i++) {
+        totalTime += result[i].useRealTime;
+    }
     
     cJSON* resultJson =cJSON_CreateObject();
     cJSON * taskIDjson = cJSON_CreateNumber(result[0].taskID);
@@ -530,7 +536,14 @@ int main(int argc, char *argv[]) {
     nowTime = time(NULL);
     strftime(datetime, MAX_LOG_LENGTH-1, "%Y-%m-%d %H:%M:%S", localtime(&nowTime));
     cJSON * doneTimeJson = cJSON_CreateString(datetime);
-    cJSON_AddItemToObject(resultJson, "time", doneTimeJson);
+    cJSON_AddItemToObject(resultJson, "doneTime", doneTimeJson);
+    
+    cJSON * judgeTimeJson = cJSON_CreateNumber(realJudgeTime);
+    cJSON_AddItemToObject(resultJson, "judgeTime", judgeTimeJson);
+
+    cJSON * extraTimeJson = cJSON_CreateNumber(realJudgeTime - totalTime);
+    cJSON_AddItemToObject(resultJson, "extraTime", extraTimeJson);
+
     cJSON* dataArrJson = cJSON_CreateArray();
     cJSON_AddItemToObject(resultJson, "result", dataArrJson);
     int curData;
@@ -540,10 +553,12 @@ int main(int argc, char *argv[]) {
         cJSON* judgeResult = cJSON_CreateNumber(result[curData].result);
         cJSON* useCPUTime = cJSON_CreateNumber(result[curData].useCPUTime);
         cJSON* useMemory = cJSON_CreateNumber(result[curData].useMemory);
+        cJSON* useRealTime = cJSON_CreateNumber(result[curData].useRealTime);
         cJSON* detail = cJSON_CreateString(result[curData].resultDetail);
 
         cJSON* dataJson =cJSON_CreateObject();
         cJSON_AddItemToObject(dataJson, "time", useCPUTime);
+        cJSON_AddItemToObject(dataJson, "realTime", useRealTime);
         cJSON_AddItemToObject(dataJson, "memory", useMemory);
         cJSON_AddItemToObject(dataJson, "signal", eixtSignal);
         cJSON_AddItemToObject(dataJson, "code", exitCode);
@@ -564,5 +579,11 @@ int main(int argc, char *argv[]) {
     fprintf(resultFile, "%s", cJSON_PrintUnformatted(resultJson));
 #endif
     fclose(resultFile);
+
+#ifdef __DEBUG
+    char buffer[MAX_DEBUG_INFO_LENGTH];
+    sprintf(buffer, "Judge success : judger real time: %ldms, judger extra time : %ldms ", realJudgeTime, realJudgeTime - totalTime);
+    logDebugInfoWithMessage(judgeConfig.logPath, buffer);
+#endif
     return 0;
 }

@@ -137,6 +137,7 @@ RunConfig* judge(const JudgerConfig * judgerConfig, const JudgeConfig *judgeConf
         } else if (boxID == 0) {
             run(judgerConfig, judgeConfig, curCase);
         } else {
+            
             pid_t killerID = fork();
             if (killerID < 0) {
                 kill(boxID, SIGKILL);
@@ -148,12 +149,16 @@ RunConfig* judge(const JudgerConfig * judgerConfig, const JudgeConfig *judgeConf
                 
                 int status;
                 struct rusage resourceuUsage;
-
+                struct timeval boxStartTime, boxExitTime;
+                gettimeofday(&boxStartTime, NULL);
                 if (wait4(boxID, &status, WSTOPPED, &resourceuUsage) == -1) {
                     kill(killerID, SIGKILL);
                     createSystemError( &result[curCase], WAIT_BOX_FAILED, "Can't wait box proccess", judgeConfig->logPath);
                     return result;
                 }
+                gettimeofday(&boxExitTime, NULL);
+                result[curCase].useRealTime = (boxExitTime.tv_sec * 1000 + boxExitTime.tv_usec / 1000 - (boxStartTime.tv_sec * 1000 + boxStartTime.tv_usec / 1000));
+                
                 kill(killerID, SIGKILL);
                 
                 check(&result[curCase], status, &resourceuUsage,  judgeConfig->maxCPUTime[curCase], judgeConfig->maxMemory[curCase],  judgeConfig->logPath);
