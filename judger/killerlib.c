@@ -5,8 +5,9 @@
 void monitor(pid_t pid, int time) {
 
     
-    // if time % 1000 < 500 do ceil
-    // if time % 1000 >= 500 do ceil then add 1
+    /* if time % 1000 < 500 do ceil
+     * if time % 1000 >= 500 do ceil then add 1
+     */
     time = ((time+500) / 1000 + 1);
     
 

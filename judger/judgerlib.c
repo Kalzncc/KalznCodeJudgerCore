@@ -12,6 +12,7 @@ void initRunConfig(RunConfig * result) {
     result->errorCode = result->exitCode = result->exitSignal = 0;
     result->result = SKIP;
     result->useCPUTime = result->useMemory = 0;
+    result->useRealTime = 0;
     result->resultDetail = (char * )malloc(sizeof(char) * MAX_DETAIL_LENGTH);
     strcpy(result->resultDetail, "No info");
 }
@@ -152,7 +153,7 @@ RunConfig* judge(const JudgerConfig * judgerConfig, const JudgeConfig *judgeConf
                 struct rusage resourceuUsage;
                 struct timeval boxStartTime, boxExitTime;
                 gettimeofday(&boxStartTime, NULL);
-                if (wait4(boxID, &status, WSTOPPED, &resourceuUsage) == -1) {
+                if (wait4(boxID, &status, 0, &resourceuUsage) == -1) {
                     kill(killerID, SIGKILL);
                     createSystemError( &result[curCase], WAIT_BOX_FAILED, "Can't wait box proccess", judgeConfig->logPath);
                     return result;

@@ -513,7 +513,7 @@ int main(int argc, char *argv[]) {
     judgeConfig.caseNumber = dataCnt;
 
 #ifdef __DEBUG
-   // print();
+   
     logDebugInfoWithMessage(judgeConfig.logPath, "Load json success.");
 #endif
     
@@ -523,7 +523,7 @@ int main(int argc, char *argv[]) {
     gettimeofday(&exitTime, NULL);
     long realJudgeTime = (exitTime.tv_sec * 1000 + exitTime.tv_usec / 1000 - startTime.tv_sec * 1000 - startTime.tv_usec / 1000);
     long totalTime = 0;
-    for (int i = 0; i < dataCnt; i++) {
+    for (i = 0; i < dataCnt; i++) {
         totalTime += result[i].useRealTime;
     }
     
@@ -580,10 +580,15 @@ int main(int argc, char *argv[]) {
 #endif
     fclose(resultFile);
 
+    
+    
 #ifdef __DEBUG
     char buffer[MAX_DEBUG_INFO_LENGTH];
     sprintf(buffer, "Judge success : judger real time: %ldms, judger extra time : %ldms ", realJudgeTime, realJudgeTime - totalTime);
     logDebugInfoWithMessage(judgeConfig.logPath, buffer);
 #endif
+
+    freeJudgeConfig(judgeConfig);
+    freeJudgerConfig(judgerConfig);
     return 0;
 }

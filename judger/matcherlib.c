@@ -155,7 +155,7 @@ void matchWithSPJ(const JudgerConfig * judgerConfig, const JudgeConfig * config,
             int status;
             struct rusage resourceUsage;
 
-            if (wait4(spjID, &status, WSTOPPED, &resourceUsage) == -1) {
+            if (wait4(spjID, &status, 0, &resourceUsage) == -1) {
                 kill(killerID, SIGKILL);
                 createSystemError( &result[curCase], WAIT_BOX_FAILED, "Can't wait box proccess", config->logPath);
                 return;

@@ -47,7 +47,7 @@ void run(const JudgerConfig* judgerConfig, const JudgeConfig *config, int curDat
         
         if (freopen(config->inputData[curDataNum], "r", stdin) == NULL
             ||freopen(config->outputData[curDataNum], "w", stdout) == NULL
-            //||freopen(config->translator.interpreterInfoPath, "w", stderr) == NULL
+            ||freopen(config->translator.interpreterInfoPath, "w", stderr) == NULL
         )
         {
             
@@ -71,11 +71,12 @@ void run(const JudgerConfig* judgerConfig, const JudgeConfig *config, int curDat
     }
     
     
-    // if (loadSeccompRules(config) != 0) {
-    //     logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SECURITY_CONFIG_LOAD_FAILED, "Can't load security conifg");
-    //     raise(SIGUSR1);
-    //     exit(EXIT_FAILURE);
-    // }
+    /* if (loadSeccompRules(config) != 0) {
+         logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SECURITY_CONFIG_LOAD_FAILED, "Can't load security conifg");
+         raise(SIGUSR1);
+         exit(EXIT_FAILURE);
+     }
+     */
     
     execv(config->translator.interpreterPath, config->translator.interpreterOptions);
 
@@ -120,11 +121,12 @@ void runSpj(const JudgerConfig * judgerConfig, const JudgeConfig *config, int cu
         exit(EXIT_FAILURE);
     }
 
-//     if (loadSeccompRulesForSPJ(config) != 0) {
-//         logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SECURITY_CONFIG_LOAD_FAILED, "Can't load security config (spj)");
-//         raise(SIGUSR1);
-//         exit(EXIT_FAILURE);
-//     }
+    /*if (loadSeccompRulesForSPJ(config) != 0) {
+        logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SECURITY_CONFIG_LOAD_FAILED, "Can't load security config (spj)");
+        raise(SIGUSR1);
+        exit(EXIT_FAILURE);
+    }
+    */
     if (config->iOMode == STD_IO) {
         
         execl(config->sPJPath, config->sPJName, config->inputData[curDataNum], config->stdAnswer[curDataNum], config->outputData[curDataNum], NULL);
