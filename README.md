@@ -29,8 +29,9 @@ sudo kalznjudger <json file path> [log path]
 ```
 sudo rm -f /usr/bin/kalznjudger
 ```
-### JSON文件
-这里使用一个JSON文件作为示例，数据项的意义及注意事项见注释。
+### 任务JSON文件
+这里使用JSON文件作为示例，数据项的意义及注意事项见注释。
+对于任务配置的json文件，如果有说明有默认值，则为选填项，否则必填。
 ```json
 {
     "Judger": {  // 评测机相关配置
@@ -276,6 +277,45 @@ compilerProductName的文件，以判定编译是否成功。编译信息会输�
 编译器和解释器输出以及评测结果文件，一同交由高层的评测队列管理模块回收处理。<br/>
 如果出现某种语言无法适配的情况，就劳烦自行编写了。这里推荐在judger.h中声明专用的编译流程函数，在box初始化后调用。目前来说，常规的语言都可以适配。<br/>
 
+### 结果json文件
+```json
+{
+	"taskID":	100031, // 任务ID号
+
+	"doneTime":	"2021-07-18 21:06:22", // 任务完成时间
+
+	"judgeTime":	15753, //ms 评测所花费的实际时间 （从开始解析任务json到评测结束的实际时间）
+
+	"extraTime":	819, //ms 评测所花费的额外时间 （ 评测所花费的实际时间 减去 所有样例下待测程序运行的实际时间之和 ） 
+                         // judger在用于处理进程、初始化配置、匹配输出等非待测程序运行开销的时间
+	"result":	[{
+
+			"time":	0, //ms  样例耗费CPU时间（按照这个标准比对是否超时）
+
+			"realTime":	5, //ms judger运行此样例的真正时间 （仅仅用于评断judger效率）
+
+			"memory":	1660,  //kb 耗费内存
+
+			"signal":	0, // 待测进程结束信号量
+
+			"code":	0, // 待测程序exit code
+
+			"result":	0, // 评测结果 
+
+			"detail":	"No info" // 评测信息
+
+		}, {
+			"time":	0,
+			"realTime":	4,
+			"memory":	1656,
+			"signal":	0,
+			"code":	0,
+			"result":	0,
+			"detail":	"No info"
+		}]
+}
+```
+
 ## 工作区
 工作区是Judger在评测时的工作目录，与评测有关的数据、待测源程序等最好都在此目录下，Judger所生成的编译器和解释器信息，以及最终结果都将会存储在此。当高层管理程序回收时，应该从工作区目录回收评测结果，并做好工作区的清理。
 
@@ -331,6 +371,8 @@ Judger产生的所有System Error都将会尽最大努力的存储到指定的lo
 |COMPILER_RUN_FAILED|-109|编译器无法启动|
 |PERMISSION_ERROR|-110|judge进程不是root|
 |ACCESS_WORKSPACE_FAILED| -111|无法访问工作区目录|
+|FILE_IO_INIT_FAILED|-112|文件IO模式初始化失败|
+|WRITE_RESULT_FILE_FAILED|-113|写入结果文件失败| 
 |BOX_SECURITY_CONFIG_LOAD_FAILED|-200|安全配置加载失败|
 |BOX_DATA_REDIRECT_FAILED|-201|评测数据重定向失败|
 |BOX_EXE_RUN_FAILED|-202|无法启动待测程序|
@@ -380,6 +422,8 @@ int main(int argc, char * argv[]) {
 ```
 
 ## 简单演示
+
+如果没有重大改变，此章节没有随着版本更迭。以下演示在v0.2.0版本进行，所以json文件的配置可能与上面章节有出入。请以上面的章节为准。
 
 这里对一个java源程序进行评测，源代码如下
  ```java
