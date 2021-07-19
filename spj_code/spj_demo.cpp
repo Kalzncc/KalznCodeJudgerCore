@@ -1,16 +1,18 @@
 #include "spjlib.h"
+#include <cmath>
 int main(int argc, char * argv[]) {
     START_JUDGE();
 
 
 //------------SPJ--CODE--------------------
-    int a; fscanf(input, "%d", &a);
-    int b; fscanf(output, "%d", &b);
-    int c; fscanf(stdoutput, "%d", &c);
-
-    if (/*some conditions*/ )
-        EXIT_JUDGE(ACCEPTED); 
-    else EXIT_JUDGE(WRONG_ANSWER); 
+    double a; 
+    fscanf(output, "%lf", &a);
+    double b;
+    fscanf(stdoutput, "%lf", &b);
+    if (fabs(a - b) < 1e-4) {
+        EXIT_JUDGE(ACCEPTED);
+    }
+    EXIT_JUDGE(WRONG_ANSWER);
 //------------SPJ--CODE--------------------
 
 

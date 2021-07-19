@@ -431,11 +431,12 @@ int main(int argc, char * argv[]) {
 #define EXIT_JUDGE(result) fclose(input); fclose(output); fclose(stdoutput); return result;
 ```
 
-## 简单演示
+## 演示
 
-如果没有重大改变，此章节没有随着版本更迭。以下演示在v0.2.0版本进行，所以json文件的配置可能与上面章节有出入。请以上面的章节为准。
+如果没有重大改变，此章节没有随着版本更迭，所以json文件的配置可能与上面章节有出入。请以上面的章节为准。
 
-这里对一个java源程序进行评测，源代码如下
+### 简单演示
+以下演示在v0.2.0版本进行。这里对一个java源程序进行评测，源代码如下
  ```java
  import java.util.*;
 public class Main {

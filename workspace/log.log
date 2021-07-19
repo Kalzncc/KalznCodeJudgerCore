@@ -1,0 +1,145 @@
+DEBUG: [2021-07-19 19:12:58] Load json success. (Get from message).
+DEBUG: [2021-07-19 19:12:58] Initializing result config (Get from message).
+DEBUG: [2021-07-19 19:12:58] Checking judger config (Get from message).
+DEBUG: [2021-07-19 19:12:58] Compileing code (Get from message).
+DEBUG: [2021-07-19 19:12:58] Begin to judge data 0 (Get from message).
+DEBUG: [2021-07-19 19:12:58] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:12:58] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:12:58] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-07-19 19:12:58] Judge success : judger real time: 600ms, judger extra time : 593ms  (Get from message).
+DEBUG: [2021-07-19 19:13:59] Load json success. (Get from message).
+DEBUG: [2021-07-19 19:13:59] Initializing result config (Get from message).
+DEBUG: [2021-07-19 19:13:59] Checking judger config (Get from message).
+DEBUG: [2021-07-19 19:13:59] Compileing code (Get from message).
+DEBUG: [2021-07-19 19:14:00] Begin to judge data 0 (Get from message).
+DEBUG: [2021-07-19 19:14:00] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:14:00] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:14:00] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-07-19 19:14:00] Begin to judge data 1 (Get from message).
+DEBUG: [2021-07-19 19:14:00] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:14:00] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:14:00] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-07-19 19:14:00] Begin to judge data 2 (Get from message).
+DEBUG: [2021-07-19 19:14:00] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:14:00] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:14:00] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-07-19 19:14:00] Judge success : judger real time: 618ms, judger extra time : 605ms  (Get from message).
+DEBUG: [2021-07-19 19:14:18] Load json success. (Get from message).
+DEBUG: [2021-07-19 19:14:18] Initializing result config (Get from message).
+DEBUG: [2021-07-19 19:14:18] Checking judger config (Get from message).
+DEBUG: [2021-07-19 19:14:18] Compileing code (Get from message).
+DEBUG: [2021-07-19 19:14:19] Begin to judge data 0 (Get from message).
+DEBUG: [2021-07-19 19:14:19] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:14:19] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:14:19] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-07-19 19:14:19] Begin to judge data 1 (Get from message).
+DEBUG: [2021-07-19 19:14:19] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:14:19] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:14:19] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-07-19 19:14:19] Begin to judge data 2 (Get from message).
+DEBUG: [2021-07-19 19:14:19] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:14:19] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:14:19] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-07-19 19:14:19] Judge success : judger real time: 611ms, judger extra time : 600ms  (Get from message).
+DEBUG: [2021-07-19 19:14:45] Load json success. (Get from message).
+DEBUG: [2021-07-19 19:14:45] Initializing result config (Get from message).
+DEBUG: [2021-07-19 19:14:45] Checking judger config (Get from message).
+DEBUG: [2021-07-19 19:14:45] Compileing code (Get from message).
+DEBUG: [2021-07-19 19:14:45] Begin to judge data 0 (Get from message).
+DEBUG: [2021-07-19 19:14:45] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:14:45] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:14:45] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:14:45] Begin to judge data 1 (Get from message).
+DEBUG: [2021-07-19 19:14:45] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:14:45] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:14:45] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:14:45] Begin to judge data 2 (Get from message).
+DEBUG: [2021-07-19 19:14:45] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:14:45] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:14:45] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:14:45] Judge success : judger real time: 604ms, judger extra time : 592ms  (Get from message).
+DEBUG: [2021-07-19 19:15:15] Load json success. (Get from message).
+DEBUG: [2021-07-19 19:15:15] Initializing result config (Get from message).
+DEBUG: [2021-07-19 19:15:15] Checking judger config (Get from message).
+DEBUG: [2021-07-19 19:15:15] Compileing code (Get from message).
+DEBUG: [2021-07-19 19:15:15] Begin to judge data 0 (Get from message).
+DEBUG: [2021-07-19 19:15:15] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:15:15] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:15:15] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-07-19 19:15:15] Begin to judge data 1 (Get from message).
+DEBUG: [2021-07-19 19:15:15] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:15:15] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:15:15] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-07-19 19:15:15] Begin to judge data 2 (Get from message).
+DEBUG: [2021-07-19 19:15:15] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:15:15] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:15:15] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-07-19 19:15:15] Judge success : judger real time: 611ms, judger extra time : 599ms  (Get from message).
+DEBUG: [2021-07-19 19:16:51] Load json success. (Get from message).
+DEBUG: [2021-07-19 19:16:51] Initializing result config (Get from message).
+DEBUG: [2021-07-19 19:16:51] Checking judger config (Get from message).
+DEBUG: [2021-07-19 19:16:51] Compileing code (Get from message).
+DEBUG: [2021-07-19 19:16:52] Begin to judge data 0 (Get from message).
+DEBUG: [2021-07-19 19:16:52] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:16:52] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:16:52] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-07-19 19:16:52] Begin to judge data 1 (Get from message).
+DEBUG: [2021-07-19 19:16:52] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:16:52] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:16:52] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-07-19 19:16:52] Begin to judge data 2 (Get from message).
+DEBUG: [2021-07-19 19:16:52] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:16:52] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:16:52] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-07-19 19:16:52] Judge success : judger real time: 632ms, judger extra time : 619ms  (Get from message).
+DEBUG: [2021-07-19 19:19:47] Load json success. (Get from message).
+DEBUG: [2021-07-19 19:19:47] Initializing result config (Get from message).
+DEBUG: [2021-07-19 19:19:47] Checking judger config (Get from message).
+DEBUG: [2021-07-19 19:19:47] Compileing code (Get from message).
+DEBUG: [2021-07-19 19:19:47] Begin to judge data 0 (Get from message).
+DEBUG: [2021-07-19 19:19:47] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:19:47] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:19:47] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-07-19 19:19:47] Begin to judge data 1 (Get from message).
+DEBUG: [2021-07-19 19:19:47] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:19:47] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:19:47] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-07-19 19:19:47] Begin to judge data 2 (Get from message).
+DEBUG: [2021-07-19 19:19:47] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:19:47] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:19:47] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-07-19 19:19:47] Judge success : judger real time: 593ms, judger extra time : 581ms  (Get from message).
+DEBUG: [2021-07-19 19:21:40] Load json success. (Get from message).
+DEBUG: [2021-07-19 19:21:40] Initializing result config (Get from message).
+DEBUG: [2021-07-19 19:21:40] Checking judger config (Get from message).
+DEBUG: [2021-07-19 19:21:40] Compileing code (Get from message).
+DEBUG: [2021-07-19 19:21:41] Begin to judge data 0 (Get from message).
+DEBUG: [2021-07-19 19:21:41] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:21:41] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:21:41] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-07-19 19:21:41] Begin to judge data 1 (Get from message).
+DEBUG: [2021-07-19 19:21:41] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:21:41] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:21:41] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-07-19 19:21:41] Begin to judge data 2 (Get from message).
+DEBUG: [2021-07-19 19:21:41] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:21:41] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:21:41] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-07-19 19:21:41] Judge success : judger real time: 601ms, judger extra time : 589ms  (Get from message).
+DEBUG: [2021-07-19 19:23:41] Load json success. (Get from message).
+DEBUG: [2021-07-19 19:23:41] Initializing result config (Get from message).
+DEBUG: [2021-07-19 19:23:41] Checking judger config (Get from message).
+DEBUG: [2021-07-19 19:23:41] Compileing code (Get from message).
+DEBUG: [2021-07-19 19:23:41] Begin to judge data 0 (Get from message).
+DEBUG: [2021-07-19 19:23:41] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:23:41] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:23:41] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-07-19 19:23:41] Begin to judge data 1 (Get from message).
+DEBUG: [2021-07-19 19:23:41] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:23:41] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:23:41] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-07-19 19:23:41] Begin to judge data 2 (Get from message).
+DEBUG: [2021-07-19 19:23:41] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-07-19 19:23:41] Running spj to judge (Get from message).
+DEBUG: [2021-07-19 19:23:41] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-07-19 19:23:41] Judge success : judger real time: 595ms, judger extra time : 584ms  (Get from message).
