@@ -1,7 +1,7 @@
 language: c
 
 install:  
-  - sudo apt install vim
+  - sudo apt install libseccomp-dev libseccomp2 seccomp
 
 script:
   - cd judger
