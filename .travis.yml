@@ -1,8 +1,7 @@
 language: c
 
 install:  
-  - ping baidu.com
-  - sudo apt install libseccomp-dev libseccomp2 seccomp
+  - sudo apt install vim
 
 script:
   - cd judger
