@@ -1,4 +1,11 @@
+<div align = "center">
+	<img src="https://user-images.githubusercontent.com/44296812/126071256-553a7ba2-7135-43cb-9611-5f59e0bfb85b.png">
+</div>
+<div align = "center">愿你我的未来充满光明，陌生人。</div>
+
 # Kalzn_Code_Judger
+
+
 ## 简介
 这是一个使用ANSI C编写(c90标准)的online judge的评测机，将在完善优化后作为KalznOJ的评测沙盒。Judger每次从一个json文件中读入任务的配置信息。然后生成评测结果，在测试例中，结果将写入工作区目录下的result.txt文本文件中。在正式使用时可以将结果写入json。
 ## 准备
