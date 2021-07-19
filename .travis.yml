@@ -1,6 +1,6 @@
 language: c
 
-before_install:  
+install:  
   - sudo apt install libseccomp-dev libseccomp2 seccomp
 
 script:
