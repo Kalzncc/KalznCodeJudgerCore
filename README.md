@@ -6,7 +6,7 @@
 # Kalzn_Code_Judger
 
 ![](https://img.shields.io/badge/language-ANSI_C-green.svg)
-![](https://img.shields.io/badge/platform-linux-lightgrey.svg)
+![](https://img.shields.io/badge/platform-Linux-lightgrey.svg)
 [![Build Status](https://travis-ci.com/Kalzncc/KalznCodeJudger.svg?branch=master)](https://travis-ci.com/Kalzncc/KalznCodeJudger)
 ## 简介
 这是一个使用ANSI C编写(C89标准)的online judge的评测机，将在完善优化后作为KalznOJ的评测沙盒。Judger每次从一个json文件中读入任务的配置信息。然后生成评测结果，在测试例中，结果将写入工作区目录下的result.txt文本文件中。在正式使用时可以将结果写入json。
