@@ -4,5 +4,5 @@ allfile = judger_config.h securitylib.h securitylib.c  compilerlib.h compilerlib
 			matcherlib.h matcherlib.c main.c
 
 kalznjudger : $(allfile)
-	gcc  -D__DEBUG  -ansi -std=c90 $(allfile) -o kalznjudger -lseccomp
+	gcc  -D__DEBUG  -ansi -std=c89 $(allfile) -o kalznjudger -lseccomp
 	sudo mv kalznjudger /usr/bin/
