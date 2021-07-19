@@ -1,8 +1,0 @@
-language: c
-
-before_install:  
-  - sudo apt install libseccomp-dev libseccomp2 seccomp
-
-script:
-  - cd judger
-  - gcc  -D__DEBUG  -ansi -std=c90  judger_config.h securitylib.h securitylib.c  compilerlib.h compilerlib.c judger_config.c loglib.h loglib.c cjson/cJSON.h cjson/cJSON.c killerlib.h killerlib.c boxlib.h boxlib.c judgerlib.h judgerlib.c matcherlib.h matcherlib.c main.c -o kalznjudger -lseccomp
