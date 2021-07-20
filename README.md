@@ -441,12 +441,12 @@ judger对编译和解释代码的过程有高度的自定义性。judger内置�
             "mode": 2,
             "compilerPath": "/usr/bin/bash",
             "compilerOptions":[
-                "bash", "/home/kalzn/sh/make.sh", "/home/kalzn/workspace/Main.java", "/home/kalzn/workspace/Main.class"
+                "/home/kalzn/sh/make.sh", "/home/kalzn/workspace/Main.java", "/home/kalzn/workspace/Main.class"
             ],
             "compilerProductName":"Main.class",
             "interpreterPath": "/usr/bin/bash",
             "compilerOptions":[
-                "bash", "/home/kalzn/sh/run.sh", "/home/kalzn/workspace/Main.class"
+                "/home/kalzn/sh/run.sh", "/home/kalzn/workspace/Main.class"
             ]
         }
 ```
