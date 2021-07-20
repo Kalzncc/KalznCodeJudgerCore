@@ -430,6 +430,13 @@ int main(int argc, char * argv[]) {
 #define START_JUDGE() FILE * input = fopen(argv[1], "r"); FILE * stdoutput = fopen(argv[2], "r"); FILE * output = fopen(argv[3], "r");
 #define EXIT_JUDGE(result) fclose(input); fclose(output); fclose(stdoutput); return result;
 ```
+## 其他说明
+
+### 多文件测试
+judger支持多文件代码评测，将所有代码文件放到工作区后，只要在任务json中配置好编译选项和解释选项即可。
+
+### 编译SPJ
+judger可以用于编译SPJ，因为存在only compiler mode， judger server也可以接受编译SPJ的任务。
 
 ## 演示
 
