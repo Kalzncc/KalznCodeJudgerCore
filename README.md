@@ -434,7 +434,33 @@ int main(int argc, char * argv[]) {
 
 ### 多文件与模块评测
 judger支持多文件代码评测，将所有代码文件放到工作区后，只要在任务json中配置好编译选项和解释选项即可。模块评测当作多文件测试，将用户提交的模块代码文件，连接驱动代码文件一起处理即可。
-
+### 自定义翻译脚本
+judger对编译和解释代码的过程有高度的自定义性。judger内置的4中翻译模式已经可以因对大部分的翻译过程。但是如果有特殊的翻译过程。你可以在translate的配置中运行自行定义的shell脚本。完成代码的编译工作。你也同样可以使用一段脚本运行待测程序。下面是一个示例，在示例中，使用自定义脚本完成对java代码的编译运行：
+```json
+"translator": {
+            "mode": 2,
+            "compilerPath": "/usr/bin/bash",
+            "compilerOptions":[
+                "bash", "/home/kalzn/sh/make.sh", "/home/kalzn/workspace/Main.java", "/home/kalzn/workspace/Main.class"
+            ],
+            "compilerProductName":"Main.class",
+            "interpreterPath": "/usr/bin/bash",
+            "compilerOptions":[
+                "bash", "/home/kalzn/sh/run.sh", "/home/kalzn/workspace/Main.class"
+            ]
+        }
+```
+```sh
+#!/bin/bash
+# make.sh
+javac $1 -o $2
+```
+```sh
+#!/bin/bash
+# run.sh
+java $3
+```
+<strong>但是请保证脚本是可靠的! 系统没有对编译过程进行监控! </strong>
 ### 编译SPJ
 judger可以用于编译SPJ，因为存在only compiler mode， judger server也可以接受编译SPJ的任务。
 
