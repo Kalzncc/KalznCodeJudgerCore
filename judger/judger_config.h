@@ -1,8 +1,6 @@
 #ifndef JUDGER_CONFIG_H
 #define JUDGER_CONFIG_H
 
-
-
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -27,29 +25,31 @@
 #include <errno.h>
 
 
-#define DEFAULT_LOG_PATH "judge_log.log" 
-#define DEFAULT_COMPILER_INFO_PATH "compiler.log"
-#define DEFAULT_INTERPRETER_INFO_PATH "interpreter.log"
-#define FILEIO_INPUT_PATH "input.in"
-#define FILEIO_OUTPUT_PATH "output.out"
-#define RESULT_FILE_PATH "result.json"
-#define MAX_JSON_CHAR_NUM 0x10000
-#define DEFAULT_UID 65534
-#define MAX_TIME_LIMIT 30000
-#define MAX_MEMORY_LIMIT 0x3f3f3f3f3f3f3f3f
-#define MAX_STACK_LIMIT 0x7fffffff
-#define MAX_OUTPUT_CHAR_BUFFER 0x3f3f3f3f
-#define MAX_SPJ_TIME_LIMIT 30000
-#define MAX_SPJ_MEMORY_LIMIT 0x7fffffff
-#define MAX_DATA_CASE_NUMBER 1024
-#define MAX_PATH_LENGTH 1024
-#define MAX_CMD_STR_LENGTH 1024
-#define MAX_DETAIL_LENGTH 128
-#define MAX_DEBUG_INFO_LENGTH 128
+#define DEFAULT_LOG_PATH                  "judge_log.log" 
+#define DEFAULT_COMPILER_INFO_PATH        "compiler.log"
+#define DEFAULT_INTERPRETER_INFO_PATH     "interpreter.log"
+#define DEFAULT_RESULT_FILE_PATH          "result.json"
+#define FILEIO_INPUT_PATH                 "input.in"
+#define FILEIO_OUTPUT_PATH                "output.out"
+
+
+#define MAX_JSON_CHAR_NUM                 0x10000
+#define DEFAULT_UID                       65534
+#define MAX_TIME_LIMIT                    30000
+#define MAX_MEMORY_LIMIT                  0x3f3f3f3f
+#define MAX_STACK_LIMIT                   0x7fffffff
+#define MAX_OUTPUT_CHAR_BUFFER            0x3f3f3f3f
+#define MAX_SPJ_TIME_LIMIT                30000
+#define MAX_SPJ_MEMORY_LIMIT              0x7fffffff
+#define MAX_DATA_CASE_NUMBER              1024
+#define MAX_PATH_LENGTH                   1024
+#define MAX_CMD_STR_LENGTH                1024
+#define MAX_DETAIL_LENGTH                 128
+#define MAX_DEBUG_INFO_LENGTH             128
 
 
 
-enum JudgeErrorEnum {
+typedef enum JudgeErrorEnum {
     
     SUCCESS = 0, /*成功评测*/
 
@@ -91,10 +91,9 @@ enum JudgeErrorEnum {
     
 
 
-};
-typedef enum JudgeErrorEnum JudgeError;
- 
-enum JudgeResultEnum {
+} JudgeError;
+
+typedef enum JudgeResultEnum {
     /* 当本次评测的JudgeError的不为SUCCESS时，JudgeResult一定是SYSTEM_ERROR。*/
     /* 当本次评测的JudgeError为SUCCESS时，JudgeResult一定不是SYSTEM_ERROR。*/
     ACCEPTED = 0, /* 答案正确*/
@@ -103,101 +102,46 @@ enum JudgeResultEnum {
     MEMORY_LIMIT_EXCEEDED = 3, /*内存超限*/
     RUNTIME_ERROR = 4, /* 运行时错误*/
     PRESENTATION_ERROR = 5,  /* 格式错误(只在严格评测模式)*/
-    OUTPUT_LIMIT_EXCEEDED = 6,  /*输出超限 (输出大小大小JudgerConfig中的maxCharBuffer)*/
+    OUTPUT_LIMIT_EXCEEDED = 6,  /*输出超限 (输出大小大小JudgeConfig中的maxCharBuffer)*/
     COMPILE_ERROR = 7, /* 编译错误*/
     SKIP = 8, /* 跳过 (仅在points mode)*/
     SYSTEM_ERROR = 9  /*系统错误 (执行log)*/
-};
-typedef enum JudgeResultEnum JudgeResult;
+} JudgeResult;
 
-enum JudgeModeEnum {
+typedef enum JudgeModeEnum {
     SINGLE_RESULT_MODE = 0, /* 单一结果模式，且若某样例没有AC，之后的样例直接跳过*/
     POINTS_MODE = 1, /* 积分模式，返回每个样例的结果，即使某样例没有AC，也会接着评测后面的样例。*/
     ONLY_COMPILE_MODE = 2 /* 只编译模式 （详见文档 并发评测与解释 了解详情）*/
-};
-typedef enum JudgeModeEnum JudgeMode;
+} JudgeMode;
 
-enum IOMode {  /* 文件读写，还是标准读写*/
+typedef enum IOMode {  /* 文件读写，还是标准读写*/
     STD_IO = 0,
     FILE_IO = 1
-};
-typedef enum IOMode IOMode;
+} IOMode;
 
 
-enum TranslationModeEnum {
+typedef enum TranslationModeEnum {
     COMPILER_MODE = 0, /* 编译型语言*/
     INTERPRETER_MODE = 1, /* 解释型语言 */
     COMPILER_INTERPRETER_MODE = 2,  /* 半编译半解释*/
     DO_NOT_TANSLATE_MODE = 3 /* 不做翻译模式*/
-    /**
-     * 待测代码是工作区下Main.x, x为后缀名
-     * 
-     * 1、compiler mode, 编译模式
-     * 此模式下，judger先切换到work space目录下，执行 [compilerCmd] 指令，
-     * 这里规定产生物的名字应为compilerProductName，此后judger将检测目录下是否成功生成名字为
-     * compilerProductName的文件，以判定编译是否成功。如果失败则报告编译失败，否则执行runner开始评测。
-     * 这里runner经初始化，会直接将进程execute到编译后的产物。
-     * 
-     * 2、interpreter mode 解释模式
-     * 此模式下，judger先切换到work space目录下，直接开始执行runner，在runner初始化成功后，将会执行语句
-     * [interpreterCmd] ,启用解释器运行代码，报错退出将按照runner的自行处理，
-     * 
-     * 3、compiler interpreter mode 编译解释模式
-     * 此模式下，judger先切换到work space目录下，执行 [compilerCmd] 指令，
-     * 这里规定产生物的名字应为compilerProductName，此后judger将检测目录下是否成功生成名字为
-     * compilerProductName的文件，以判定编译是否成功。如果失败则报告编译失败，否则执行runner开始评测。
-     * 在runner初始化成功后，将会执行语句 [interpreterCmd], 启用解释器运行代码，报错退出将按照runner的自行处理。
-     * 
-     * 4、do not tanslate mode 不做翻译模式
-     * 直接运行compilerProductName，不做任何处理，详见文档 并发评测与解释 了解详情
-     * 
-     * 不过要明确的是，此部分的配置应该由系统的部署人员完成，此部分的配置一般不会修改
-     * 除非要改动OJ的编译指令，或者添加、删减某种语言。
-     * 
-     * 编译和解释过程中产生的输出信息会分别记录到compiler_log.txt 和 interpreter_log.txt下，
-     * 它将和评测结果文件，一同交由高层的评测队列管理模块回收处理。
-     * 
-     * 如果出现某种语言无法适配的情况，就劳烦自行编写了。
-     * 这里推荐在judger.h中声明专用的编译流程函数，在box初始化后调用。
-     * 目前来说，常规的语言都可以适配。
-     */
-};
-typedef enum TranslationModeEnum TranslationMode;
+} TranslationMode;
 
-enum StrictModeEnum {
+typedef enum StrictModeEnum {
     NOT_STRICT_MODE = 0,
     STRICT_MODE = 1
-    /**
-     *严格评测模式：
-     *如果为true，则启用严格评测模式，在严格模式下，按照以下顺序比对答案和输出：
-     *1、对字符串进行变换，把答案和输出数据中的"\r\n"，用"\n"替代
-     *2、如果输出或者答案最后有一个'\n'，则删掉一个'\n'。
-     *3、如果输出和答案相等，则AC。
-     *4、否则：将答案和输出的所有连续空白字符都用一个空格替代。
-     *5、如果此时输出和答案相等，则PE。
-     *6、否则WA。
-     *
-     *非严格模式：
-     *1、对字符串进行变换，把答案和输出数据中的"\r\n"，用"\n"替代
-     *2、如果输出或者答案最后有一个'\n'，则删掉一个'\n'。
-     *3、将答案和输出的所有连续空白字符都用一个空格替代。
-     *4、如果此时输出和答案相等，则AC。
-     *5、否则WA。
-     *
-    */
-};
-typedef enum StrictModeEnum StrictMode;
+} StrictMode;
 
-struct TranslatorConfig {
+typedef struct TranslatorConfig {
     /* 根据编译模式的不同，Judger对代码的处理就不同。*/
 
-    TranslationMode mode; /* 翻译模式，详见上述*/
+    int mode; /* 翻译模式，详见上述*/
 
     char* compilerPath;      /* 编译器路径 绝对路径*/
     char** compilerOptions; /* 编译指令，这里给出一个c++11编译器的指令示例：*/
                              /* "/usr/bin/g++ -std=c++11 Main.cpp -o $compilerProductName"*/
                              /* compilerOptions[] = {"/usr/bin/g++", "-std=c++11", "Main.cpp", "-o", "$compilerProductName", NULL};*/
-                             /* 保证最后一个有一个NULL*/
+
     char* compilerInfoPath; /* 编译器输出路径*/
     char* compilerProductName;  /* 编译产物名字，编译所生成的编译产物名字必须和其一致，否则Judger找不到目录下的对应文件，*/
                                 /* 会视为编译错误。*/
@@ -207,41 +151,37 @@ struct TranslatorConfig {
     char** interpreterOptions;  /* 解释器指令，这是提供给runner用解释器运行程序的指令，这里给出一个java的示例。*/
                                  /* java $compilerProductName*/
                                  /*  interpreterOptions[] = {"java", "$compilerProductName", NULL};*/
-                                 /* 保证最后一个有一个NULL*/
   
-};   
-typedef struct TranslatorConfig TranslatorConfig;
+} TranslatorConfig;   
 
-struct JudgeConfig {
-
-    /* 为了方便编写Compiler指令，这里待测代码均为同目录下的Main.x, 其中x为后缀名。*/
-
-    /* 任务ID号*/
-    long long taskID; 
+typedef struct JudgeConfig {
 
     
+    int maxCharBuffer; /* 最大字符缓存*/
+
+    
+    long taskID; /* 任务ID号*/
 
 
     /*编译与评测设置*/
-    JudgeMode judgeMode; /* 评测模式*/
+    int judgeMode; /* 评测模式*/
     TranslatorConfig translator; /* 翻译模式*/
 
 
     /*IO模式设置*/
-    IOMode iOMode;
+    int iOMode;
 
 
     /* 严格模式设置*/
-    StrictMode strictMode;
+    int strictMode;
 
 
     /*用户组设置*/
     uid_t uid;
     gid_t gid;
 
-
-    int caseNumber;
-    /*路径设置*/
+    /*数据设置*/
+    int caseNumber; /*样例个数*/
     /* 输入输出文件数组，一一对应，*/
     char* workSpacePath; /* 评测区路径 绝对路径*/
                          /*  Judger将会在这个路径下寻找数据文件路径, 也会把生成的临时文件存放在此。*/
@@ -255,26 +195,21 @@ struct JudgeConfig {
     int* maxCPUTime; /*最大CPU时限*/
     long long* maxMemory;  /*最大内存使用量*/
     int* maxStack; /* 最大栈空间*/
-    
     char* logPath; /*log路径  绝对路径 */
     
 
     /* SPJ设置*/
-    short isSPJ;
+    int isSPJ; /*是否启用SPJ*/
     char* sPJPath; /* 绝对路径*/
-    char* sPJName;
+    char* sPJName; /*SPJ程序的名字*/
+    int maxSPJTime; /* SPJ程序的最大时间*/
+    long long maxSPJMemory; /*SPJ程序最大内存耗费*/
 
 
-    
+} JudgeConfig;
 
-
-
-    
-};
-typedef struct JudgeConfig JudgeConfig;
-
-struct RunConfig {
-    long long taskID;
+typedef struct RunConfig {
+    long long taskID; /*任务ID*/
     int useCPUTime; /*CPU时间消耗*/
     long long useMemory;/*内存消耗*/
     int exitSignal;/*结束信号量*/
@@ -285,22 +220,16 @@ struct RunConfig {
 
     JudgeResult result;/*结果*/
     char* resultDetail;/*结果解释*/
-};
-typedef struct RunConfig RunConfig;
+}RunConfig;
 
+#ifdef __DEBUG
+void __debugPrintnum(const char * str, long long value);
+void __debugPrints(const char * str, const char* value);
+void __debugPrintJudgeConfig(JudgeConfig *config);
+void __debugPrintRunConfig(RunConfig *config);
+#endif
 
-struct JudgerConfig {
-    /* 区分JudgConfig，JudgerConfig是对Judger评测机的配置，而JudgeConfig是对一次Judge任务的配置。*/
-    /* 实际上，每次任务，都必须同时传入JudgeConfig和JudgerConfig的所有信息。*/
-    long long maxCharBuffer; /* 最大字符缓存*/
-    int maxSPJTime; /* SPJ程序的最大时间*/
-    long long maxSPJMemory;
-};
-typedef struct JudgerConfig JudgerConfig;
-
-
-/* 释放内存*/
-void freeJudgerConfig(JudgerConfig config);
-void freeJudgeConfig(JudgeConfig config);
-void freeRunConfig(RunConfig config);
+/*析构函数*/
+void freeJudgeConfig(JudgeConfig *config);
+void freeRunConfig(RunConfig *config);
 #endif

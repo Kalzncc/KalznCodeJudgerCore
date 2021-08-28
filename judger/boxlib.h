@@ -5,8 +5,8 @@
 
 
 
-void run(const JudgerConfig *judgerConfig, const JudgeConfig *config, int curDataNum);
-void runSpj(const JudgerConfig * judgerConfig, const JudgeConfig *config, int curDataNum);
+void run(const JudgeConfig *config, int curDataNum);
+void runSpj(const JudgeConfig *config, int curDataNum);
 
 #endif
 

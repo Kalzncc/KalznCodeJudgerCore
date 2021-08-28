@@ -4,7 +4,7 @@
 #include "judger_config.h"
 
 
-RunConfig* judge(const JudgerConfig * judgerConfig, const JudgeConfig *judgeConfig);
+RunConfig* judge(const JudgeConfig *judgeConfig);
 
 
 #endif

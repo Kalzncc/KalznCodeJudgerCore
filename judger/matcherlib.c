@@ -4,6 +4,10 @@
 #include "boxlib.h"
 #include "killerlib.h"
 
+JudgeResult formatMatch(const char *std,  const char *out);
+void checkSPJ(const JudgeConfig *config, RunConfig * result, int status, const struct rusage * resourceUsage);
+
+
 JudgeResult formatMatch(const char *std,  const char *out) {
     while(*std != '\0' && *out != '\0') {
         char chStd, chOut;
@@ -22,7 +26,7 @@ JudgeResult formatMatch(const char *std,  const char *out) {
     if (*std != *out) return WRONG_ANSWER;
     return ACCEPTED;
 }
-void matchResult(const JudgerConfig *judgerConfig, const JudgeConfig * config, int curCase, RunConfig * result) {
+void matchResult(const JudgeConfig * config, int curCase, RunConfig * result) {
     
 #ifdef __DEBUG
     char buffer[MAX_DEBUG_INFO_LENGTH];
@@ -46,14 +50,14 @@ void matchResult(const JudgerConfig *judgerConfig, const JudgeConfig * config, i
         return;
     }
     
-    char *stdbuf = (char * ) malloc(sizeof(char *) *judgerConfig->maxCharBuffer);
-    char *outbuf = (char * ) malloc(sizeof(char *) *judgerConfig->maxCharBuffer);
+    char *stdbuf = (char * ) malloc(sizeof(char *) * config->maxCharBuffer);
+    char *outbuf = (char * ) malloc(sizeof(char *) * config->maxCharBuffer);
     
     char ch;
     int stdCnt = 0, outCnt = 0;
     while((ch = fgetc(stdFile)) != EOF) {
         stdbuf[stdCnt++] = ch;
-        if (stdCnt>judgerConfig->maxCharBuffer) {
+        if (stdCnt>config->maxCharBuffer) {
             createSystemError(result, MATCHER_STD_DATA_TOO_LARGE,"The std answer is too large", config->logPath);
             return;
         }
@@ -62,7 +66,7 @@ void matchResult(const JudgerConfig *judgerConfig, const JudgeConfig * config, i
 
     while((ch = fgetc(outFile)) != EOF) {
         outbuf[outCnt++] = ch;
-        if (outCnt > judgerConfig->maxCharBuffer) {
+        if (outCnt > config->maxCharBuffer) {
             result->result = OUTPUT_LIMIT_EXCEEDED;
             return;
         }
@@ -92,7 +96,7 @@ void matchResult(const JudgerConfig *judgerConfig, const JudgeConfig * config, i
     
     return;
 }
-void checkSPJ(const JudgerConfig * judgerConfig, const JudgeConfig * judgeConfig, RunConfig * result, int status, const struct rusage * resourceUsage) {
+void checkSPJ(const JudgeConfig *config, RunConfig * result, int status, const struct rusage * resourceUsage) {
 
 
 
@@ -112,14 +116,14 @@ void checkSPJ(const JudgerConfig * judgerConfig, const JudgeConfig * judgeConfig
 #ifdef __DEBUG
     char buffer[MAX_DEBUG_INFO_LENGTH];
     sprintf(buffer, "Box (spj) exit signal : %d, exit code : %d", exitSignal, exitCode);
-    logDebugInfoWithMessage(judgeConfig->logPath, buffer);
+    logDebugInfoWithMessage(config->logPath, buffer);
 #endif
 
-    if (useCPUTime > judgerConfig->maxSPJTime) {
+    if (useCPUTime > config->maxSPJTime) {
         result->result = WRONG_ANSWER;
         return;
     }
-    if (useMemory > judgerConfig->maxSPJMemory) {
+    if (useMemory > config->maxSPJMemory) {
         result->result = WRONG_ANSWER;
         return;
     }
@@ -130,7 +134,7 @@ void checkSPJ(const JudgerConfig * judgerConfig, const JudgeConfig * judgeConfig
     return;
 }   
 
-void matchWithSPJ(const JudgerConfig * judgerConfig, const JudgeConfig * config, int curCase, RunConfig * result, const char * logPath) {
+void matchWithSPJ(const JudgeConfig *config, int curCase, RunConfig * result) {
 #ifdef __DEBUG
     char buffer[MAX_DEBUG_INFO_LENGTH];
     sprintf(buffer, "Running spj to judge");
@@ -142,7 +146,7 @@ void matchWithSPJ(const JudgerConfig * judgerConfig, const JudgeConfig * config,
         createSystemError(&result[curCase], FORK_SPJ_FAILED, "Can't fork spj proccess", config->logPath);
         return;
     } else if (spjID == 0) {
-        runSpj(judgerConfig, config, curCase);
+        runSpj(config, curCase);
     } else {
         pid_t killerID = fork();
         if (killerID < 0) {
@@ -150,7 +154,7 @@ void matchWithSPJ(const JudgerConfig * judgerConfig, const JudgeConfig * config,
             createSystemError(&result[curCase], FORK_KILLER_FOR_SPJ_FAILED, "Can't fork killer proccess for spj", config->logPath);
             return;
         } else if (killerID==0) {
-            monitor(spjID, judgerConfig->maxSPJTime);
+            monitor(spjID, config->maxSPJTime);
         } else {
             int status;
             struct rusage resourceUsage;
@@ -162,7 +166,7 @@ void matchWithSPJ(const JudgerConfig * judgerConfig, const JudgeConfig * config,
             }
             
             kill(killerID, SIGKILL);
-            checkSPJ(judgerConfig, config, result, status, &resourceUsage);
+            checkSPJ(config, result, status, &resourceUsage);
         }
     }
 

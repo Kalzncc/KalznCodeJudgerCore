@@ -41,17 +41,62 @@ using namespace std;
 const int N = 2e7+5;
 const int inf =0x3f3f3f3f;
 const int mod = 1e9+7;
-
+ll x, y, k;
+ll G[N];
+ll _pow(ll a, ll b)
+{
+	ll res = 1;
+	while(b)
+	{
+		if (b & 1) res = res * a % mod;
+		b >>= 1;
+		a = a * a % mod;
+	}
+	return res;
+}
+ll invs;
+ll getn(ll a0, ll q, ll n)
+{
+	if (q ==  1) return a0 * n % mod;
+	return a0 * (1 - _pow(q, n) + mod ) % mod * _pow( (1 - q + mod) % mod, mod-2) % mod;
+}
+ll ans = 0;
+ll getans(ll d, int dep)
+{
+	if (dep == k) 
+	{
+		return G[k];	
+	}
+	ll pre = getans(d<<1, dep+1) % mod;
+    ll g0 = _pow(x, d) * invs % mod;
+    ll q0 = _pow(x, d<<1);
+    pre = (pre + G[dep] * getn(g0, q0, 1ll << (k - dep - 1) ) % mod) % mod;
+    g0 = g0 * _pow(y, d+1) % mod;
+    q0 = _pow(x*y%mod, d<<1);
+    pre = (pre - G[dep] * getn(g0, q0, 1ll << (k - dep - 1) ) % mod + mod) % mod;
+    // if (dep == k - 1)
+    // {
+    //     cout << g0 << " "<< q0 << endl;
+    //     cout <<  G[dep] * getn(g0, q0, 1ll << (k - dep - 1) ) % mod << endl;
+    // }
+    return pre;
+}
 int main()
 {
-	double a, b; cin >> a >> b;
-	double l = 0, r = 0x3f3f3f3f;
-	while(abs(r - l) > 1e-2) {
-		double mid = (l + r) / 2;
-		if (mid * mid > a * a + b * b) r = mid;
-		else l = mid;
+	cin >> k;
+	for (int i = 0; i <= k; i++)
+	{
+		scanf("%lld", &G[i]);
+		if (i) G[i] = (G[i-1] * G[i]) % mod;
 	}
-	printf("%.6f\n", l);
+	int m; cin >> m;
+	while(m--)
+	{
+		scanf("%lld%lld", &x, &y);
+		invs = _pow( (1-y+mod)%mod,  mod-2);
+		ans = 0;
+		printf("%lld\n", getans(1, 0));
+		//printf("%lld\n", ans);
+	}
 	return 0;
-
 }

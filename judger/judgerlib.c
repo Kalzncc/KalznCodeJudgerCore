@@ -6,6 +6,8 @@
 #include "matcherlib.h"
 #include "compilerlib.h"
 
+void initRunConfig(RunConfig * result);
+void check(RunConfig *result, int status, const struct rusage *resourceUsage, int timeLimit, long long memoryLimit,  const char * logPath );
 
 
 void initRunConfig(RunConfig * result) {
@@ -21,7 +23,7 @@ void check(RunConfig *result, int status, const struct rusage *resourceUsage, in
     result->exitSignal = WTERMSIG(status);
     if (result->exitSignal == SIGUSR1) {
         result->result = SYSTEM_ERROR;
-        strcpy(result->resultDetail, "Check log file to know detail");
+        strcpy(result->resultDetail, "Access log file to check detail");
         return ;
     }
     result->exitCode =  WEXITSTATUS(status);
@@ -51,48 +53,48 @@ void check(RunConfig *result, int status, const struct rusage *resourceUsage, in
     
     
 }   
-RunConfig* judge(const JudgerConfig * judgerConfig, const JudgeConfig *judgeConfig) {
+RunConfig* judge(const JudgeConfig *config) {
     RunConfig *result = NULL;
-    result = (RunConfig*) malloc (sizeof(RunConfig)* judgeConfig->caseNumber );
+    result = (RunConfig*) malloc (sizeof(RunConfig)* config->caseNumber );
     int curCase;
 #ifdef __DEBUG
-    logDebugInfoWithMessage(judgeConfig->logPath, "Initializing result config");
+    logDebugInfoWithMessage(config->logPath, "Initializing result config");
 #endif
-    for (curCase = 0; curCase < judgeConfig->caseNumber; curCase++) {
+    for (curCase = 0; curCase < config->caseNumber; curCase++) {
         initRunConfig(&result[curCase]);
-        result[curCase].taskID = judgeConfig->taskID;
+        result[curCase].taskID = config->taskID;
     }
 #ifdef __DEBUG
-    logDebugInfoWithMessage(judgeConfig->logPath, "Checking judger config");
+    logDebugInfoWithMessage(config->logPath, "Checking judger config");
 #endif
     if (getuid()!=0) {
-        createSystemError(&result[0], PERMISSION_ERROR, "No root", judgeConfig->logPath);
+        createSystemError(&result[0], PERMISSION_ERROR, "No root", config->logPath);
         return result;
     }
-    if (chdir(judgeConfig->workSpacePath)!=0) {
-        createSystemError(&result[0], ACCESS_WORKSPACE_FAILED, "Can't access workspace.", judgeConfig->logPath);
+    if (chdir(config->workSpacePath)!=0) {
+        createSystemError(&result[0], ACCESS_WORKSPACE_FAILED, "Can't access workspace.", config->logPath);
+        return result;
     }
 
-    if (judgerConfig->maxCharBuffer<1 || judgerConfig->maxCharBuffer>MAX_OUTPUT_CHAR_BUFFER
-        || judgerConfig->maxSPJMemory<1 || judgerConfig->maxSPJMemory>MAX_SPJ_MEMORY_LIMIT
-        || judgerConfig->maxSPJTime<1 || judgerConfig->maxSPJTime>MAX_SPJ_TIME_LIMIT
+    if (config->maxCharBuffer<1 || config->maxCharBuffer>MAX_OUTPUT_CHAR_BUFFER
+        || (config->isSPJ == 1 && (config->maxSPJMemory<1 || config->maxSPJMemory>MAX_SPJ_MEMORY_LIMIT || config->maxSPJTime<1 || config->maxSPJTime>MAX_SPJ_TIME_LIMIT) )
         )
     {
-        createSystemError(&result[0], INVALID_JUDGE_CONFIG, "Judger limit is invalid", judgeConfig->logPath);
+        createSystemError(&result[0], INVALID_JUDGE_CONFIG, "Judger limit is invalid", config->logPath);
         return result;
     }
 
-    if (judgeConfig->translator.mode != INTERPRETER_MODE && judgeConfig->translator.mode != DO_NOT_TANSLATE_MODE) {
+    if (config->translator.mode != INTERPRETER_MODE && config->translator.mode != DO_NOT_TANSLATE_MODE) {
 #ifdef __DEBUG
-    logDebugInfoWithMessage(judgeConfig->logPath, "Compileing code");
+    logDebugInfoWithMessage(config->logPath, "Compileing code");
 #endif
-        remove(judgeConfig->translator.compilerProductName);
-        if (compileCode(judgeConfig->translator.compilerPath, judgeConfig->translator.compilerInfoPath, judgeConfig->translator.compilerOptions)) {
-            createSystemError(&result[0], COMPILER_RUN_FAILED, "Cant't run compiler", judgeConfig->logPath);
+        remove(config->translator.compilerProductName);
+        if (compileCode(config->translator.compilerPath, config->translator.compilerInfoPath, config->translator.compilerOptions)) {
+            createSystemError(&result[0], COMPILER_RUN_FAILED, "Cant't run compiler", config->logPath);
             return result;
         }
         FILE *fp;
-        if ( (fp = fopen(judgeConfig->translator.compilerProductName, "r")) == NULL) {
+        if ( (fp = fopen(config->translator.compilerProductName, "r")) == NULL) {
             result[0].result = COMPILE_ERROR;
 
             strcpy(result[0].resultDetail, "Code compile failed");
@@ -101,52 +103,52 @@ RunConfig* judge(const JudgerConfig * judgerConfig, const JudgeConfig *judgeConf
             fclose(fp);
         }
     }
-    if (judgeConfig->judgeMode == ONLY_COMPILE_MODE) {
+    if (config->judgeMode == ONLY_COMPILE_MODE) {
         result->result = ACCEPTED;
         return result;
     }
 
-    for (curCase = 0; curCase < judgeConfig->caseNumber; curCase++) {
+    for (curCase = 0; curCase < config->caseNumber; curCase++) {
 #ifdef __DEBUG
     char buffer[MAX_DEBUG_INFO_LENGTH];
     sprintf(buffer, "Begin to judge data %d", curCase);
-    logDebugInfoWithMessage(judgeConfig->logPath, buffer);
+    logDebugInfoWithMessage(config->logPath, buffer);
 #endif
-        if (judgeConfig->maxCPUTime[curCase]<1 || judgeConfig->maxCPUTime[curCase] > MAX_TIME_LIMIT
-        || judgeConfig->maxMemory[curCase]<1 || judgeConfig->maxMemory[curCase] > MAX_MEMORY_LIMIT
-        || judgeConfig->maxStack[curCase]<1 || judgeConfig->maxStack[curCase]> MAX_STACK_LIMIT
+        if (config->maxCPUTime[curCase]<1 || config->maxCPUTime[curCase] > MAX_TIME_LIMIT
+        || config->maxMemory[curCase]<1 || config->maxMemory[curCase] > MAX_MEMORY_LIMIT
+        || config->maxStack[curCase]<1 || config->maxStack[curCase]> MAX_STACK_LIMIT
         )
         {
-            createSystemError( &result[curCase], INVALID_JUDGE_CONFIG, "Resource limit is invalid", judgeConfig->logPath);
+            createSystemError( &result[curCase], INVALID_JUDGE_CONFIG, "Resource limit is invalid", config->logPath);
         }
-        if (judgeConfig->iOMode == FILE_IO) {
+        if (config->iOMode == FILE_IO) {
             FILE *fpTar, *fpOr;
-            if ((fpTar = fopen(FILEIO_INPUT_PATH, "w")) == NULL || (fpOr = fopen(judgeConfig->inputData[curCase], "r") )== NULL) {
-                createSystemError(&result[curCase], FILE_IO_INIT_FAILED, "Can't copy file in File IO Mode", judgeConfig->logPath);
+            if ((fpTar = fopen(FILEIO_INPUT_PATH, "w")) == NULL || (fpOr = fopen(config->inputData[curCase], "r") )== NULL) {
+                createSystemError(&result[curCase], FILE_IO_INIT_FAILED, "Can't copy file in File IO Mode", config->logPath);
                 return result;
             }
             char ch;
             while((ch = fgetc(fpOr)) != EOF) fputc(ch, fpTar);
             if (fclose(fpTar)!=0 || fclose(fpOr) != 0) {
-                createSystemError(&result[curCase], FILE_IO_INIT_FAILED, "Can't close file in File IO Mode", judgeConfig->logPath);
+                createSystemError(&result[curCase], FILE_IO_INIT_FAILED, "Can't close file in File IO Mode", config->logPath);
                 return result;
             }
         }
         pid_t boxID = fork();
         if (boxID<0) {
-            createSystemError(&result[curCase], FORK_BOX_FAILED, "Can't fork box proccess", judgeConfig->logPath);
+            createSystemError(&result[curCase], FORK_BOX_FAILED, "Can't fork box proccess", config->logPath);
             return result;
         } else if (boxID == 0) {
-            run(judgerConfig, judgeConfig, curCase);
+            run(config, curCase);
         } else {
             
             pid_t killerID = fork();
             if (killerID < 0) {
                 kill(boxID, SIGKILL);
-                createSystemError(&result[curCase], FORK_KILLER_FAILED, "Can't fork killer proccess", judgeConfig->logPath);
+                createSystemError(&result[curCase], FORK_KILLER_FAILED, "Can't fork killer proccess", config->logPath);
                 return result;
             } else if (killerID==0) {
-                monitor(boxID, judgeConfig->maxCPUTime[curCase]);
+                monitor(boxID, config->maxCPUTime[curCase]);
             } else {
                 
                 int status;
@@ -155,7 +157,7 @@ RunConfig* judge(const JudgerConfig * judgerConfig, const JudgeConfig *judgeConf
                 gettimeofday(&boxStartTime, NULL);
                 if (wait4(boxID, &status, 0, &resourceuUsage) == -1) {
                     kill(killerID, SIGKILL);
-                    createSystemError( &result[curCase], WAIT_BOX_FAILED, "Can't wait box proccess", judgeConfig->logPath);
+                    createSystemError( &result[curCase], WAIT_BOX_FAILED, "Can't wait box proccess", config->logPath);
                     return result;
                 }
                 gettimeofday(&boxExitTime, NULL);
@@ -163,21 +165,20 @@ RunConfig* judge(const JudgerConfig * judgerConfig, const JudgeConfig *judgeConf
                 
                 kill(killerID, SIGKILL);
                 
-                check(&result[curCase], status, &resourceuUsage,  judgeConfig->maxCPUTime[curCase], judgeConfig->maxMemory[curCase],  judgeConfig->logPath);
+                check(&result[curCase], status, &resourceuUsage,  config->maxCPUTime[curCase], config->maxMemory[curCase],  config->logPath);
                 if (result[curCase].result == SYSTEM_ERROR) return result;
                 
                 if (result[curCase].result == SKIP) {
-                    if (judgeConfig->isSPJ == 0) {
-                        
-                        matchResult(judgerConfig, judgeConfig, curCase, &result[curCase]);
+                    if (config->isSPJ == 0) {
+                        matchResult(config, curCase, &result[curCase]);
                         
                     } else {
-                        matchWithSPJ(judgerConfig, judgeConfig, curCase, &result[curCase], judgeConfig->logPath);
+                        matchWithSPJ(config,  curCase, &result[curCase]);
                     }
                 }
             }
         }
-        if (result[curCase].result != ACCEPTED && result[curCase].result != PRESENTATION_ERROR && judgeConfig->judgeMode == SINGLE_RESULT_MODE) {
+        if (result[curCase].result != ACCEPTED && result[curCase].result != PRESENTATION_ERROR && config->judgeMode == SINGLE_RESULT_MODE) {
             return result;
         }
     }

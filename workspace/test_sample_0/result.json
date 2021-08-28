@@ -1,0 +1,63 @@
+{
+	"taskID":	100031,
+	"doneTime":	"2021-08-27 17:21:06",
+	"judgeTime":	6759,
+	"extraTime":	672,
+	"result":	[{
+			"time":	0,
+			"realTime":	4,
+			"memory":	1660,
+			"signal":	0,
+			"code":	0,
+			"result":	0,
+			"detail":	"No info"
+		}, {
+			"time":	15,
+			"realTime":	4,
+			"memory":	1660,
+			"signal":	0,
+			"code":	0,
+			"result":	0,
+			"detail":	"No info"
+		}, {
+			"time":	0,
+			"realTime":	4,
+			"memory":	1660,
+			"signal":	0,
+			"code":	0,
+			"result":	0,
+			"detail":	"No info"
+		}, {
+			"time":	0,
+			"realTime":	5,
+			"memory":	1660,
+			"signal":	0,
+			"code":	0,
+			"result":	0,
+			"detail":	"No info"
+		}, {
+			"time":	0,
+			"realTime":	4,
+			"memory":	1660,
+			"signal":	0,
+			"code":	0,
+			"result":	0,
+			"detail":	"No info"
+		}, {
+			"time":	2968,
+			"realTime":	2985,
+			"memory":	1660,
+			"signal":	0,
+			"code":	0,
+			"result":	0,
+			"detail":	"No info"
+		}, {
+			"time":	2937,
+			"realTime":	3081,
+			"memory":	1660,
+			"signal":	0,
+			"code":	0,
+			"result":	0,
+			"detail":	"No info"
+		}]
+}

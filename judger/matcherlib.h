@@ -5,7 +5,7 @@
 
 
 
-void matchResult(const JudgerConfig *judgerConfig, const JudgeConfig * config, int curCase, RunConfig * result);
-void matchWithSPJ(const JudgerConfig * judgerConfig, const JudgeConfig * config, int curCase, RunConfig * result, const char * logPath);
+void matchResult(const JudgeConfig * config, int curCase, RunConfig * result);
+void matchWithSPJ(const JudgeConfig * config, int curCase, RunConfig * result);
 
 #endif

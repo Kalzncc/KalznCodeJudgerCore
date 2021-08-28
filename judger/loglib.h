@@ -2,6 +2,7 @@
 #define LOGLIB_H
 
 #define MAX_LOG_LENGTH 1024
+
 #include "judger_config.h"
 
 
