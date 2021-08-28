@@ -7,4 +7,4 @@ script:
   - sudo dpkg -i libseccomp-dev_2.5.1-1ubuntu1~20.04.1_amd64.deb
   - sudo dpkg -i seccomp_2.5.1-1ubuntu1~20.04.1_amd64.deb
   - cd ../judger
-  - gcc  -D__DEBUG  -ansi -std=c89  judger_config.h securitylib.h securitylib.c  compilerlib.h compilerlib.c judger_config.c loglib.h loglib.c cjson/cJSON.h cjson/cJSON.c killerlib.h killerlib.c boxlib.h boxlib.c judgerlib.h judgerlib.c matcherlib.h matcherlib.c main.c -o kalznjudger -lseccomp 
+  - gcc  -D__DEBUG  -ansi -std=c89  judger_config.h securitylib.h securitylib.c  compilerlib.h compilerlib.c judger_config.c loglib.h loglib.c cjson/cJSON.h cjson/cJSON.c killerlib.h killerlib.c boxlib.h boxlib.c judgerlib.h judgerlib.c matcherlib.h matcherlib.c jsonlib.h jsonlib.c main.c -o kalznjudger -lseccomp 
