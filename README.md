@@ -1,6 +1,3 @@
-<div align = "center">
-	<img src="https://user-images.githubusercontent.com/44296812/126071256-553a7ba2-7135-43cb-9611-5f59e0bfb85b.png">
-</div>
 <div align = "center">愿你我的未来充满光明，陌生人。</div>
 
 # Kalzn_Code_Judger
