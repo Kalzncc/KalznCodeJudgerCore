@@ -388,7 +388,7 @@ Judger产生的所有System Error都将会尽最大努力的存储到指定的lo
 Judger采用seccomp沙盒机制，但是目前还没有配置好，所以在本文档更新之前，请不要将此项目用在公开服务器上。
 
 ## SPJ说明
-SPJ程序使用C++书写，这里占用SPJ程序的Exit Code作为评测的结果，SPJ的返回值为ACCEPTED，则Judger认为待测程序在此样例下通过，其他情况均为WRONG_ANSWER。SPJ程序需要引入``spjlib.h``文件，然后在开始调用``START_JUDGE()``,另外，``input,output,stdoutput``分别是输入数据，待测程序输出数据以及标准输出的文件指针。在得到评测结果后，应调用``EXIT_JUDGE()``返回结果。无需``return``。这里要注意的是，<strong>如果SPJ程序崩溃、超时、超出内存限制，均视为源程序WRONG_ANSWER。</strong>这里给一个SPJ程序的示例。
+SPJ程序理论上可以使用任何语言书写，judger执行SPJ时，将会传入3个参数：1、输入文件路径，2、标准输出文件路径，3、待测程序输出文件路径。这里占用SPJ程序的Exit Code作为评测的结果，SPJ的返回值为0，则Judger认为待测程序在此样例下通过，其他情况均为WRONG_ANSWER。因为很多语言Exit Code不太好设定，且性能较C/C++来说很差，所以这里还是建议使用C/C++书写，SPJ程序需要引入``spjlib.h``文件，然后在开始调用``START_JUDGE()``,另外，``input,output,stdoutput``分别是输入数据，待测程序输出数据以及标准输出的文件指针。在得到评测结果后，应调用``EXIT_JUDGE(<ACCEPTED|WRONG_ANSWER>)``返回结果。不要直接``return``。这里要注意的是，<strong>如果SPJ程序崩溃、超时、超出内存限制，均视为源程序WRONG_ANSWER。</strong>这里给一个SPJ程序的示例。
 ```cpp
 #include "spjlib.h"
 int main(int argc, char * argv[]) {
@@ -412,10 +412,24 @@ int main(int argc, char * argv[]) {
 这里也明确SPJ出现的宏定义常量、函数的意义
 
 ```cpp
+#ifndef SPJLIB_H
+#define SPJLIB_H
+#include <stdio.h>
+#include <stdlib.h>
+
 #define ACCEPTED 0
 #define WRONG_ANSWER 1
-#define START_JUDGE() FILE * input = fopen(argv[1], "r"); FILE * stdoutput = fopen(argv[2], "r"); FILE * output = fopen(argv[3], "r");
-#define EXIT_JUDGE(result) fclose(input); fclose(output); fclose(stdoutput); return result;
+
+#define START_JUDGE() \
+        FILE *input = fopen(argv[1], "r"); \
+        FILE *stdoutput = fopen(argv[2], "r"); \
+        FILE *output = fopen(argv[3], "r");
+#define EXIT_JUDGE(result) \
+        fclose(input); \
+        fclose(output); \
+        fclose(stdoutput); \
+        exit(result);
+#endif
 ```
 ## 其他说明
 
