@@ -337,7 +337,7 @@ v0.2.0版本发布的重要功能
 | 结果名 | 结果代码 | 说明 |
 | --- | --- | --- |
 |ACCEPTED|0|该测试点通过了测试|
-|WRONG_ANSWER|1|该测试点输出与标准答案不一致，或spj任何该待测程序答案错误|
+|WRONG_ANSWER|1|该测试点输出与标准答案不一致，或spj认为该待测程序答案错误|
 |TIME_LIMIT_EXCEEDED|2|待测程序没有在时间限制内给出答案|
 |MEMORY_LIMIT_EXCEEDED|3|待测程序没有在内存限制内给出答案|
 |RUNTIME_ERROR|4|待测程序崩溃|
@@ -388,7 +388,7 @@ Judger产生的所有System Error都将会尽最大努力的存储到指定的lo
 Judger采用seccomp沙盒机制，但是目前还没有配置好，所以在本文档更新之前，请不要将此项目用在公开服务器上。
 
 ## SPJ说明
-SPJ程序使用C++书写，这里占用SPJ程序的Exit Code作为评测的结果，SPJ的返回值为ACCEPTED，则Judger认为待测程序在此样例下通过，其他情况均为WRONG_ANSWER。SPJ程序需要引入``spjlib.h``文件，然后在开始调用``START_JUDGE()``,另外，``input,output,stdoutput``分别是输入数据，待测程序输出数据以及标准输出的文件指针。在得到评测结果后，应调用``EXIT_JUDGE()``返回结果。无需``return``。这里要注意的是，如果SPJ程序崩溃、超时、超出内存限制，均视为源程序WRONG_ANSWER。这里给一个SPJ程序的示例。
+SPJ程序使用C++书写，这里占用SPJ程序的Exit Code作为评测的结果，SPJ的返回值为ACCEPTED，则Judger认为待测程序在此样例下通过，其他情况均为WRONG_ANSWER。SPJ程序需要引入``spjlib.h``文件，然后在开始调用``START_JUDGE()``,另外，``input,output,stdoutput``分别是输入数据，待测程序输出数据以及标准输出的文件指针。在得到评测结果后，应调用``EXIT_JUDGE()``返回结果。无需``return``。这里要注意的是，<strong>如果SPJ程序崩溃、超时、超出内存限制，均视为源程序WRONG_ANSWER。</strong>这里给一个SPJ程序的示例。
 ```cpp
 #include "spjlib.h"
 int main(int argc, char * argv[]) {
