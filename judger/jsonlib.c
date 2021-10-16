@@ -80,7 +80,7 @@ int loadJudgeConfig(const char *jsonStr, JudgeConfig *config, char *logPath) {
     config->resultPath = (char*)malloc(sizeof(char) * strlen(stringVal));
     strcpy(config->resultPath, stringVal);
 
-    readBoolJson(cjson, "isSPJ", &(config->isSPJ), 0);
+    readBoolJson(cjson, "sPJ", &(config->isSPJ), 0);
  
     if (config->isSPJ != 0) {
         readNonNegativeIntJson(cjson, "maxSPJTime", &(config->maxSPJTime), MAX_SPJ_TIME_LIMIT);
