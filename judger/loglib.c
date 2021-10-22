@@ -5,6 +5,7 @@
 void createSystemError(RunConfig * result, JudgeError error, const char * message, const char * logPath) {
     result->errorCode = error;
     result->result = SYSTEM_ERROR;
+    result->resultDetail = (char *) malloc(sizeof(char) * (strlen(message)+1));
     strcpy(result->resultDetail, message);
     logSystemErrorWithResult(logPath, result);
 }

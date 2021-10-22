@@ -1,8 +1,8 @@
 {
 	"taskID":	100031,
-	"doneTime":	"2021-08-27 17:13:43",
-	"judgeTime":	6,
-	"extraTime":	6,
+	"doneTime":	"2021-10-22 20:53:08",
+	"judgeTime":	2,
+	"extraTime":	2,
 	"result":	[{
 			"time":	0,
 			"realTime":	0,

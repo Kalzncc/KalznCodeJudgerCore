@@ -193,7 +193,7 @@ typedef struct JudgeConfig {
 
     /* 资源分配*/
     int* maxCPUTime; /*最大CPU时限*/
-    long long* maxMemory;  /*最大内存使用量*/
+    int* maxMemory;  /*最大内存使用量*/
     int* maxStack; /* 最大栈空间*/
     char* logPath; /*log路径  绝对路径 */
     
@@ -203,7 +203,7 @@ typedef struct JudgeConfig {
     char* sPJPath; /* 绝对路径*/
     char* sPJName; /*SPJ程序的名字*/
     int maxSPJTime; /* SPJ程序的最大时间*/
-    long long maxSPJMemory; /*SPJ程序最大内存耗费*/
+    int maxSPJMemory; /*SPJ程序最大内存耗费*/
 
 
 } JudgeConfig;

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo kalznjudger ../workspace/test_sample_2/config.json ../workspace/test_sample_2/log.log
+sudo kalznjudger ../workspace/test_sample_0/config.json ../workspace/test_sample_0/log.log

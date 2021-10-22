@@ -1,8 +1,8 @@
 {
 	"taskID":	100031,
-	"doneTime":	"2021-08-28 08:44:37",
-	"judgeTime":	598,
-	"extraTime":	579,
+	"doneTime":	"2021-10-22 18:55:50",
+	"judgeTime":	590,
+	"extraTime":	567,
 	"result":	[{
 			"time":	0,
 			"realTime":	4,
@@ -20,16 +20,8 @@
 			"result":	1,
 			"detail":	"No info"
 		}, {
-			"time":	15,
-			"realTime":	4,
-			"memory":	1644,
-			"signal":	0,
-			"code":	0,
-			"result":	1,
-			"detail":	"No info"
-		}, {
 			"time":	0,
-			"realTime":	4,
+			"realTime":	5,
 			"memory":	1648,
 			"signal":	0,
 			"code":	0,
@@ -37,8 +29,16 @@
 			"detail":	"No info"
 		}, {
 			"time":	0,
-			"realTime":	3,
+			"realTime":	5,
 			"memory":	1644,
+			"signal":	0,
+			"code":	0,
+			"result":	1,
+			"detail":	"No info"
+		}, {
+			"time":	0,
+			"realTime":	5,
+			"memory":	1648,
 			"signal":	0,
 			"code":	0,
 			"result":	1,

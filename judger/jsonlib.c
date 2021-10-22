@@ -42,9 +42,9 @@ int loadJudgeConfig(const char *jsonStr, JudgeConfig *config, char *logPath) {
 
     cjson = cJSON_Parse(jsonStr);
 
-    char *stringVal = (char *)malloc(sizeof(char)*strlen(jsonStr));
+    char *stringVal = (char *)malloc(sizeof(char)*(strlen(jsonStr)+1));
     readStringJson(cjson, "logPath", stringVal, logPath);
-    config->logPath = (char *)malloc(sizeof(char) * strlen(stringVal));
+    config->logPath = (char *)malloc(sizeof(char) * (strlen(stringVal)+1));
     strcpy(config->logPath, stringVal);
     strcpy(logPath, config->logPath);
 
@@ -73,11 +73,11 @@ int loadJudgeConfig(const char *jsonStr, JudgeConfig *config, char *logPath) {
         logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : workSpacePath");
         return 1;
     }
-    config->workSpacePath = (char*)malloc(sizeof(char) * strlen(stringVal));
+    config->workSpacePath = (char*)malloc(sizeof(char) * (strlen(stringVal)+1));
     strcpy(config->workSpacePath, stringVal);
 
     readStringJson(cjson, "resultPath", stringVal, DEFAULT_RESULT_FILE_PATH);
-    config->resultPath = (char*)malloc(sizeof(char) * strlen(stringVal));
+    config->resultPath = (char*)malloc(sizeof(char) * (strlen(stringVal)+1));
     strcpy(config->resultPath, stringVal);
 
     readBoolJson(cjson, "sPJ", &(config->isSPJ), 0);
@@ -89,14 +89,14 @@ int loadJudgeConfig(const char *jsonStr, JudgeConfig *config, char *logPath) {
             logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : spjExePath");
             return 1;
         }
-        config->sPJPath = (char*)malloc(sizeof(char) * strlen(stringVal));
+        config->sPJPath = (char*)malloc(sizeof(char) * (strlen(stringVal)+1));
         strcpy(config->sPJPath, stringVal);
 
         if (readStringJson(cjson, "spjExeName", stringVal, NULL)) {
             logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : spjExeName");
             return 1;
         }
-        config->sPJName = (char*)malloc(sizeof(char) * strlen(stringVal));
+        config->sPJName = (char*)malloc(sizeof(char) * (strlen(stringVal)+1));
         strcpy(config->sPJName, stringVal);
     }
 
@@ -112,7 +112,7 @@ int loadJudgeConfig(const char *jsonStr, JudgeConfig *config, char *logPath) {
             logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : compilerPath");
             return 1;
         }
-        config->translator.compilerPath = (char*)malloc(sizeof(char) * strlen(stringVal));
+        config->translator.compilerPath = (char*)malloc(sizeof(char) * (strlen(stringVal)+1));
         strcpy(config->translator.compilerPath, stringVal);
 
         cJSON *temp;
@@ -121,7 +121,7 @@ int loadJudgeConfig(const char *jsonStr, JudgeConfig *config, char *logPath) {
             return 1;
         } else {
             int compilerOptionCnt = cJSON_GetArraySize(temp);
-            config->translator.compilerOptions = (char **)malloc(sizeof(char*) * compilerOptionCnt+1);
+            config->translator.compilerOptions = (char **)malloc(sizeof(char*) * (compilerOptionCnt+1));
             config->translator.compilerOptions[compilerOptionCnt] = NULL;
             int i;
             for (i = 0; i < compilerOptionCnt; i++) {
@@ -134,7 +134,7 @@ int loadJudgeConfig(const char *jsonStr, JudgeConfig *config, char *logPath) {
             } 
         }
         readStringJson(transJson, "compilerInfoPath", stringVal, DEFAULT_COMPILER_INFO_PATH);
-        config->translator.compilerInfoPath = (char*)malloc(sizeof(char) * strlen(stringVal));
+        config->translator.compilerInfoPath = (char*)malloc(sizeof(char) * (strlen(stringVal)+1));
         strcpy(config->translator.compilerInfoPath, stringVal);
     }
     if (config->translator.mode != INTERPRETER_MODE) {
@@ -142,7 +142,7 @@ int loadJudgeConfig(const char *jsonStr, JudgeConfig *config, char *logPath) {
             logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : compilerProductName");
             return 1;
         }
-        config->translator.compilerProductName = (char*)malloc(sizeof(char) * strlen(stringVal));
+        config->translator.compilerProductName = (char*)malloc(sizeof(char) * (strlen(stringVal)+1));
         strcpy(config->translator.compilerProductName, stringVal);
     }
 
@@ -151,7 +151,7 @@ int loadJudgeConfig(const char *jsonStr, JudgeConfig *config, char *logPath) {
             logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : interpreterPath");
             return 1;
         }
-        config->translator.interpreterPath = (char*)malloc(sizeof(char) * strlen(stringVal));
+        config->translator.interpreterPath = (char*)malloc(sizeof(char) * (strlen(stringVal)+1));
         strcpy(config->translator.interpreterPath, stringVal);
 
         cJSON *temp;
@@ -160,7 +160,7 @@ int loadJudgeConfig(const char *jsonStr, JudgeConfig *config, char *logPath) {
             return 1;
         } else {
             int interpreterOptionCnt = cJSON_GetArraySize(temp);
-            config->translator.interpreterOptions = (char **)malloc(sizeof(char*) * interpreterOptionCnt+1);
+            config->translator.interpreterOptions = (char **)malloc(sizeof(char*) * (interpreterOptionCnt+1));
             config->translator.interpreterOptions[interpreterOptionCnt] = NULL;
             int i;
             for (i = 0; i < interpreterOptionCnt; i++) {
@@ -174,7 +174,7 @@ int loadJudgeConfig(const char *jsonStr, JudgeConfig *config, char *logPath) {
              
         }
         readStringJson(transJson, "interpreterInfoPath", stringVal, DEFAULT_INTERPRETER_INFO_PATH);
-        config->translator.interpreterInfoPath = (char*)malloc(sizeof(char) * strlen(stringVal));
+        config->translator.interpreterInfoPath = (char*)malloc(sizeof(char) * (strlen(stringVal)+1));
         strcpy(config->translator.interpreterInfoPath, stringVal);
     }
     cJSON *dataJson = cJSON_GetObjectItem(cjson, "data");
@@ -196,7 +196,7 @@ int loadJudgeConfig(const char *jsonStr, JudgeConfig *config, char *logPath) {
     config->outputData = (char **) malloc(sizeof(char *) * dataCnt);
     config->stdAnswer = (char **) malloc(sizeof(char *) * dataCnt);
     config->maxCPUTime = (int *) malloc(sizeof(int) * dataCnt);
-    config->maxMemory = (long long *) malloc(sizeof(long long) * dataCnt);
+    config->maxMemory = (int *) malloc(sizeof(int) * dataCnt);
     config->maxStack = (int *) malloc(sizeof(int) * dataCnt);
     cJSON *temp;
     
@@ -276,7 +276,7 @@ int loadJudgeConfig(const char *jsonStr, JudgeConfig *config, char *logPath) {
         }
     }
     if (config->translator.mode == COMPILER_MODE || config->translator.mode == DO_NOT_TANSLATE_MODE) {
-        config->translator.interpreterInfoPath = (char * )malloc(sizeof(DEFAULT_INTERPRETER_INFO_PATH));
+        config->translator.interpreterInfoPath = (char * )malloc(sizeof(DEFAULT_INTERPRETER_INFO_PATH)+1);
         strcpy(config->translator.interpreterInfoPath, DEFAULT_INTERPRETER_INFO_PATH);
         
         config->translator.interpreterPath = (char *) malloc((strlen(config->translator.compilerProductName) + 1) * sizeof(char));

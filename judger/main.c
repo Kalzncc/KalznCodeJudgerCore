@@ -9,22 +9,24 @@ char jsonStr[MAX_JSON_CHAR_NUM+2];
 
 
 int main(int argc, char *argv[]) {
-   struct timeval startTime, exitTime;
-   gettimeofday(&startTime, NULL);
-
-    char *logPath = DEFAULT_LOG_PATH;
+    struct timeval startTime, exitTime;
+    gettimeofday(&startTime, NULL);
+    char *logPath = (char *) malloc(sizeof(char) * (strlen(DEFAULT_LOG_PATH)+1));
+    strcpy(logPath, DEFAULT_LOG_PATH);
     FILE * jsonFile;
     if (argc != 2 && argc != 3) {
         logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Input judge config invalid.");
         goto FAIL_EXIT0;
     } 
     if (argc == 3) {
-        logPath = argv[2];
+        logPath = (char *) malloc(sizeof(char) * (strlen(argv[2])+1));
+        strcpy(logPath, argv[2]);
     }
     if ( (jsonFile = fopen(argv[1], "r") ) == NULL) {
         logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Can't open the json file.");
         goto FAIL_EXIT0;
     }
+    printf("%s\n", logPath);
     char ch; int cnt = 0;
 
     while( (ch = fgetc(jsonFile))!=EOF && cnt <= MAX_JSON_CHAR_NUM)  {
