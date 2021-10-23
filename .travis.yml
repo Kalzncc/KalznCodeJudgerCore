@@ -6,5 +6,6 @@ script:
   - sudo dpkg -i libseccomp2_2.5.1-1ubuntu1~20.04.1_amd64.deb
   - sudo dpkg -i libseccomp-dev_2.5.1-1ubuntu1~20.04.1_amd64.deb
   - sudo dpkg -i seccomp_2.5.1-1ubuntu1~20.04.1_amd64.deb
-  - cd ..
-  - gcc  -D__DEBUG  include/judger_config.h include/securitylib.h src/securitylib.c  include/compilerlib.h src/compilerlib.c src/judger_config.c include/loglib.h src/loglib.c include/cjson/cJSON.h src/cJSON.c include/killerlib.h src/killerlib.c include/boxlib.h src/boxlib.c include/judgerlib.h src/judgerlib.c include/matcherlib.h src/matcherlib.c include/jsonlib.h src/jsonlib.c src/main.c -o kalznjudger -lseccomp 
+  - sudo dpkg -i make_4.2.1-1.2_amd64.deb
+  - cd ../build
+  - make 
