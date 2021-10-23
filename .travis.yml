@@ -11,5 +11,5 @@ script:
   - sudo ./bootstrap
   - sudo make
   - sudo make install
-  - cd ../build
+  - cd ../../build
   - make 
