@@ -6,5 +6,10 @@ script:
   - sudo dpkg -i libseccomp2_2.5.1-1ubuntu1~20.04.1_amd64.deb
   - sudo dpkg -i libseccomp-dev_2.5.1-1ubuntu1~20.04.1_amd64.deb
   - sudo dpkg -i seccomp_2.5.1-1ubuntu1~20.04.1_amd64.deb
+  - sudo tar xzvf cmake-3.3.2.tar.gz
+  - cd cmake-3.3.2
+  - ./bootstrap
+  - gmake
+  - make install
   - cd ../build
   - make 
