@@ -1,0 +1,62 @@
+[
+{
+  "directory": "/mnt/d/liunx/judger/KalznCodeJudger-1/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9  -I/mnt/d/liunx/judger/KalznCodeJudger-1/include  -g   -D__DEBUG -o CMakeFiles/judger.dir/src/boxlib.c.o   -c /mnt/d/liunx/judger/KalznCodeJudger-1/src/boxlib.c",
+  "file": "/mnt/d/liunx/judger/KalznCodeJudger-1/src/boxlib.c"
+},
+{
+  "directory": "/mnt/d/liunx/judger/KalznCodeJudger-1/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9  -I/mnt/d/liunx/judger/KalznCodeJudger-1/include  -g   -D__DEBUG -o CMakeFiles/judger.dir/src/cJSON.c.o   -c /mnt/d/liunx/judger/KalznCodeJudger-1/src/cJSON.c",
+  "file": "/mnt/d/liunx/judger/KalznCodeJudger-1/src/cJSON.c"
+},
+{
+  "directory": "/mnt/d/liunx/judger/KalznCodeJudger-1/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9  -I/mnt/d/liunx/judger/KalznCodeJudger-1/include  -g   -D__DEBUG -o CMakeFiles/judger.dir/src/cJSON_Utils.c.o   -c /mnt/d/liunx/judger/KalznCodeJudger-1/src/cJSON_Utils.c",
+  "file": "/mnt/d/liunx/judger/KalznCodeJudger-1/src/cJSON_Utils.c"
+},
+{
+  "directory": "/mnt/d/liunx/judger/KalznCodeJudger-1/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9  -I/mnt/d/liunx/judger/KalznCodeJudger-1/include  -g   -D__DEBUG -o CMakeFiles/judger.dir/src/compilerlib.c.o   -c /mnt/d/liunx/judger/KalznCodeJudger-1/src/compilerlib.c",
+  "file": "/mnt/d/liunx/judger/KalznCodeJudger-1/src/compilerlib.c"
+},
+{
+  "directory": "/mnt/d/liunx/judger/KalznCodeJudger-1/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9  -I/mnt/d/liunx/judger/KalznCodeJudger-1/include  -g   -D__DEBUG -o CMakeFiles/judger.dir/src/jsonlib.c.o   -c /mnt/d/liunx/judger/KalznCodeJudger-1/src/jsonlib.c",
+  "file": "/mnt/d/liunx/judger/KalznCodeJudger-1/src/jsonlib.c"
+},
+{
+  "directory": "/mnt/d/liunx/judger/KalznCodeJudger-1/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9  -I/mnt/d/liunx/judger/KalznCodeJudger-1/include  -g   -D__DEBUG -o CMakeFiles/judger.dir/src/judger_config.c.o   -c /mnt/d/liunx/judger/KalznCodeJudger-1/src/judger_config.c",
+  "file": "/mnt/d/liunx/judger/KalznCodeJudger-1/src/judger_config.c"
+},
+{
+  "directory": "/mnt/d/liunx/judger/KalznCodeJudger-1/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9  -I/mnt/d/liunx/judger/KalznCodeJudger-1/include  -g   -D__DEBUG -o CMakeFiles/judger.dir/src/judgerlib.c.o   -c /mnt/d/liunx/judger/KalznCodeJudger-1/src/judgerlib.c",
+  "file": "/mnt/d/liunx/judger/KalznCodeJudger-1/src/judgerlib.c"
+},
+{
+  "directory": "/mnt/d/liunx/judger/KalznCodeJudger-1/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9  -I/mnt/d/liunx/judger/KalznCodeJudger-1/include  -g   -D__DEBUG -o CMakeFiles/judger.dir/src/killerlib.c.o   -c /mnt/d/liunx/judger/KalznCodeJudger-1/src/killerlib.c",
+  "file": "/mnt/d/liunx/judger/KalznCodeJudger-1/src/killerlib.c"
+},
+{
+  "directory": "/mnt/d/liunx/judger/KalznCodeJudger-1/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9  -I/mnt/d/liunx/judger/KalznCodeJudger-1/include  -g   -D__DEBUG -o CMakeFiles/judger.dir/src/loglib.c.o   -c /mnt/d/liunx/judger/KalznCodeJudger-1/src/loglib.c",
+  "file": "/mnt/d/liunx/judger/KalznCodeJudger-1/src/loglib.c"
+},
+{
+  "directory": "/mnt/d/liunx/judger/KalznCodeJudger-1/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9  -I/mnt/d/liunx/judger/KalznCodeJudger-1/include  -g   -D__DEBUG -o CMakeFiles/judger.dir/src/main.c.o   -c /mnt/d/liunx/judger/KalznCodeJudger-1/src/main.c",
+  "file": "/mnt/d/liunx/judger/KalznCodeJudger-1/src/main.c"
+},
+{
+  "directory": "/mnt/d/liunx/judger/KalznCodeJudger-1/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9  -I/mnt/d/liunx/judger/KalznCodeJudger-1/include  -g   -D__DEBUG -o CMakeFiles/judger.dir/src/matcherlib.c.o   -c /mnt/d/liunx/judger/KalznCodeJudger-1/src/matcherlib.c",
+  "file": "/mnt/d/liunx/judger/KalznCodeJudger-1/src/matcherlib.c"
+},
+{
+  "directory": "/mnt/d/liunx/judger/KalznCodeJudger-1/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9  -I/mnt/d/liunx/judger/KalznCodeJudger-1/include  -g   -D__DEBUG -o CMakeFiles/judger.dir/src/securitylib.c.o   -c /mnt/d/liunx/judger/KalznCodeJudger-1/src/securitylib.c",
+  "file": "/mnt/d/liunx/judger/KalznCodeJudger-1/src/securitylib.c"
+}
+]

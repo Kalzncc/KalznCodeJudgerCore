@@ -1,0 +1,5 @@
+/mnt/d/liunx/judger/KalznCodeJudger-1/build/CMakeFiles/edit_cache.dir
+/mnt/d/liunx/judger/KalznCodeJudger-1/build/CMakeFiles/package_source.dir
+/mnt/d/liunx/judger/KalznCodeJudger-1/build/CMakeFiles/rebuild_cache.dir
+/mnt/d/liunx/judger/KalznCodeJudger-1/build/CMakeFiles/package.dir
+/mnt/d/liunx/judger/KalznCodeJudger-1/build/CMakeFiles/judger.dir

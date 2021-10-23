@@ -1,5 +1,0 @@
-DEBUG: [2021-10-22 20:53:08] Load json success. (Get from message).
-DEBUG: [2021-10-22 20:53:08] Initializing result config (Get from message).
-DEBUG: [2021-10-22 20:53:08] Checking judger config (Get from message).
-ERROR:-110 [2021-10-22 20:53:08] No root (Get from judger in taskID:100031; detail: useCPUTime:0, useMemory:0, exitSignal:0, exitCode:0).
-DEBUG: [2021-10-22 20:53:08] Judge success : judger real time: 2ms, judger extra time : 2ms  (Get from message).
