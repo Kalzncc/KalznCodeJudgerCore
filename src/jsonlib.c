@@ -84,7 +84,7 @@ int loadJudgeConfig(const char *jsonStr, JudgeConfig *config, char *logPath) {
  
     if (config->isSPJ != 0) {
         readNonNegativeIntJson(cjson, "maxSPJTime", &(config->maxSPJTime), MAX_SPJ_TIME_LIMIT);
-        readNonNegativeIntJson(cjson, "maxSPJMemory", &(config->maxSPJTime), MAX_SPJ_MEMORY_LIMIT);
+        readNonNegativeIntJson(cjson, "maxSPJMemory", &(config->maxSPJMemory), MAX_SPJ_MEMORY_LIMIT);
         if (readStringJson(cjson, "spjExePath", stringVal, NULL)) {
             logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : spjExePath");
             return 1;
