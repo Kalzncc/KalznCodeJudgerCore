@@ -62,7 +62,7 @@ sudo rm -f /usr/bin/kalznjudger
 
     "logPath":"/home/kalzn/Desktop/testworkspace/log.log", // log目录 必选项
 
-    "isSPJ": true, // 是否启用SPJ，默认为false
+    "sPJ": true, // 是否启用SPJ，默认为false
 
     "spjExePath":"/home/kalzn/Desktop/testworkspace/spj", // SPJ目录，当isSPJ=true时，必填项
 
