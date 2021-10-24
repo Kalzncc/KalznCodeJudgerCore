@@ -385,7 +385,8 @@ Judger产生的所有System Error都将会尽最大努力的存储到指定的lo
 其中，-50系列报错将直接输出至stderr，其他错误将记录到log文件
 
 ## 安全机制
-Judger采用seccomp沙盒机制，但是目前还没有配置好，所以在本文档更新之前，请不要将此项目用在公开服务器上。
+Judger采用seccomp沙盒机制，且box在极低权限下运行，在标准IO模式下，由于seccomp设置，box无法执行execve，fork，clone等系统调用，无法写文件。
+box进程设置的effective UID权限极低，无法读取文件。文件IO模式的权限控制还没有配置好，所以请不要在公开环境使用本系统。
 
 ## SPJ说明
 SPJ程序理论上可以使用任何语言书写，judger执行SPJ时，将会传入3个参数：1、输入文件路径，2、标准输出文件路径，3、待测程序输出文件路径。这里占用SPJ程序的Exit Code作为评测的结果，SPJ的返回值为0，则Judger认为待测程序在此样例下通过，其他情况均为WRONG_ANSWER。因为很多语言Exit Code不太好设定，且性能较C/C++来说很差，所以这里还是建议使用C/C++书写，SPJ程序需要引入``spjlib.h``文件，然后在开始调用``START_JUDGE()``,另外，``input,output,stdoutput``分别是输入数据，待测程序输出数据以及标准输出的文件指针。在得到评测结果后，应调用``EXIT_JUDGE(<ACCEPTED|WRONG_ANSWER>)``返回结果。不要直接``return``。这里要注意的是，<strong>如果SPJ程序崩溃、超时、超出内存限制，均视为源程序WRONG_ANSWER。</strong>这里给一个SPJ程序的示例。
