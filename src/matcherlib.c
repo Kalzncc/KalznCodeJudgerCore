@@ -63,6 +63,10 @@ void matchResult(const JudgeConfig * config, int curCase, RunConfig * result) {
     
     char ch;
     int stdCnt = 0, outCnt = 0;
+
+    stdbuf[stdCnt++] = ' ';
+    outbuf[outCnt++] = ' ';
+    
     while((ch = fgetc(stdFile)) != EOF) {
         stdbuf[stdCnt++] = ch;
         if (stdCnt>config->maxCharBuffer) {
