@@ -11,17 +11,25 @@ void checkSPJ(const JudgeConfig *config, RunConfig * result, int status, const s
 JudgeResult formatMatch(const char *std,  const char *out) {
     while(*std != '\0' && *out != '\0') {
         char chStd, chOut;
-        if (!isspace(*std)) chStd = *std;
-        else chStd = ' ';
-        while(isspace(*std)) std++;
+        if (!isspace(*std))  {
+            chStd = *std;
+            std++;
+        }
+        else {
+            chStd = ' ';
+            while(isspace(*std)) std++;
+        }
 
-        if (!isspace(*out)) chOut = *out;
-        else chOut = ' ';
-        while(isspace(*out)) out++;
- 
-        
+        if (!isspace(*out)) {
+            chOut = *out;
+            out++;
+        }
+        else {
+            chOut = ' ';
+            while(isspace(*out)) out++;
+        }
+
         if (chStd != chOut) return WRONG_ANSWER;
-        std++; out++;
     }
     if (*std != *out) return WRONG_ANSWER;
     return ACCEPTED;
@@ -61,6 +69,15 @@ void matchResult(const JudgeConfig * config, int curCase, RunConfig * result) {
             createSystemError(result, MATCHER_STD_DATA_TOO_LARGE,"The std answer is too large", config->logPath);
             return;
         }
+
+        /*format the file str for windows input data*/
+        if (stdCnt >= 1) {
+            if (stdbuf[stdCnt-1] == '\n' && stdbuf[stdCnt-2] == '\r') {
+                stdCnt--;
+                stdbuf[stdCnt-1] = '\n';
+            }
+        }
+
     }
     stdbuf[stdCnt] = '\0';
 
@@ -70,6 +87,15 @@ void matchResult(const JudgeConfig * config, int curCase, RunConfig * result) {
             result->result = OUTPUT_LIMIT_EXCEEDED;
             return;
         }
+
+        /*format the file str for windows input data*/
+        if (outCnt >= 1) {
+            if (outbuf[outCnt-1] == '\n' && outbuf[outCnt-2] == '\r') {
+                outCnt--;
+                outbuf[outCnt-1] = '\n';
+            }
+        }
+        
     }
     outbuf[outCnt] = '\0';
     
@@ -80,7 +106,7 @@ void matchResult(const JudgeConfig * config, int curCase, RunConfig * result) {
 
     if (config->strictMode == STRICT_MODE) {
         
-        if (strcmp(outbuf, stdbuf) == 0) {
+        if (outCnt==stdCnt && strcmp(outbuf, stdbuf) == 0) {
             result->result = ACCEPTED;
             return;
         }
