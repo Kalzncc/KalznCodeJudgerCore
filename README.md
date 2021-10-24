@@ -18,7 +18,7 @@ sudo apt install libseccomp-dev libseccomp2 seccomp
 虽然seccomp文件夹中上传了seccomp包，但是仅适用于unbuntu20.04，目的是让travis ci用于build。请使用时请务必自行安装seccomp库。如有其他问题，请自行解决。
 
 ## 编译代码
-请连接seccomp库进行编译。在judger目录下
+请连接seccomp库进行编译，在build目录下。
 ```sh
 make
 ```
