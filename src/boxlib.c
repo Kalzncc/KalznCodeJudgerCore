@@ -120,13 +120,12 @@ void runSpj(const JudgeConfig *config, int curDataNum) {
         raise(SIGUSR1);
         exit(EXIT_FAILURE);
     }
-
-    /*if (loadSeccompRulesForSPJ(config) != 0) {
+    if (loadSeccompRulesForSPJ(config) != 0) {
         logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SECURITY_CONFIG_LOAD_FAILED, "Can't load security config (spj)");
         raise(SIGUSR1);
         exit(EXIT_FAILURE);
     }
-    */
+    
     if (config->iOMode == STD_IO) {
         
         execl(config->sPJPath, config->sPJName, config->inputData[curDataNum], config->stdAnswer[curDataNum], config->outputData[curDataNum], NULL);
