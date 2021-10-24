@@ -47,7 +47,7 @@ void run(const JudgeConfig *config, int curDataNum) {
         
         if (freopen(config->inputData[curDataNum], "r", stdin) == NULL
             ||freopen(config->outputData[curDataNum], "w", stdout) == NULL
-            ||freopen(config->translator.interpreterInfoPath, "w", stderr) == NULL
+            ||freopen(config->translator->interpreterInfoPath, "w", stderr) == NULL
         )
         {
             
@@ -70,15 +70,15 @@ void run(const JudgeConfig *config, int curDataNum) {
         exit(EXIT_FAILURE);
     }
     
-    /*
-     if (loadSeccompRules(config) != 0) {
+    
+    if (loadSeccompRules(config) != 0) {
         logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SECURITY_CONFIG_LOAD_FAILED, "Can't load security conifg");
         raise(SIGUSR1);
         exit(EXIT_FAILURE);
-     }
-     */
+    }
     
-    execv(config->translator.interpreterPath, config->translator.interpreterOptions);
+    
+    execv(config->translator->interpreterPath, config->translator->interpreterOptions);
 
     logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_EXE_RUN_FAILED, "Can't run pending exe or interpreter");
     raise(SIGUSR1);

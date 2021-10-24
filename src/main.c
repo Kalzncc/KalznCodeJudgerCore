@@ -62,7 +62,7 @@ int main(int argc, char *argv[]) {
     }
     jsonStr[cnt] = '\0';
     JudgeConfig* config = (JudgeConfig *)malloc(sizeof(JudgeConfig));
-
+    config->translator = (TranslatorConfig *) malloc(sizeof(TranslatorConfig));
 
     if (loadJudgeConfig(jsonStr, config, logPath))  goto FAIL_EXIT1;
     
@@ -100,13 +100,7 @@ int main(int argc, char *argv[]) {
 FAIL_EXIT2:
     fclose(resultFile);
 FAIL_EXIT1:
-
-    freeJudgeConfig(config);
-    freeRunConfig(result);
-
-    free(config);
-    free(result);
-
+    
 FAIL_EXIT0:
     exit(EXIT_FAILURE);
 }

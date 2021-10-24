@@ -11,11 +11,11 @@ void freeJudgeConfig(JudgeConfig* config) {
     free(config->logPath);
     free(config->sPJName);
     free(config->sPJPath);
-    free(config->translator.compilerPath);
-    free(config->translator.compilerOptions);
-    free(config->translator.compilerProductName);
-    free(config->translator.interpreterPath);
-    free(config->translator.interpreterOptions);
+    free(config->translator->compilerPath);
+    free(config->translator->compilerOptions);
+    free(config->translator->compilerProductName);
+    free(config->translator->interpreterPath);
+    free(config->translator->interpreterOptions);
 
 }
 void freeRunConfig(RunConfig *config) {
@@ -47,23 +47,23 @@ void __debugPrintJudgeConfig(JudgeConfig *judgeConfig) {
         __debugPrints("spjExePath", judgeConfig->sPJPath);
         __debugPrints("spjExeName", judgeConfig->sPJName);
     }
-    __debugPrintnum("translator-mode", judgeConfig->translator.mode);
-    if (judgeConfig->translator.mode != INTERPRETER_MODE) {
-        __debugPrints("compilerPath", judgeConfig->translator.compilerPath);
+    __debugPrintnum("translator-mode", judgeConfig->translator->mode);
+    if (judgeConfig->translator->mode != INTERPRETER_MODE) {
+        __debugPrints("compilerPath", judgeConfig->translator->compilerPath);
         int i;
         fprintf(stderr, "compilerOption : ");
-        for (i = 0; judgeConfig->translator.compilerOptions[i] != NULL; i++) {
-            fprintf(stderr, "%s ", judgeConfig->translator.compilerOptions[i]);
+        for (i = 0; judgeConfig->translator->compilerOptions[i] != NULL; i++) {
+            fprintf(stderr, "%s ", judgeConfig->translator->compilerOptions[i]);
         }
         fputs("", stderr);
-        __debugPrints("compilerProductName", judgeConfig->translator.compilerProductName);
+        __debugPrints("compilerProductName", judgeConfig->translator->compilerProductName);
     }
-    if (judgeConfig->translator.mode != COMPILER_MODE) {
-        __debugPrints("interpreterPath", judgeConfig->translator.interpreterPath);
+    if (judgeConfig->translator->mode != COMPILER_MODE) {
+        __debugPrints("interpreterPath", judgeConfig->translator->interpreterPath);
         int i;
         fprintf(stderr, "interpreterOptions : ");
-        for (i = 0; judgeConfig->translator.interpreterOptions[i] != NULL; i++) {
-            fprintf(stderr, "%s ", judgeConfig->translator.interpreterOptions[i]);
+        for (i = 0; judgeConfig->translator->interpreterOptions[i] != NULL; i++) {
+            fprintf(stderr, "%s ", judgeConfig->translator->interpreterOptions[i]);
         }
         fputs("", stderr);
     }

@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "securitylib.h": "c",
+        "seccomp.h": "c"
+    }
+}

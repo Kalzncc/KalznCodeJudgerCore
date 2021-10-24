@@ -165,7 +165,7 @@ typedef struct JudgeConfig {
 
     /*编译与评测设置*/
     int judgeMode; /* 评测模式*/
-    TranslatorConfig translator; /* 翻译模式*/
+    TranslatorConfig *translator; /* 翻译模式*/
 
 
     /*IO模式设置*/

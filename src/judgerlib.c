@@ -86,17 +86,17 @@ RunConfig* judge(const JudgeConfig *config) {
         return result;
     }
 
-    if (config->translator.mode != INTERPRETER_MODE && config->translator.mode != DO_NOT_TANSLATE_MODE) {
+    if (config->translator->mode != INTERPRETER_MODE && config->translator->mode != DO_NOT_TANSLATE_MODE) {
 #ifdef __DEBUG
     logDebugInfoWithMessage(config->logPath, "Compileing code");
 #endif
-        remove(config->translator.compilerProductName);
-        if (compileCode(config->translator.compilerPath, config->translator.compilerInfoPath, config->translator.compilerOptions)) {
+        remove(config->translator->compilerProductName);
+        if (compileCode(config->translator->compilerPath, config->translator->compilerInfoPath, config->translator->compilerOptions)) {
             createSystemError(&result[0], COMPILER_RUN_FAILED, "Cant't run compiler", config->logPath);
             return result;
         }
         FILE *fp;
-        if ( (fp = fopen(config->translator.compilerProductName, "r")) == NULL) {
+        if ( (fp = fopen(config->translator->compilerProductName, "r")) == NULL) {
             result[0].result = COMPILE_ERROR;
 
             strcpy(result[0].resultDetail, "Code compile failed");

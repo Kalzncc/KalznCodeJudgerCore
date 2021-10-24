@@ -105,15 +105,15 @@ int loadJudgeConfig(const char *jsonStr, JudgeConfig *config, char *logPath) {
         logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : translator");
         return 1;
     }
-    readNonNegativeIntJson(transJson, "mode",&(config->translator.mode), COMPILER_MODE);
+    readNonNegativeIntJson(transJson, "mode",&(config->translator->mode), COMPILER_MODE);
 
-    if (config->translator.mode == COMPILER_MODE || config->translator.mode == COMPILER_INTERPRETER_MODE) {
+    if (config->translator->mode == COMPILER_MODE || config->translator->mode == COMPILER_INTERPRETER_MODE) {
         if (readStringJson(transJson, "compilerPath", stringVal, NULL)) {
             logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : compilerPath");
             return 1;
         }
-        config->translator.compilerPath = (char*)malloc(sizeof(char) * (strlen(stringVal)+1));
-        strcpy(config->translator.compilerPath, stringVal);
+        config->translator->compilerPath = (char*)malloc(sizeof(char) * (strlen(stringVal)+1));
+        strcpy(config->translator->compilerPath, stringVal);
 
         cJSON *temp;
         if ( ( temp = cJSON_GetObjectItem(transJson, "compilerOptions") ) == NULL || !cJSON_IsArray(temp)) {
@@ -121,38 +121,38 @@ int loadJudgeConfig(const char *jsonStr, JudgeConfig *config, char *logPath) {
             return 1;
         } else {
             int compilerOptionCnt = cJSON_GetArraySize(temp);
-            config->translator.compilerOptions = (char **)malloc(sizeof(char*) * (compilerOptionCnt+1));
-            config->translator.compilerOptions[compilerOptionCnt] = NULL;
+            config->translator->compilerOptions = (char **)malloc(sizeof(char*) * (compilerOptionCnt+1));
+            config->translator->compilerOptions[compilerOptionCnt] = NULL;
             int i;
             for (i = 0; i < compilerOptionCnt; i++) {
                 if ( !cJSON_IsString(cJSON_GetArrayItem(temp, i)) ) {
                     logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : compilerOptions");
                     return 1;
                 }
-                config->translator.compilerOptions[i] = (char * )malloc((strlen(cJSON_GetArrayItem(temp, i)->valuestring)+1)*sizeof(char));
-                strcpy(config->translator.compilerOptions[i], cJSON_GetArrayItem(temp, i)->valuestring);
+                config->translator->compilerOptions[i] = (char * )malloc((strlen(cJSON_GetArrayItem(temp, i)->valuestring)+1)*sizeof(char));
+                strcpy(config->translator->compilerOptions[i], cJSON_GetArrayItem(temp, i)->valuestring);
             } 
         }
         readStringJson(transJson, "compilerInfoPath", stringVal, DEFAULT_COMPILER_INFO_PATH);
-        config->translator.compilerInfoPath = (char*)malloc(sizeof(char) * (strlen(stringVal)+1));
-        strcpy(config->translator.compilerInfoPath, stringVal);
+        config->translator->compilerInfoPath = (char*)malloc(sizeof(char) * (strlen(stringVal)+1));
+        strcpy(config->translator->compilerInfoPath, stringVal);
     }
-    if (config->translator.mode != INTERPRETER_MODE) {
+    if (config->translator->mode != INTERPRETER_MODE) {
         if (readStringJson(transJson, "compilerProductName", stringVal, NULL)) {
             logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : compilerProductName");
             return 1;
         }
-        config->translator.compilerProductName = (char*)malloc(sizeof(char) * (strlen(stringVal)+1));
-        strcpy(config->translator.compilerProductName, stringVal);
+        config->translator->compilerProductName = (char*)malloc(sizeof(char) * (strlen(stringVal)+1));
+        strcpy(config->translator->compilerProductName, stringVal);
     }
 
-    if (config->translator.mode == INTERPRETER_MODE || config->translator.mode == COMPILER_INTERPRETER_MODE) {
+    if (config->translator->mode == INTERPRETER_MODE || config->translator->mode == COMPILER_INTERPRETER_MODE) {
         if (readStringJson(transJson, "interpreterPath",stringVal, NULL)) {
             logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : interpreterPath");
             return 1;
         }
-        config->translator.interpreterPath = (char*)malloc(sizeof(char) * (strlen(stringVal)+1));
-        strcpy(config->translator.interpreterPath, stringVal);
+        config->translator->interpreterPath = (char*)malloc(sizeof(char) * (strlen(stringVal)+1));
+        strcpy(config->translator->interpreterPath, stringVal);
 
         cJSON *temp;
         if ( ( temp = cJSON_GetObjectItem(transJson, "interpreterOptions") ) == NULL || !cJSON_IsArray(temp)) {
@@ -160,22 +160,22 @@ int loadJudgeConfig(const char *jsonStr, JudgeConfig *config, char *logPath) {
             return 1;
         } else {
             int interpreterOptionCnt = cJSON_GetArraySize(temp);
-            config->translator.interpreterOptions = (char **)malloc(sizeof(char*) * (interpreterOptionCnt+1));
-            config->translator.interpreterOptions[interpreterOptionCnt] = NULL;
+            config->translator->interpreterOptions = (char **)malloc(sizeof(char*) * (interpreterOptionCnt+1));
+            config->translator->interpreterOptions[interpreterOptionCnt] = NULL;
             int i;
             for (i = 0; i < interpreterOptionCnt; i++) {
                 if ( !cJSON_IsString(cJSON_GetArrayItem(temp, i)) ) {
                     logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : interpreterOptions");
                     return 1;                     
                 }
-                config->translator.interpreterOptions[i] = (char * )malloc((strlen(cJSON_GetArrayItem(temp, i)->valuestring)+1)*sizeof(char));
-                strcpy(config->translator.interpreterOptions[i], cJSON_GetArrayItem(temp, i)->valuestring);
+                config->translator->interpreterOptions[i] = (char * )malloc((strlen(cJSON_GetArrayItem(temp, i)->valuestring)+1)*sizeof(char));
+                strcpy(config->translator->interpreterOptions[i], cJSON_GetArrayItem(temp, i)->valuestring);
             }
              
         }
         readStringJson(transJson, "interpreterInfoPath", stringVal, DEFAULT_INTERPRETER_INFO_PATH);
-        config->translator.interpreterInfoPath = (char*)malloc(sizeof(char) * (strlen(stringVal)+1));
-        strcpy(config->translator.interpreterInfoPath, stringVal);
+        config->translator->interpreterInfoPath = (char*)malloc(sizeof(char) * (strlen(stringVal)+1));
+        strcpy(config->translator->interpreterInfoPath, stringVal);
     }
     cJSON *dataJson = cJSON_GetObjectItem(cjson, "data");
     if (!cJSON_IsArray(dataJson)) {
@@ -275,14 +275,14 @@ int loadJudgeConfig(const char *jsonStr, JudgeConfig *config, char *logPath) {
             config->maxStack[i] = maxStack;
         }
     }
-    if (config->translator.mode == COMPILER_MODE || config->translator.mode == DO_NOT_TANSLATE_MODE) {
-        config->translator.interpreterInfoPath = (char * )malloc(sizeof(DEFAULT_INTERPRETER_INFO_PATH)+1);
-        strcpy(config->translator.interpreterInfoPath, DEFAULT_INTERPRETER_INFO_PATH);
+    if (config->translator->mode == COMPILER_MODE || config->translator->mode == DO_NOT_TANSLATE_MODE) {
+        config->translator->interpreterInfoPath = (char * )malloc(sizeof(DEFAULT_INTERPRETER_INFO_PATH)+1);
+        strcpy(config->translator->interpreterInfoPath, DEFAULT_INTERPRETER_INFO_PATH);
         
-        config->translator.interpreterPath = (char *) malloc((strlen(config->translator.compilerProductName) + 1) * sizeof(char));
-        strcpy(config->translator.interpreterPath, config->translator.compilerProductName);
-        config->translator.interpreterOptions = (char **) malloc(sizeof(char*));
-        config->translator.interpreterOptions[0] = NULL;
+        config->translator->interpreterPath = (char *) malloc((strlen(config->translator->compilerProductName) + 1) * sizeof(char));
+        strcpy(config->translator->interpreterPath, config->translator->compilerProductName);
+        config->translator->interpreterOptions = (char **) malloc(sizeof(char*));
+        config->translator->interpreterOptions[0] = NULL;
 
     }
     config->caseNumber = dataCnt;
