@@ -35,11 +35,11 @@
 
 #define MAX_JSON_CHAR_NUM                 0x10000
 #define DEFAULT_UID                       65534
-#define MAX_TIME_LIMIT                    30000
+#define MAX_TIME_LIMIT                    60000
 #define MAX_MEMORY_LIMIT                  0x3f3f3f3f
 #define MAX_STACK_LIMIT                   0x7fffffff
 #define MAX_OUTPUT_CHAR_BUFFER            0x3f3f3f3f
-#define MAX_SPJ_TIME_LIMIT                30000
+#define MAX_SPJ_TIME_LIMIT                60000
 #define MAX_SPJ_MEMORY_LIMIT              0x7fffffff
 #define MAX_DATA_CASE_NUMBER              1024
 #define MAX_PATH_LENGTH                   1024
@@ -65,9 +65,9 @@ typedef enum JudgeErrorEnum {
     WAIT_KILLER_FOR_SPJ_FAILED= -108, /* 无法wait用于监控spj的killer进程终止*/
     COMPILER_RUN_FAILED = -109, /*编译器无法启动*/
     PERMISSION_ERROR = -110, /*judge进程不是root*/
-    ACCESS_WORKSPACE_FAILED = -111, 
-    FILE_IO_INIT_FAILED = -112,
-    WRITE_RESULT_FILE_FAILED = -113 ,
+    ACCESS_WORKSPACE_FAILED = -111,   /*无法访问工作区*/
+    FILE_IO_INIT_FAILED = -112, /*文件IO模式初始化失败*/
+    WRITE_RESULT_FILE_FAILED = -113 , /*结果json文件写入失败*/
 
     /* box 进程产生错误*/
     BOX_SECURITY_CONFIG_LOAD_FAILED = -200, /* 安全配置加载失败*/
