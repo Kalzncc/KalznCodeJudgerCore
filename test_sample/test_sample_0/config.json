@@ -3,7 +3,8 @@
     "taskID":"100031",
     "workSpacePath":"/mnt/d/liunx/judger/KalznCodeJudger-1/test_sample/test_sample_0/",
     "logPath":      "/mnt/d/liunx/judger/KalznCodeJudger-1/test_sample/test_sample_0/log.log",
-    "judgeMode":1,
+    "judgeMode":0,
+    "strictMode":1,
     "isSPJ":0,
     "translator": {
         "mode": 0,

@@ -83,6 +83,8 @@ typedef enum JudgeErrorEnum {
     /* matcher 产生错误*/
     MATCHER_OPEN_DATA_FAILED = -400, /* 无法打开文件*/
     MATCHER_STD_DATA_TOO_LARGE = -401, /*标准答案文件字符数大于maxCharbuffer*/
+    MATCHER_SPJ_CAN_NOT_OPEN_DATA_FILE = -402, /*spj程序无法打开数据文件*/
+    MATCHER_SPJ_ARGV_ERROR = -403,  /*spj程序参数错误*/
 
     /* log 产生错误*/
     LOG_IDENTIFY_ERROR_FAILED = -500, /* 无法识别错误*/

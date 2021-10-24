@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "securitylib.h": "c",
-        "seccomp.h": "c"
+        "seccomp.h": "c",
+        "spjlib.h": "c"
     }
 }

@@ -1,12 +1,12 @@
 {
     "maxCharBuffer" : 10000000,
     "taskID":"100031",
-    "workSpacePath":"/mnt/d/liunx/judger/KalznCodeJudger-1/workspace/test_sample_2/",
-    "logPath":"/mnt/d/liunx/judger/KalznCodeJudger-1/workspace/test_sample_2/log.log",
+    "workSpacePath":"/mnt/d/liunx/judger/KalznCodeJudger-1/test_sample/test_sample_2/",
+    "logPath":"/mnt/d/liunx/judger/KalznCodeJudger-1/test_sample/test_sample_2/log.log",
     "judgeMode":1,
-    "isSPJ":1,
-    "spjExePath":"spj/spj",
-    "spjExeName":"spj/spj",
+    "sPJ":true,
+    "spjExePath":"spj/spj0",
+    "spjExeName":"spj0",
     "translator": {
         "mode": 0,
         "compilerPath": "/usr/bin/g++",

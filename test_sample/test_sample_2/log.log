@@ -98,3 +98,1025 @@ DEBUG: [2021-10-22 18:55:50] Begin to judge data 4 (Get from message).
 DEBUG: [2021-10-22 18:55:50] Box exit signal : 0, exit code : 0 (Get from message).
 DEBUG: [2021-10-22 18:55:50] Matching output and std output (Get from message).
 DEBUG: [2021-10-22 18:55:50] Judge success : judger real time: 590ms, judger extra time : 567ms  (Get from message).
+DEBUG: [2021-10-24 18:03:30] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:03:30] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:03:30] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:03:30] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:03:30] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:03:30] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:03:30] Matching output and std output (Get from message).
+DEBUG: [2021-10-24 18:03:30] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:03:30] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:03:30] Matching output and std output (Get from message).
+DEBUG: [2021-10-24 18:03:30] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:03:30] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:03:30] Matching output and std output (Get from message).
+DEBUG: [2021-10-24 18:03:30] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:03:30] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:03:30] Matching output and std output (Get from message).
+DEBUG: [2021-10-24 18:03:30] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:03:30] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:03:30] Matching output and std output (Get from message).
+DEBUG: [2021-10-24 18:03:30] Judge success : judger real time: 656ms, judger extra time : 637ms  (Get from message).
+DEBUG: [2021-10-24 18:03:50] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:03:50] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:03:50] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:03:50] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:03:50] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:03:50] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:03:50] Running spj to judge (Get from message).
+ERROR:-200 [2021-10-24 18:03:50] Can't load security config (spj) (Get from taskID : 100031).
+DEBUG: [2021-10-24 18:03:50] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:03:50] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:03:50] Running spj to judge (Get from message).
+ERROR:-200 [2021-10-24 18:03:50] Can't load security config (spj) (Get from taskID : 100031).
+DEBUG: [2021-10-24 18:03:50] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:03:50] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:03:50] Running spj to judge (Get from message).
+ERROR:-200 [2021-10-24 18:03:50] Can't load security config (spj) (Get from taskID : 100031).
+DEBUG: [2021-10-24 18:03:50] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:03:50] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:03:50] Running spj to judge (Get from message).
+ERROR:-200 [2021-10-24 18:03:50] Can't load security config (spj) (Get from taskID : 100031).
+DEBUG: [2021-10-24 18:03:50] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:03:50] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:03:50] Running spj to judge (Get from message).
+ERROR:-200 [2021-10-24 18:03:50] Can't load security config (spj) (Get from taskID : 100031).
+DEBUG: [2021-10-24 18:03:50] Judge success : judger real time: 639ms, judger extra time : 621ms  (Get from message).
+DEBUG: [2021-10-24 18:04:20] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:04:20] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:04:20] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:04:20] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:04:20] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:04:20] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:04:20] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:04:20] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:04:20] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:04:20] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:04:20] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:04:20] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:04:20] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:04:20] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:04:20] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:04:20] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:04:20] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:04:20] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:04:20] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:04:20] Judge success : judger real time: 709ms, judger extra time : 694ms  (Get from message).
+DEBUG: [2021-10-24 18:07:06] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:07:06] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:07:06] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:07:06] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:07:07] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:07:07] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:07:07] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:07:07] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:07:07] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:07:07] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:07:07] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:07:07] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:07:07] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:07:07] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:07:07] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:07:07] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:07:07] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:07:07] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:07:07] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:07:07] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:07:07] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:07:07] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:07:07] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:07:07] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:07:07] Judge success : judger real time: 665ms, judger extra time : 648ms  (Get from message).
+DEBUG: [2021-10-24 18:09:29] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:09:29] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:09:29] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:09:29] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:09:30] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:09:30] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:09:30] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:09:30] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:09:30] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:09:30] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:09:30] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:09:30] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:09:30] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:09:30] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:09:30] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:09:30] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:09:30] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:09:30] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:09:30] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:09:30] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:09:30] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:09:30] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:09:30] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:09:30] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:09:30] Judge success : judger real time: 669ms, judger extra time : 651ms  (Get from message).
+DEBUG: [2021-10-24 18:10:55] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:10:55] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:10:55] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:10:55] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:10:56] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:10:56] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:10:56] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:10:56] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:10:56] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:10:56] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:10:56] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:10:56] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:10:56] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:10:56] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:10:56] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:10:56] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:10:56] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:10:56] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:10:56] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:10:56] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:10:56] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:10:56] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:10:56] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:10:56] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:10:56] Judge success : judger real time: 641ms, judger extra time : 625ms  (Get from message).
+DEBUG: [2021-10-24 18:11:17] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:11:17] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:11:17] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:11:17] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:11:17] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:11:18] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:11:18] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:11:18] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:11:18] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:11:18] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:11:18] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:11:18] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:11:18] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:11:18] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:11:18] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:11:18] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:11:18] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:11:18] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:11:18] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:11:18] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:11:18] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:11:18] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:11:18] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:11:18] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:11:18] Judge success : judger real time: 632ms, judger extra time : 616ms  (Get from message).
+DEBUG: [2021-10-24 18:17:44] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:17:44] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:17:44] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:17:44] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:17:44] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:17:44] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:17:44] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:17:44] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:17:44] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:17:44] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:17:44] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:17:44] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:17:44] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:17:44] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:17:44] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:17:44] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:17:44] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:17:44] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:17:44] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:17:44] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:17:44] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:17:44] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:17:44] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:17:44] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:17:44] Judge success : judger real time: 650ms, judger extra time : 633ms  (Get from message).
+DEBUG: [2021-10-24 18:19:11] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:19:11] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:19:11] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:19:11] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:19:11] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:19:11] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:19:11] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:19:11] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:19:11] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:19:11] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:19:11] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:19:11] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:19:11] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:19:11] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:19:11] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:19:11] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:19:11] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:19:11] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:19:11] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:19:11] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:19:11] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:19:11] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:19:11] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:19:11] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:19:11] Judge success : judger real time: 663ms, judger extra time : 647ms  (Get from message).
+DEBUG: [2021-10-24 18:22:06] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:22:06] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:22:06] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:22:06] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:22:07] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:22:07] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:22:07] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:22:07] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:22:07] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:22:07] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:22:07] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:22:07] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:22:07] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:22:07] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:22:07] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:22:07] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:22:07] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:22:07] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:22:07] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:22:07] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:22:07] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:22:07] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:22:07] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:22:07] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:22:07] Judge success : judger real time: 648ms, judger extra time : 631ms  (Get from message).
+DEBUG: [2021-10-24 18:23:41] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:23:41] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:23:41] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:23:41] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:23:42] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:23:42] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:23:42] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:23:42] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:23:42] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:23:42] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:23:42] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:23:42] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:23:42] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:23:42] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:23:42] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:23:42] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:23:42] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:23:42] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:23:42] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:23:42] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:23:42] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:23:42] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:23:42] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:23:42] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:23:42] Judge success : judger real time: 662ms, judger extra time : 645ms  (Get from message).
+DEBUG: [2021-10-24 18:24:04] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:24:04] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:24:04] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:24:04] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:24:05] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:24:05] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:05] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:24:05] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:05] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:24:05] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:05] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:24:05] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:05] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:24:05] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:05] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:24:05] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:05] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:24:05] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:05] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:24:05] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:05] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:24:05] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:05] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:24:05] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:05] Judge success : judger real time: 661ms, judger extra time : 645ms  (Get from message).
+DEBUG: [2021-10-24 18:24:11] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:24:11] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:24:11] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:24:11] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:24:12] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:24:12] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:12] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:24:12] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:12] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:24:12] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:12] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:24:12] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:12] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:24:12] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:12] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:24:12] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:12] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:24:12] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:12] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:24:12] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:12] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:24:12] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:12] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:24:12] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:12] Judge success : judger real time: 738ms, judger extra time : 722ms  (Get from message).
+DEBUG: [2021-10-24 18:24:29] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:24:29] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:24:29] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:24:29] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:24:30] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:24:30] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:30] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:24:30] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:30] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:24:30] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:30] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:24:30] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:30] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:24:30] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:30] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:24:30] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:30] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:24:30] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:30] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:24:30] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:30] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:24:30] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:30] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:24:30] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:30] Judge success : judger real time: 628ms, judger extra time : 611ms  (Get from message).
+DEBUG: [2021-10-24 18:24:40] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:24:40] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:24:40] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:24:40] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:24:41] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:24:41] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:41] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:24:41] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:41] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:24:41] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:41] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:24:41] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:41] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:24:41] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:41] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:24:41] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:41] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:24:41] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:41] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:24:41] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:41] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:24:41] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:41] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:24:41] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:24:41] Judge success : judger real time: 641ms, judger extra time : 625ms  (Get from message).
+DEBUG: [2021-10-24 18:25:05] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:25:05] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:25:05] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:25:05] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:25:06] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:25:06] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:06] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:25:06] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:06] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:25:06] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:06] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:25:06] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:06] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:25:06] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:06] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:25:06] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:06] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:25:06] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:06] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:25:06] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:06] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:25:06] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:06] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:25:06] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:06] Judge success : judger real time: 642ms, judger extra time : 625ms  (Get from message).
+DEBUG: [2021-10-24 18:25:18] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:25:18] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:25:18] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:25:18] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:25:19] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:25:19] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:19] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:25:19] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:19] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:25:19] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:19] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:25:19] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:19] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:25:19] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:19] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:25:19] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:19] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:25:19] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:19] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:25:19] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:19] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:25:19] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:19] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:25:19] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:19] Judge success : judger real time: 710ms, judger extra time : 691ms  (Get from message).
+DEBUG: [2021-10-24 18:25:45] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:25:45] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:25:45] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:25:45] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:25:45] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:25:45] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:45] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:25:45] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:45] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:25:45] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:45] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:25:45] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:45] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:25:45] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:45] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:25:45] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:45] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:25:45] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:45] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:25:45] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:45] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:25:45] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:45] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:25:45] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:45] Judge success : judger real time: 612ms, judger extra time : 592ms  (Get from message).
+DEBUG: [2021-10-24 18:25:51] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:25:51] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:25:51] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:25:51] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:25:51] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:25:51] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:51] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:25:51] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:51] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:25:51] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:51] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:25:51] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:51] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:25:51] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:51] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:25:51] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:51] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:25:51] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:51] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:25:51] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:51] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:25:51] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:51] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:25:51] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:25:51] Judge success : judger real time: 680ms, judger extra time : 662ms  (Get from message).
+DEBUG: [2021-10-24 18:26:14] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:26:14] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:26:14] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:26:14] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:26:15] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:26:15] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:15] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:26:15] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:15] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:26:15] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:15] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:26:15] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:15] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:26:15] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:15] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:26:15] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:15] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:26:15] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:15] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:26:15] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:15] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:26:15] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:15] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:26:15] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:15] Judge success : judger real time: 656ms, judger extra time : 640ms  (Get from message).
+DEBUG: [2021-10-24 18:26:19] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:26:19] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:26:19] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:26:19] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:26:20] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:26:20] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:20] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:26:20] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:20] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:26:20] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:20] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:26:20] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:20] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:26:20] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:20] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:26:20] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:20] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:26:20] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:20] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:26:20] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:20] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:26:20] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:20] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:26:20] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:20] Judge success : judger real time: 628ms, judger extra time : 613ms  (Get from message).
+DEBUG: [2021-10-24 18:26:38] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:26:38] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:26:38] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:26:38] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:26:39] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:26:39] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:39] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:26:39] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:39] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:26:39] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:39] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:26:39] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:39] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:26:39] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:39] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:26:39] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:39] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:26:39] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:39] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:26:39] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:39] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:26:39] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:39] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:26:39] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:26:39] Judge success : judger real time: 632ms, judger extra time : 615ms  (Get from message).
+DEBUG: [2021-10-24 18:27:25] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:27:25] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:27:25] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:27:25] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:27:26] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:27:26] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:27:26] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:27:26] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:27:26] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:27:26] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:27:26] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:27:26] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:27:26] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:27:26] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:27:26] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:27:26] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:27:26] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:27:26] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:27:26] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:27:26] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:27:26] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:27:26] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:27:26] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:27:26] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:27:26] Judge success : judger real time: 652ms, judger extra time : 635ms  (Get from message).
+DEBUG: [2021-10-24 18:33:33] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:33:33] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:33:33] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:33:33] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:33:33] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:33:33] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:33:33] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:33:33] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:33:33] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:33:33] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:33:33] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:33:33] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:33:33] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:33:33] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:33:33] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:33:33] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:33:33] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:33:33] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:33:33] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:33:33] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:33:33] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:33:33] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:33:33] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:33:33] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:33:33] Judge success : judger real time: 628ms, judger extra time : 610ms  (Get from message).
+DEBUG: [2021-10-24 18:35:04] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:35:04] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:35:04] Checking judger config (Get from message).
+ERROR:-110 [2021-10-24 18:35:04] No root (Get from judger in taskID:100031; detail: useCPUTime:0, useMemory:0, exitSignal:0, exitCode:0).
+DEBUG: [2021-10-24 18:35:04] Judge success : judger real time: 1ms, judger extra time : 1ms  (Get from message).
+DEBUG: [2021-10-24 18:35:39] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:35:39] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:35:39] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:35:39] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:35:40] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:35:40] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:35:40] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:35:40] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:35:40] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:35:40] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:35:40] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:35:40] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:35:40] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:35:40] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:35:40] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:35:40] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:35:40] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:35:40] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:35:40] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:35:40] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:35:40] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:35:40] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:35:40] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:35:40] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:35:40] Judge success : judger real time: 660ms, judger extra time : 644ms  (Get from message).
+DEBUG: [2021-10-24 18:36:14] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:36:14] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:36:14] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:36:14] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:36:15] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:36:15] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:36:15] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:36:15] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:36:15] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:36:15] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:36:15] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:36:15] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:36:15] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:36:15] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:36:15] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:36:15] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:36:15] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:36:15] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:36:15] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:36:15] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:36:15] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:36:15] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:36:15] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:36:15] Box (spj) exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:36:15] Judge success : judger real time: 646ms, judger extra time : 623ms  (Get from message).
+DEBUG: [2021-10-24 18:36:34] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:36:34] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:36:34] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:36:34] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:36:35] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:36:35] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:36:35] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:36:35] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:36:35] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:36:35] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:36:35] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:36:35] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:36:35] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:36:35] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:36:35] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:36:35] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:36:35] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:36:35] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:36:35] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:36:35] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:36:35] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:36:35] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:36:35] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:36:35] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:36:35] Judge success : judger real time: 630ms, judger extra time : 611ms  (Get from message).
+DEBUG: [2021-10-24 18:40:11] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:40:11] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:40:11] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:40:11] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:40:11] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:40:11] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:40:11] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:40:11] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:40:11] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:40:11] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:40:11] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:40:11] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:40:11] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:40:11] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:40:11] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:40:11] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:40:11] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:40:11] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:40:11] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:40:11] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:40:11] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:40:11] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:40:11] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:40:11] Box (spj) exit signal : 11, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:40:11] Judge success : judger real time: 644ms, judger extra time : 629ms  (Get from message).
+DEBUG: [2021-10-24 18:40:53] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:40:53] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:40:53] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:40:53] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:40:53] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:40:53] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:40:53] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:40:53] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:40:53] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:40:53] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:40:53] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:40:53] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:40:53] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:40:53] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:40:53] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:40:53] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:40:53] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:40:53] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:40:53] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:40:53] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:40:53] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:40:53] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:40:53] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:40:53] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:40:53] Judge success : judger real time: 635ms, judger extra time : 618ms  (Get from message).
+DEBUG: [2021-10-24 18:41:26] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:41:26] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:41:26] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:41:26] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:41:27] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:41:27] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:41:27] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:41:27] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:41:27] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:41:27] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:41:27] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:41:27] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:41:27] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:41:27] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:41:27] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:41:27] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:41:27] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:41:27] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:41:27] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:41:27] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:41:27] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:41:27] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:41:27] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:41:27] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:41:27] Judge success : judger real time: 646ms, judger extra time : 630ms  (Get from message).
+DEBUG: [2021-10-24 18:42:44] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:42:44] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:42:44] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:42:44] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:42:45] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:42:45] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:42:45] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:42:45] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:42:45] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:42:45] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:42:45] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:42:45] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:42:45] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:42:45] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:42:45] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:42:45] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:42:45] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:42:45] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:42:45] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:42:45] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:42:45] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:42:45] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:42:45] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:42:45] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:42:45] Judge success : judger real time: 634ms, judger extra time : 617ms  (Get from message).
+DEBUG: [2021-10-24 18:43:12] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:43:12] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:43:12] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:43:12] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:43:12] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:43:12] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:43:12] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:44:43] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:44:43] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:44:43] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:44:43] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:44:43] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:44:43] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:44:43] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:44:44] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:44:44] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:44:44] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:44:44] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:44:44] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:44:44] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:44:44] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:44:44] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:44:44] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:44:44] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:44:44] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:44:44] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:44:44] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:44:44] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:44:44] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:44:44] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:44:44] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:44:44] Judge success : judger real time: 625ms, judger extra time : 609ms  (Get from message).
+DEBUG: [2021-10-24 18:45:24] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:45:24] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:45:24] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:45:24] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:45:24] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:45:24] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:45:24] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:45:24] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:45:24] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:45:24] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:45:24] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:45:24] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:45:24] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:45:24] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:45:24] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:45:24] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:45:24] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:45:24] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:45:24] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:45:24] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:45:24] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:45:24] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:45:24] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:45:24] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:45:24] Judge success : judger real time: 647ms, judger extra time : 631ms  (Get from message).
+DEBUG: [2021-10-24 18:46:52] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:46:52] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:46:52] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:46:52] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:46:52] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:46:52] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:46:52] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:46:52] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:46:52] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:46:52] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:46:52] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:46:52] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:46:52] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:46:52] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:46:52] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:46:52] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:46:52] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:46:52] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:46:52] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:46:52] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:46:52] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:46:52] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:46:52] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:46:52] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:46:52] Judge success : judger real time: 629ms, judger extra time : 612ms  (Get from message).
+DEBUG: [2021-10-24 18:48:46] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:48:46] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:48:46] Checking judger config (Get from message).
+ERROR:-110 [2021-10-24 18:48:46] No root (Get from judger in taskID:100031; detail: useCPUTime:0, useMemory:0, exitSignal:0, exitCode:0).
+DEBUG: [2021-10-24 18:48:46] Judge success : judger real time: 1ms, judger extra time : 1ms  (Get from message).
+DEBUG: [2021-10-24 18:48:55] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:48:55] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:48:55] Checking judger config (Get from message).
+ERROR:-110 [2021-10-24 18:48:55] No root (Get from judger in taskID:100031; detail: useCPUTime:0, useMemory:0, exitSignal:0, exitCode:0).
+DEBUG: [2021-10-24 18:48:55] Judge success : judger real time: 1ms, judger extra time : 1ms  (Get from message).
+DEBUG: [2021-10-24 18:48:59] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:48:59] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:48:59] Checking judger config (Get from message).
+ERROR:-110 [2021-10-24 18:48:59] No root (Get from judger in taskID:100031; detail: useCPUTime:0, useMemory:0, exitSignal:0, exitCode:0).
+DEBUG: [2021-10-24 18:48:59] Judge success : judger real time: 1ms, judger extra time : 1ms  (Get from message).
+DEBUG: [2021-10-24 18:49:12] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:49:12] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:49:12] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:49:12] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:49:13] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:49:13] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:49:13] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:49:13] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:49:13] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:49:13] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:49:13] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:49:13] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:49:13] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:49:13] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:49:13] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:49:13] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:49:13] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:49:13] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:49:13] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:49:13] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:49:13] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:49:13] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:49:13] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:49:13] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:49:13] Judge success : judger real time: 637ms, judger extra time : 624ms  (Get from message).
+DEBUG: [2021-10-24 18:49:20] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:49:20] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:49:20] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:49:20] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:49:21] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:49:21] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:49:21] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:49:21] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:49:21] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:49:21] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:49:21] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:49:21] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:49:21] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:49:21] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:49:21] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:49:21] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:49:21] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:49:21] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:49:21] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:49:21] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:49:21] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:49:21] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:49:21] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:49:21] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:49:21] Judge success : judger real time: 634ms, judger extra time : 620ms  (Get from message).
+DEBUG: [2021-10-24 18:53:36] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:53:36] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:53:36] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:53:36] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:53:36] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:53:36] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:53:36] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:53:36] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:53:36] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:53:36] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:53:36] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:53:36] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:53:36] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:53:36] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:53:36] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:53:36] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:53:36] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:53:36] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:53:36] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:53:36] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:53:36] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:53:36] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:53:36] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:53:36] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+DEBUG: [2021-10-24 18:53:36] Judge success : judger real time: 636ms, judger extra time : 620ms  (Get from message).
+DEBUG: [2021-10-24 18:54:20] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:54:20] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:54:20] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:54:20] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:54:20] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:54:20] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:54:20] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:54:20] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+ERROR:-403 [2021-10-24 18:54:20] Spj argv error (Get from judger in taskID:100031; detail: useCPUTime:0, useMemory:1644, exitSignal:0, exitCode:0).
+DEBUG: [2021-10-24 18:54:20] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:54:20] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:54:20] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:54:20] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+ERROR:-403 [2021-10-24 18:54:20] Spj argv error (Get from judger in taskID:100031; detail: useCPUTime:0, useMemory:1648, exitSignal:0, exitCode:0).
+DEBUG: [2021-10-24 18:54:20] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:54:20] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:54:20] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:54:20] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+ERROR:-403 [2021-10-24 18:54:20] Spj argv error (Get from judger in taskID:100031; detail: useCPUTime:0, useMemory:1648, exitSignal:0, exitCode:0).
+DEBUG: [2021-10-24 18:54:20] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:54:20] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:54:20] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:54:20] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+ERROR:-403 [2021-10-24 18:54:20] Spj argv error (Get from judger in taskID:100031; detail: useCPUTime:0, useMemory:1648, exitSignal:0, exitCode:0).
+DEBUG: [2021-10-24 18:54:20] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:54:20] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:54:20] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:54:20] Box (spj) exit signal : 0, exit code : 3 (Get from message).
+ERROR:-403 [2021-10-24 18:54:20] Spj argv error (Get from judger in taskID:100031; detail: useCPUTime:0, useMemory:1652, exitSignal:0, exitCode:0).
+DEBUG: [2021-10-24 18:54:20] Judge success : judger real time: 643ms, judger extra time : 630ms  (Get from message).
+DEBUG: [2021-10-24 18:55:17] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:55:17] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:55:17] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:55:17] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:55:17] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:55:17] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:55:17] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:55:17] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:55:17] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:55:17] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:55:17] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:55:17] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:55:17] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:55:17] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:55:17] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:55:17] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:55:17] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:55:17] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:55:17] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:55:17] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:55:17] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:55:17] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:55:17] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:55:17] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:55:17] Judge success : judger real time: 640ms, judger extra time : 624ms  (Get from message).
+DEBUG: [2021-10-24 18:56:13] Load json success. (Get from message).
+DEBUG: [2021-10-24 18:56:13] Initializing result config (Get from message).
+DEBUG: [2021-10-24 18:56:13] Checking judger config (Get from message).
+DEBUG: [2021-10-24 18:56:13] Compileing code (Get from message).
+DEBUG: [2021-10-24 18:56:14] Begin to judge data 0 (Get from message).
+DEBUG: [2021-10-24 18:56:14] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:56:14] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:56:14] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:56:14] Begin to judge data 1 (Get from message).
+DEBUG: [2021-10-24 18:56:14] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:56:14] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:56:14] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:56:14] Begin to judge data 2 (Get from message).
+DEBUG: [2021-10-24 18:56:14] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:56:14] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:56:14] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:56:14] Begin to judge data 3 (Get from message).
+DEBUG: [2021-10-24 18:56:14] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:56:14] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:56:14] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:56:14] Begin to judge data 4 (Get from message).
+DEBUG: [2021-10-24 18:56:14] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-10-24 18:56:14] Running spj to judge (Get from message).
+DEBUG: [2021-10-24 18:56:14] Box (spj) exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-10-24 18:56:14] Judge success : judger real time: 646ms, judger extra time : 629ms  (Get from message).

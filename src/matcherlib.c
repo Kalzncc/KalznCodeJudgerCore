@@ -136,10 +136,11 @@ void checkSPJ(const JudgeConfig *config, RunConfig * result, int status, const s
         strcpy(result->resultDetail, "Check log file to know detail");
         return ;
     }
-    if (exitSignal > 0) {
+    if (exitSignal != 0) {
         result->result = WRONG_ANSWER;
         return;
     }
+    
     int exitCode =  WEXITSTATUS(status);
     int useCPUTime = (int) (resourceUsage->ru_utime.tv_sec * 1000 + resourceUsage->ru_utime.tv_usec / 1000);
     long long useMemory = resourceUsage->ru_maxrss * 1024;
@@ -159,8 +160,17 @@ void checkSPJ(const JudgeConfig *config, RunConfig * result, int status, const s
     }
     if (exitCode == ACCEPTED)
         result->result = ACCEPTED;
-    else 
+    else if (exitCode == WRONG_ANSWER) {
         result->result = WRONG_ANSWER;
+    } else if (exitCode == 2) {
+        createSystemError(result, MATCHER_SPJ_CAN_NOT_OPEN_DATA_FILE,"Spj can't open data file", config->logPath);
+        return;
+    } else if (exitCode == 3) {
+        createSystemError(result, MATCHER_SPJ_ARGV_ERROR,"Spj argv error", config->logPath);
+        return;
+    } else {
+        result->result = WRONG_ANSWER;
+    }
     return;
 }   
 

@@ -3,25 +3,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 typedef int judge_result;
 
-#define ACCEPTED        0
-#define WRONG_ANSWER    1
+#define ACCEPTED                   0
+#define WRONG_ANSWER               1
+
+#define _CAN_NOT_OPEN_DATA_FILE    2
+#define _ARGV_ERROR                3
+
+
+void _start_judge(int argc, char *argv[], FILE* &in, FILE* &sout, FILE* &out);
 
 #define START_JUDGE() \
-        FILE *input = fopen(argv[1], "r"); \
-        FILE *stdoutput = fopen(argv[2], "r"); \
-        FILE *output = fopen(argv[3], "r");
+        FILE *in = NULL; \
+        FILE *sout = NULL; \
+        FILE *out = NULL; \
+        _start_judge(argc, argv, in, sout, out);
+        
 
 #define EXIT_JUDGE(result) \
-        fclose(input); \
-        fclose(output); \
-        fclose(stdoutput); \
+        fclose(in); \
+        fclose(out); \
+        fclose(sout); \
         exit(result);
-
-#define SPJ_FLOAT_CMP(x, y, dif) \
-        ( ((x)-(y)<(dif)) && ((y)-(x)<(dif)) )
 
 
 
