@@ -50,9 +50,8 @@ int main(int argc, char *argv[]) {
         logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Can't open the json file.");
         goto FAIL_EXIT0;
     }
-    printf("%s\n", logPath);
     char ch; int cnt = 0;
-
+    
     while( (ch = fgetc(jsonFile))!=EOF && cnt <= MAX_JSON_CHAR_NUM)  {
         jsonStr[cnt++] = ch;
     }

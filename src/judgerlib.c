@@ -39,11 +39,11 @@ void check(RunConfig *result, int status, const struct rusage *resourceUsage, in
     if (result->exitCode != 0) {
         result->result = RUNTIME_ERROR;
         strcpy(result->resultDetail, "No zero return");
-        return;
+        
     }
     if (result->exitSignal != 0) {
         result->result = RUNTIME_ERROR;
-        return;
+        
     }
     if (result->useCPUTime > timeLimit) {
         result->result = TIME_LIMIT_EXCEEDED;
