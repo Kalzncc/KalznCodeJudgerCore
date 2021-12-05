@@ -21,7 +21,7 @@ void initRunConfig(RunConfig * result) {
 void check(RunConfig *result, int status, const struct rusage *resourceUsage, int timeLimit, long long memoryLimit,  const char * logPath ) {
     
     result->exitSignal = WTERMSIG(status);
-    if (result->exitSignal == SIGUSR1) {
+    if (result->exitSignal == SIGUSR2) {
         result->result = SYSTEM_ERROR;
         strcpy(result->resultDetail, "Access log file to check detail");
         return ;
@@ -79,7 +79,8 @@ RunConfig* judge(const JudgeConfig *config) {
     }
 
     if (config->maxCharBuffer<1 || config->maxCharBuffer>MAX_OUTPUT_CHAR_BUFFER
-        || (config->isSPJ == 1 && (config->maxSPJMemory<1 || config->maxSPJMemory>MAX_SPJ_MEMORY_LIMIT || config->maxSPJTime<1 || config->maxSPJTime>MAX_SPJ_TIME_LIMIT) )
+        || (config->isSPJ == 1 && (config->maxSPJMemory<1 || config->maxSPJMemory>MAX_SPJ_MEMORY_LIMIT
+        || config->maxSPJTime<1 || config->maxSPJTime>MAX_SPJ_TIME_LIMIT) )
         )
     {
         createSystemError(&result[0], INVALID_JUDGE_CONFIG, "Judger limit is invalid", config->logPath);

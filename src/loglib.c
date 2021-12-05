@@ -50,7 +50,7 @@ void logSystemErrorWithResult(const char * path, const RunConfig* result) {
     static time_t nowTime;
     nowTime = time(NULL);
     strftime(datetime, MAX_LOG_LENGTH-1, "%Y-%m-%d %H:%M:%S", localtime(&nowTime));
-    int cnt = snprintf(buffer, MAX_LOG_LENGTH, "ERROR:%d [%s] %s (Get from judger in taskID:%lld; detail: useCPUTime:%d, useMemory:%lld, exitSignal:%d, exitCode:%d).\n", result->errorCode, datetime, result->resultDetail, result->taskID, result->useCPUTime,  result->useMemory, result->exitSignal, result->exitCode);
+    int cnt = snprintf(buffer, MAX_LOG_LENGTH, "ERROR:%d [%s] %s (Get from judger in taskID:%s; detail: useCPUTime:%d, useMemory:%lld, exitSignal:%d, exitCode:%d).\n", result->errorCode, datetime, result->resultDetail, result->taskID, result->useCPUTime,  result->useMemory, result->exitSignal, result->exitCode);
     int logFd = fileno((FILE *) logFile);
     if (flock(logFd, LOCK_EX) == 0) {
         if (write(logFd, buffer, (size_t)cnt) < 0) {
@@ -91,7 +91,7 @@ void logSystemErrorWithMessage(const char * path, JudgeError error, const char *
     fprintf(stderr, "%s", buffer);
 #endif
 }
-void logSystemErrorWithTaskID(const char * path, int taskID, JudgeError error, const char * message) {
+void logSystemErrorWithTaskID(const char * path, const char *taskID, JudgeError error, const char * message) {
     FILE * logFile = fopen(path, "a+");
     if (logFile == NULL) {
         fprintf(stderr, "Error: Can't open log file.\n");
@@ -102,7 +102,7 @@ void logSystemErrorWithTaskID(const char * path, int taskID, JudgeError error, c
     static time_t nowTime;
     nowTime = time(NULL);
     strftime(datetime, MAX_LOG_LENGTH-1, "%Y-%m-%d %H:%M:%S", localtime(&nowTime));
-    int cnt = snprintf(buffer, MAX_LOG_LENGTH, "ERROR:%d [%s] %s (Get from taskID : %d).\n",error, datetime, message, taskID);
+    int cnt = snprintf(buffer, MAX_LOG_LENGTH, "ERROR:%d [%s] %s (Get from taskID : %s).\n",error, datetime, message, taskID);
     int logFd = fileno((FILE *) logFile);
     if (flock(logFd, LOCK_EX) == 0) {
         if (write(logFd, buffer, (size_t)cnt) < 0) {

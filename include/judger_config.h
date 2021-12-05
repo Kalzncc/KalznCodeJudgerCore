@@ -163,7 +163,7 @@ typedef struct JudgeConfig {
     int maxCharBuffer; /* 最大字符缓存*/
 
     
-    long taskID; /* 任务ID号*/
+    char* taskID; /* 任务ID号*/
 
 
     /*编译与评测设置*/

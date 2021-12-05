@@ -57,11 +57,13 @@ int loadJudgeConfig(const char *jsonStr, JudgeConfig *config, char *logPath) {
         logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : taskID");
         return 1;
     }
-    config->taskID = atol(stringVal);
-    if (config->taskID < 1) {
-        logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : taskID");
-        return 1;
-    }
+    config->taskID = (char*)malloc(sizeof(char) * strlen(stringVal) + 1);
+    strcpy(config->taskID, stringVal);
+
+//    if (config->taskID < 1) {
+//        logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : taskID");
+//        return 1;
+//    }
     
     readNonNegativeIntJson(cjson, "uid", &(config->uid), DEFAULT_UID);
     readNonNegativeIntJson(cjson, "gid", &(config->gid), DEFAULT_UID);
@@ -302,7 +304,7 @@ int createResultJson(struct timeval startTime, const JudgeConfig *config, const 
         totalTime += result[i].useRealTime;
     }
     
-    cJSON * taskIDjson = cJSON_CreateNumber(result[0].taskID);
+    cJSON * taskIDjson = cJSON_CreateString(result[0].taskID);
     cJSON_AddItemToObject(resultJson, "taskID", taskIDjson);
 
     char datetime[128];

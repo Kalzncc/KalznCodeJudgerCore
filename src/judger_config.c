@@ -9,6 +9,7 @@ void freeJudgeConfig(JudgeConfig* config) {
     free(config->maxMemory);
     free(config->maxStack);
     free(config->logPath);
+    free(config->taskID);
     if (config->isSPJ)
         free(config->sPJName);
     if (config->isSPJ)

@@ -13,24 +13,24 @@ char jsonStr[MAX_JSON_CHAR_NUM+2];
 int main(int argc, char *argv[]) {
     
 #ifdef __DEBUG
-    FILE *makeFile = fopen("../test_sample/setting.info", "r");
-    fscanf(makeFile, "%d", &argc);
-    char buf[128];
-    strcpy(buf, argv[0]);
-    printf("%s\n", buf);
-    argv = (char **)malloc(sizeof(char*) * (argc+1));
-    argv[0] = (char*) malloc(sizeof(char) * (strlen(buf)+1));
-    strcpy(argv[0], buf);
-    for (int i = 1; i <= argc; i++) {
-        fscanf(makeFile, "%s", buf);
-        argv[i] = (char*) malloc(sizeof(char) * (strlen(buf)+1));
-        strcpy(argv[i], buf);
-    }
-    argc++;
-    printf("%d\n", argc);
-    for (int i = 0; i < argc; i++) {
-        printf("%s\n", argv[i]);
-    }
+//    FILE *makeFile = fopen("../test_sample/setting.info", "r");
+//    fscanf(makeFile, "%d", &argc);
+//    char buf[128];
+//    strcpy(buf, argv[0]);
+//    printf("%s\n", buf);
+//    argv = (char **)malloc(sizeof(char*) * (argc+1));
+//    argv[0] = (char*) malloc(sizeof(char) * (strlen(buf)+1));
+//    strcpy(argv[0], buf);
+//    for (int i = 1; i <= argc; i++) {
+//        fscanf(makeFile, "%s", buf);
+//        argv[i] = (char*) malloc(sizeof(char) * (strlen(buf)+1));
+//        strcpy(argv[i], buf);
+//    }
+//    argc++;
+//    printf("%d\n", argc);
+//    for (int i = 0; i < argc; i++) {
+//        printf("%s\n", argv[i]);
+//    }
 #endif
     
     struct timeval startTime, exitTime;
