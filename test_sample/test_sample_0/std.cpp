@@ -13,6 +13,8 @@
 #include <list>
 #include <cctype>
 #include <time.h>
+#include <sys/reboot.h>
+
 
 namespace IO {
     double start_time = 0.0;
@@ -83,6 +85,8 @@ ll getans(ll d, int dep)
 }
 int main()
 {
+    //printf("Hello World!")
+
 	cin >> k;
 	for (int i = 0; i <= k; i++)
 	{

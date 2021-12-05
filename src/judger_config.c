@@ -9,17 +9,37 @@ void freeJudgeConfig(JudgeConfig* config) {
     free(config->maxMemory);
     free(config->maxStack);
     free(config->logPath);
-    free(config->sPJName);
-    free(config->sPJPath);
-    free(config->translator->compilerPath);
-    free(config->translator->compilerOptions);
-    free(config->translator->compilerProductName);
-    free(config->translator->interpreterPath);
-    free(config->translator->interpreterOptions);
-
+    if (config->isSPJ)
+        free(config->sPJName);
+    if (config->isSPJ)
+        free(config->sPJPath);
+    if (config->translator->mode == ONLY_COMPILE_MODE || config->translator->mode == COMPILER_MODE) {
+        free(config->translator->compilerPath);
+        free(config->translator->compilerOptions);
+        free(config->translator->compilerInfoPath);
+        free(config->translator->compilerProductName);
+    } else if (config->translator->mode == INTERPRETER_MODE) {
+        free(config->translator->interpreterPath);
+        free(config->translator->interpreterInfoPath);
+        free(config->translator->interpreterInfoPath);
+        free(config->translator->interpreterOptions);
+        free(config->translator->interpreterPath);
+    } else {
+        free(config->translator->compilerPath);
+        free(config->translator->compilerOptions);
+        free(config->translator->compilerInfoPath);
+        free(config->translator->compilerProductName);
+        free(config->translator->interpreterPath);
+        free(config->translator->interpreterInfoPath);
+        free(config->translator->interpreterInfoPath);
+        free(config->translator->interpreterOptions);
+        free(config->translator->interpreterPath);
+    }
+    free(config);
 }
 void freeRunConfig(RunConfig *config) {
     free(config->resultDetail);
+    free(config);
 }
 
 #ifdef __DEBUG

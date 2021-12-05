@@ -121,7 +121,8 @@ void matchResult(const JudgeConfig * config, int curCase, RunConfig * result) {
     while(outCnt > 0 && isspace(outbuf[outCnt-1])) outCnt--;
     outbuf[outCnt] = '\0';
     result->result = formatMatch(stdbuf, outbuf);
-    
+    free(stdbuf);
+    free(outbuf);
     if (result->result == ACCEPTED && config->strictMode == STRICT_MODE) result->result = PRESENTATION_ERROR;
     
     return;
@@ -204,8 +205,9 @@ void matchWithSPJ(const JudgeConfig *config, int curCase, RunConfig * result) {
                 createSystemError( &result[curCase], WAIT_BOX_FAILED, "Can't wait box proccess", config->logPath);
                 return;
             }
-            
             kill(killerID, SIGKILL);
+            int kill_status;
+            waitpid(killerID, &kill_status, 0);
             checkSPJ(config, result, status, &resourceUsage);
         }
     }

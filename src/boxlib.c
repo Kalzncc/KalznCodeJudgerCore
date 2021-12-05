@@ -5,9 +5,9 @@
 
 
 
-void run(const JudgeConfig *config, int curDataNum) {
-    
-    
+void run(JudgeConfig *config, int curDataNum) {
+
+
     struct rlimit maxStackLimit;
     maxStackLimit.rlim_cur = maxStackLimit.rlim_max = (rlim_t) config->maxStack[curDataNum];
     if (setrlimit(RLIMIT_STACK, &maxStackLimit) != 0) {
@@ -23,13 +23,13 @@ void run(const JudgeConfig *config, int curDataNum) {
         raise(SIGUSR1);
         exit(EXIT_FAILURE);
     }
-    
+
     struct rlimit maxMemoryLimit;
-    
+
     maxMemoryLimit.rlim_cur = maxMemoryLimit.rlim_max = (rlim_t) config->maxMemory[curDataNum] * 1024 * 4;
-    
+
     if (setrlimit(RLIMIT_AS, &maxMemoryLimit) != 0) {
-        
+
         logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SET_LIMIT_FAILED, "Can't set limit");
         raise(SIGUSR1);
         exit(EXIT_FAILURE);
@@ -42,49 +42,58 @@ void run(const JudgeConfig *config, int curDataNum) {
         raise(SIGUSR1);
         exit(EXIT_FAILURE);
     }
-    
+
+    struct rlimit maxProcessNumLimit;
+    maxProcessNumLimit.rlim_cur = maxProcessNumLimit.rlim_max = config->translator->securityProcessNum;
+    if (setrlimit(RLIMIT_NPROC, &maxProcessNumLimit) != 0) {
+        logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SET_LIMIT_FAILED, "Can't set limit");
+        raise(SIGUSR1);
+        exit(EXIT_FAILURE);
+    }
+
     if (config->iOMode == STD_IO) {
-        
+
         if (freopen(config->inputData[curDataNum], "r", stdin) == NULL
             ||freopen(config->outputData[curDataNum], "w", stdout) == NULL
             ||freopen(config->translator->interpreterInfoPath, "w", stderr) == NULL
         )
         {
-            
+
             logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_DATA_REDIRECT_FAILED, "Can't redirect data");
             raise(SIGUSR1);
             exit(EXIT_FAILURE);
         }
-        
+
     }
-    
+
     gid_t group_list[] = {config->gid};
-    if (config->gid != -1 && (setgid(config->gid) == -1 || setgroups(sizeof(group_list) / sizeof(gid_t), group_list) == -1)) {
+    if ((setgid(config->gid) == -1 || setgroups(sizeof(group_list) / sizeof(gid_t), group_list) == -1)) {
         logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SET_UID_FATLED, "Can't set uid/gid");
         raise(SIGUSR1);
         exit(EXIT_FAILURE);
     }
-    if (config->uid != -1 && setuid(config->uid) == -1) {
+    if ( setuid(config->uid) == -1) {
         logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SET_UID_FATLED, "Can't set uid/gid");
         raise(SIGUSR1);
         exit(EXIT_FAILURE);
     }
-    
-    
+
+
     if (loadSeccompRules(config) != 0) {
         logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_SECURITY_CONFIG_LOAD_FAILED, "Can't load security conifg");
         raise(SIGUSR1);
         exit(EXIT_FAILURE);
     }
-    
-    
-    execv(config->translator->interpreterPath, config->translator->interpreterOptions);
+
+   // freeJudgeConfig(config);
+    char **envp = {NULL};
+    execve(config->translator->interpreterPath, config->translator->interpreterOptions, envp);
 
     logSystemErrorWithTaskID(config->logPath, config->taskID, BOX_EXE_RUN_FAILED, "Can't run pending exe or interpreter");
     raise(SIGUSR1);
     exit(EXIT_FAILURE);
 }
-void runSpj(const JudgeConfig *config, int curDataNum) {
+void runSpj(JudgeConfig *config, int curDataNum) {
     struct rlimit maxStackLimit;
     maxStackLimit.rlim_cur = maxStackLimit.rlim_max = (rlim_t)MAX_STACK_LIMIT;
     if (setrlimit(RLIMIT_STACK, &maxStackLimit) != 0) {
@@ -127,9 +136,10 @@ void runSpj(const JudgeConfig *config, int curDataNum) {
     }
     
     if (config->iOMode == STD_IO) {
-        
+        freeJudgeConfig(config);
         execl(config->sPJPath, config->sPJName, config->inputData[curDataNum], config->stdAnswer[curDataNum], config->outputData[curDataNum], NULL);
     } else {
+        freeJudgeConfig(config);
         execl(config->sPJPath, config->sPJName, config->inputData[curDataNum], config->stdAnswer[curDataNum], FILEIO_OUTPUT_PATH, NULL);
     }
     

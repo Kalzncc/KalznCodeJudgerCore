@@ -1,10 +1,10 @@
 {
     "maxCharBuffer" : 10000000,
     "taskID":"100031",
-    "workSpacePath":"/mnt/d/liunx/judger/KalznCodeJudger-1/workspace/test_sample_1/",
-    "logPath":"/mnt/d/liunx/judger/KalznCodeJudger-1/workspace/test_sample_1/log.log",
+    "workSpacePath":"/home/kalzn/project/git/JudgerCore/test_sample/test_sample_1",
+    "logPath":"/home/kalzn/project/git/JudgerCore/test_sample/test_sample_1/log.log",
     "judgeMode":1,
-    "isSPJ":0,
+    "sPJ":0,
     "translator": {
         "mode": 2,
         "compilerPath": "/usr/bin/javac",
@@ -14,8 +14,9 @@
         "compilerProductName":"Main.class",
         "interpreterPath": "/usr/bin/java",
         "interpreterOptions":[
-            "java",  "Main"
-        ]
+            "java",  "-Xmx512m", "Main"
+        ],
+        "securityProcessNum":2
     },
     "data" : [
         {
@@ -23,7 +24,7 @@
             "outputData":"data/output.out",
             "stdAnswer":"data/1.out",             
             "maxCPUTime": 5000,
-            "maxMemory" : 102400,
+            "maxMemory" : 1024000,
             "maxStack" : 1024000
         },
         {
@@ -31,7 +32,7 @@
             "outputData":"data/output.out",
             "stdAnswer":"data/2.out",           
             "maxCPUTime": 5000,
-            "maxMemory" : 102400,
+            "maxMemory" : 1024000,
             "maxStack" : 1024000
         },
         {
@@ -39,7 +40,7 @@
             "outputData":"data/output.out",
             "stdAnswer":"data/3.out",               
             "maxCPUTime": 5000,
-            "maxMemory" : 102400,
+            "maxMemory" : 1024000,
             "maxStack" : 1024000
         }
     ]

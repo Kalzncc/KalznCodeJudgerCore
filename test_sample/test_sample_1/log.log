@@ -1,81 +1,441 @@
-DEBUG: [2021-08-27 17:21:25] Load json success. (Get from message).
-DEBUG: [2021-08-27 17:21:25] Initializing result config (Get from message).
-DEBUG: [2021-08-27 17:21:25] Checking judger config (Get from message).
-DEBUG: [2021-08-27 17:21:25] Compileing code (Get from message).
-DEBUG: [2021-08-27 17:21:25] Judge success : judger real time: 352ms, judger extra time : 352ms  (Get from message).
-DEBUG: [2021-08-27 17:22:31] Load json success. (Get from message).
-DEBUG: [2021-08-27 17:22:31] Initializing result config (Get from message).
-DEBUG: [2021-08-27 17:22:31] Checking judger config (Get from message).
-DEBUG: [2021-08-27 17:22:31] Compileing code (Get from message).
-DEBUG: [2021-08-27 17:22:31] Judge success : judger real time: 396ms, judger extra time : 396ms  (Get from message).
-DEBUG: [2021-08-27 17:23:33] Load json success. (Get from message).
-DEBUG: [2021-08-27 17:23:33] Initializing result config (Get from message).
-DEBUG: [2021-08-27 17:23:33] Checking judger config (Get from message).
-DEBUG: [2021-08-27 17:23:33] Compileing code (Get from message).
-DEBUG: [2021-08-27 17:23:33] Judge success : judger real time: 376ms, judger extra time : 376ms  (Get from message).
-DEBUG: [2021-08-27 17:26:39] Load json success. (Get from message).
-DEBUG: [2021-08-27 17:26:39] Initializing result config (Get from message).
-DEBUG: [2021-08-27 17:26:39] Checking judger config (Get from message).
-DEBUG: [2021-08-27 17:26:39] Compileing code (Get from message).
-DEBUG: [2021-08-27 17:26:39] Judge success : judger real time: 477ms, judger extra time : 477ms  (Get from message).
-DEBUG: [2021-08-27 17:27:12] Load json success. (Get from message).
-DEBUG: [2021-08-27 17:27:12] Initializing result config (Get from message).
-DEBUG: [2021-08-27 17:27:12] Checking judger config (Get from message).
-DEBUG: [2021-08-27 17:27:12] Compileing code (Get from message).
-DEBUG: [2021-08-27 17:27:13] Judge success : judger real time: 511ms, judger extra time : 511ms  (Get from message).
-DEBUG: [2021-08-27 17:27:33] Load json success. (Get from message).
-DEBUG: [2021-08-27 17:27:33] Initializing result config (Get from message).
-DEBUG: [2021-08-27 17:27:33] Checking judger config (Get from message).
-DEBUG: [2021-08-27 17:27:33] Compileing code (Get from message).
-DEBUG: [2021-08-27 17:27:33] Begin to judge data 0 (Get from message).
-DEBUG: [2021-08-27 17:27:33] Box exit signal : 0, exit code : 0 (Get from message).
-DEBUG: [2021-08-27 17:27:33] Matching output and std output (Get from message).
-DEBUG: [2021-08-27 17:27:33] Begin to judge data 1 (Get from message).
-DEBUG: [2021-08-27 17:27:34] Box exit signal : 0, exit code : 1 (Get from message).
-DEBUG: [2021-08-27 17:27:34] Begin to judge data 2 (Get from message).
-DEBUG: [2021-08-27 17:27:34] Box exit signal : 0, exit code : 1 (Get from message).
-DEBUG: [2021-08-27 17:27:34] Judge success : judger real time: 822ms, judger extra time : 464ms  (Get from message).
-DEBUG: [2021-08-27 17:30:09] Load json success. (Get from message).
-DEBUG: [2021-08-27 17:30:09] Initializing result config (Get from message).
-DEBUG: [2021-08-27 17:30:09] Checking judger config (Get from message).
-DEBUG: [2021-08-27 17:30:09] Compileing code (Get from message).
-DEBUG: [2021-08-27 17:30:09] Begin to judge data 0 (Get from message).
-DEBUG: [2021-08-27 17:30:09] Box exit signal : 0, exit code : 0 (Get from message).
-DEBUG: [2021-08-27 17:30:09] Matching output and std output (Get from message).
-DEBUG: [2021-08-27 17:30:09] Judge success : judger real time: 626ms, judger extra time : 490ms  (Get from message).
-DEBUG: [2021-08-27 17:30:50] Load json success. (Get from message).
-DEBUG: [2021-08-27 17:30:50] Initializing result config (Get from message).
-DEBUG: [2021-08-27 17:30:50] Checking judger config (Get from message).
-DEBUG: [2021-08-27 17:30:50] Compileing code (Get from message).
-DEBUG: [2021-08-27 17:30:50] Begin to judge data 0 (Get from message).
-DEBUG: [2021-08-27 17:30:50] Box exit signal : 0, exit code : 0 (Get from message).
-DEBUG: [2021-08-27 17:30:50] Matching output and std output (Get from message).
-DEBUG: [2021-08-27 17:30:50] Judge success : judger real time: 559ms, judger extra time : 453ms  (Get from message).
-DEBUG: [2021-08-27 17:31:09] Load json success. (Get from message).
-DEBUG: [2021-08-27 17:31:09] Initializing result config (Get from message).
-DEBUG: [2021-08-27 17:31:09] Checking judger config (Get from message).
-DEBUG: [2021-08-27 17:31:09] Compileing code (Get from message).
-DEBUG: [2021-08-27 17:31:10] Begin to judge data 0 (Get from message).
-DEBUG: [2021-08-27 17:31:10] Box exit signal : 0, exit code : 0 (Get from message).
-DEBUG: [2021-08-27 17:31:10] Matching output and std output (Get from message).
-DEBUG: [2021-08-27 17:31:10] Begin to judge data 1 (Get from message).
-DEBUG: [2021-08-27 17:31:10] Box exit signal : 0, exit code : 0 (Get from message).
-DEBUG: [2021-08-27 17:31:10] Matching output and std output (Get from message).
-DEBUG: [2021-08-27 17:31:10] Begin to judge data 2 (Get from message).
-DEBUG: [2021-08-27 17:31:10] Box exit signal : 0, exit code : 0 (Get from message).
-DEBUG: [2021-08-27 17:31:10] Matching output and std output (Get from message).
-DEBUG: [2021-08-27 17:31:10] Judge success : judger real time: 785ms, judger extra time : 468ms  (Get from message).
-DEBUG: [2021-08-27 17:33:16] Load json success. (Get from message).
-DEBUG: [2021-08-27 17:33:16] Initializing result config (Get from message).
-DEBUG: [2021-08-27 17:33:16] Checking judger config (Get from message).
-DEBUG: [2021-08-27 17:33:16] Compileing code (Get from message).
-DEBUG: [2021-08-27 17:33:16] Begin to judge data 0 (Get from message).
-DEBUG: [2021-08-27 17:33:16] Box exit signal : 0, exit code : 0 (Get from message).
-DEBUG: [2021-08-27 17:33:16] Matching output and std output (Get from message).
-DEBUG: [2021-08-27 17:33:16] Begin to judge data 1 (Get from message).
-DEBUG: [2021-08-27 17:33:16] Box exit signal : 0, exit code : 0 (Get from message).
-DEBUG: [2021-08-27 17:33:16] Matching output and std output (Get from message).
-DEBUG: [2021-08-27 17:33:16] Begin to judge data 2 (Get from message).
-DEBUG: [2021-08-27 17:33:16] Box exit signal : 0, exit code : 0 (Get from message).
-DEBUG: [2021-08-27 17:33:16] Matching output and std output (Get from message).
-DEBUG: [2021-08-27 17:33:16] Judge success : judger real time: 817ms, judger extra time : 498ms  (Get from message).
+DEBUG: [2021-12-04 14:22:39] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:22:39] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:22:39] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:22:39] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:22:39] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:22:40] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:22:40] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:22:40] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:22:40] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:22:40] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:22:40] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:22:40] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:22:40] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:22:40] Judge success : judger real time: 856ms, judger extra time : 574ms  (Get from message).
+DEBUG: [2021-12-04 14:23:32] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:23:32] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:23:32] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:23:32] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:23:33] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:23:33] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:23:33] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:23:33] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:23:33] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:23:33] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:23:33] Judge success : judger real time: 656ms, judger extra time : 588ms  (Get from message).
+DEBUG: [2021-12-04 14:24:13] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:24:13] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:24:13] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:24:13] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:24:14] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:24:14] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:24:14] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:24:14] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:24:14] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:24:14] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:24:14] Judge success : judger real time: 611ms, judger extra time : 569ms  (Get from message).
+DEBUG: [2021-12-04 14:24:35] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:24:35] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:24:35] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:24:35] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:24:36] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:24:36] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:24:36] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:24:36] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:24:36] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:24:36] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:24:36] Judge success : judger real time: 763ms, judger extra time : 567ms  (Get from message).
+DEBUG: [2021-12-04 14:25:55] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:25:55] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:25:55] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:25:55] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:25:55] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:25:55] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:25:55] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:25:55] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:25:56] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:25:56] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:25:56] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:25:56] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:25:56] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:25:56] Judge success : judger real time: 806ms, judger extra time : 548ms  (Get from message).
+DEBUG: [2021-12-04 14:26:15] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:26:15] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:26:15] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:26:15] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:26:16] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:26:16] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:26:16] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:26:16] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:26:16] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:26:16] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:26:16] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:26:16] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:26:16] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:26:16] Judge success : judger real time: 856ms, judger extra time : 592ms  (Get from message).
+DEBUG: [2021-12-04 14:27:09] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:27:09] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:27:09] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:27:09] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:27:10] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:27:10] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:27:10] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:27:10] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:27:10] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:27:10] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:27:10] Judge success : judger real time: 574ms, judger extra time : 552ms  (Get from message).
+DEBUG: [2021-12-04 14:27:35] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:27:35] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:27:35] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:27:35] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:27:35] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:27:35] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:27:35] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:27:35] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:27:35] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:27:35] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:27:35] Judge success : judger real time: 643ms, judger extra time : 579ms  (Get from message).
+DEBUG: [2021-12-04 14:28:19] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:28:19] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:28:19] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:28:19] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:28:19] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:28:19] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:28:19] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:28:19] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:28:19] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:28:19] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:28:19] Judge success : judger real time: 652ms, judger extra time : 569ms  (Get from message).
+DEBUG: [2021-12-04 14:28:32] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:28:32] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:28:32] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:28:32] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:28:33] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:28:33] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:28:33] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:28:33] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:28:33] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:28:33] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:28:33] Judge success : judger real time: 661ms, judger extra time : 575ms  (Get from message).
+DEBUG: [2021-12-04 14:28:48] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:28:48] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:28:48] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:28:48] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:28:49] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:28:49] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:28:49] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:28:49] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:28:49] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:28:49] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:28:49] Judge success : judger real time: 627ms, judger extra time : 566ms  (Get from message).
+DEBUG: [2021-12-04 14:29:00] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:29:00] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:29:00] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:29:00] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:29:01] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:29:01] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:29:01] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:29:01] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:29:01] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:29:01] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:29:01] Judge success : judger real time: 669ms, judger extra time : 586ms  (Get from message).
+DEBUG: [2021-12-04 14:29:39] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:29:39] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:29:39] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:29:39] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:29:39] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:29:39] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:29:39] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:29:39] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:29:39] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:29:39] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:29:39] Judge success : judger real time: 638ms, judger extra time : 565ms  (Get from message).
+DEBUG: [2021-12-04 14:30:06] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:30:06] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:30:06] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:30:06] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:30:07] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:30:07] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:30:07] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:30:07] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:30:07] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:30:07] Box exit signal : 0, exit code : 1 (Get from message).
+DEBUG: [2021-12-04 14:30:07] Judge success : judger real time: 647ms, judger extra time : 568ms  (Get from message).
+DEBUG: [2021-12-04 14:30:24] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:30:24] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:30:24] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:30:24] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:30:24] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:30:24] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:30:24] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:30:24] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:30:24] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:30:24] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:30:24] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:30:24] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:30:24] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:30:24] Judge success : judger real time: 844ms, judger extra time : 562ms  (Get from message).
+DEBUG: [2021-12-04 14:31:17] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:31:17] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:31:17] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:31:17] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:31:17] Judge success : judger real time: 589ms, judger extra time : 589ms  (Get from message).
+DEBUG: [2021-12-04 14:31:40] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:31:40] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:31:40] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:31:40] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:31:40] Judge success : judger real time: 622ms, judger extra time : 622ms  (Get from message).
+DEBUG: [2021-12-04 14:31:56] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:31:56] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:31:56] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:31:56] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:31:57] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:31:57] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:31:57] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:31:57] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:31:57] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:31:57] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:31:57] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:31:57] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:31:57] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:31:57] Judge success : judger real time: 1064ms, judger extra time : 614ms  (Get from message).
+DEBUG: [2021-12-04 14:32:30] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:32:30] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:32:30] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:32:30] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:32:31] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:32:31] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:32:31] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:32:31] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:32:31] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:32:31] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:32:31] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:32:31] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:32:31] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:32:31] Judge success : judger real time: 721ms, judger extra time : 704ms  (Get from message).
+DEBUG: [2021-12-04 14:33:01] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:33:01] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:33:01] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:33:01] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:33:02] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:33:02] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:33:02] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:33:02] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:33:02] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:33:02] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:33:02] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:33:02] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:33:02] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:33:02] Judge success : judger real time: 1135ms, judger extra time : 684ms  (Get from message).
+DEBUG: [2021-12-04 14:33:12] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:33:12] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:33:12] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:33:12] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:33:13] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:33:13] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:33:13] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:33:13] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:33:13] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:33:13] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:33:13] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:33:13] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:33:13] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:33:13] Judge success : judger real time: 754ms, judger extra time : 737ms  (Get from message).
+DEBUG: [2021-12-04 14:34:09] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:34:09] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:34:09] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:34:09] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:34:09] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:34:09] Box exit signal : 31, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:34:09] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:34:09] Box exit signal : 31, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:34:09] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:34:10] Box exit signal : 31, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:34:10] Judge success : judger real time: 1007ms, judger extra time : 648ms  (Get from message).
+DEBUG: [2021-12-04 14:39:29] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:39:29] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:39:29] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:39:29] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:39:30] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:39:30] Box exit signal : 31, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:39:30] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:39:30] Box exit signal : 31, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:39:30] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:39:30] Box exit signal : 31, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:39:30] Judge success : judger real time: 1061ms, judger extra time : 673ms  (Get from message).
+DEBUG: [2021-12-04 14:41:52] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:41:52] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:41:52] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:41:52] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:41:53] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:41:53] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:41:53] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:41:53] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:41:53] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:41:53] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:41:53] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:41:53] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:41:53] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:41:53] Judge success : judger real time: 675ms, judger extra time : 658ms  (Get from message).
+DEBUG: [2021-12-04 14:42:00] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:42:00] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:42:00] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:42:00] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:42:01] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:42:01] Box exit signal : 31, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:42:01] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:42:01] Box exit signal : 31, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:42:01] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:42:01] Box exit signal : 31, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:42:01] Judge success : judger real time: 1039ms, judger extra time : 660ms  (Get from message).
+DEBUG: [2021-12-04 14:42:06] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:42:06] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:42:06] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:42:06] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:42:07] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:42:07] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:42:07] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:42:07] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:42:07] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:42:07] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:42:07] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:42:07] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:42:07] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:42:07] Judge success : judger real time: 681ms, judger extra time : 664ms  (Get from message).
+DEBUG: [2021-12-04 14:43:41] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:43:41] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:43:41] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:43:41] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:43:41] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:43:41] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:43:41] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:43:41] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:43:41] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:43:41] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:43:41] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:43:41] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:43:41] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:43:41] Judge success : judger real time: 623ms, judger extra time : 609ms  (Get from message).
+DEBUG: [2021-12-04 14:44:34] Load json success. (Get from message).
+DEBUG: [2021-12-04 14:44:34] Initializing result config (Get from message).
+DEBUG: [2021-12-04 14:44:34] Checking judger config (Get from message).
+DEBUG: [2021-12-04 14:44:34] Compileing code (Get from message).
+DEBUG: [2021-12-04 14:44:35] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 14:44:35] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:44:35] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:44:35] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 14:44:35] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:44:35] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:44:35] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 14:44:35] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 14:44:35] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 14:44:35] Judge success : judger real time: 718ms, judger extra time : 699ms  (Get from message).
+DEBUG: [2021-12-04 15:25:23] Load json success. (Get from message).
+DEBUG: [2021-12-04 15:25:23] Initializing result config (Get from message).
+DEBUG: [2021-12-04 15:25:23] Checking judger config (Get from message).
+DEBUG: [2021-12-04 15:25:23] Compileing code (Get from message).
+DEBUG: [2021-12-04 15:25:24] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 15:25:24] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:25:24] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 15:25:24] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 15:25:24] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:25:24] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 15:25:24] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 15:25:24] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:25:24] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 15:25:24] Judge success : judger real time: 711ms, judger extra time : 696ms  (Get from message).
+DEBUG: [2021-12-04 15:25:38] Load json success. (Get from message).
+DEBUG: [2021-12-04 15:25:38] Initializing result config (Get from message).
+DEBUG: [2021-12-04 15:25:38] Checking judger config (Get from message).
+DEBUG: [2021-12-04 15:25:38] Compileing code (Get from message).
+DEBUG: [2021-12-04 15:25:39] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 15:25:39] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:25:39] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 15:25:39] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 15:25:39] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:25:39] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 15:25:39] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 15:25:39] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:25:39] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 15:25:39] Judge success : judger real time: 619ms, judger extra time : 606ms  (Get from message).
+DEBUG: [2021-12-04 15:26:26] Load json success. (Get from message).
+DEBUG: [2021-12-04 15:26:26] Initializing result config (Get from message).
+DEBUG: [2021-12-04 15:26:26] Checking judger config (Get from message).
+DEBUG: [2021-12-04 15:26:26] Compileing code (Get from message).
+DEBUG: [2021-12-04 15:26:27] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 15:26:27] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:26:27] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 15:26:27] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 15:26:27] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:26:27] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 15:26:27] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 15:26:27] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:26:27] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 15:26:27] Judge success : judger real time: 661ms, judger extra time : 645ms  (Get from message).
+DEBUG: [2021-12-04 15:26:34] Load json success. (Get from message).
+DEBUG: [2021-12-04 15:26:34] Initializing result config (Get from message).
+DEBUG: [2021-12-04 15:26:34] Checking judger config (Get from message).
+DEBUG: [2021-12-04 15:26:34] Compileing code (Get from message).
+DEBUG: [2021-12-04 15:26:34] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 15:26:35] Box exit signal : 31, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:26:35] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 15:26:35] Box exit signal : 31, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:26:35] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 15:26:35] Box exit signal : 31, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:26:35] Judge success : judger real time: 922ms, judger extra time : 557ms  (Get from message).
+DEBUG: [2021-12-04 15:29:20] Load json success. (Get from message).
+DEBUG: [2021-12-04 15:29:20] Initializing result config (Get from message).
+DEBUG: [2021-12-04 15:29:20] Checking judger config (Get from message).
+DEBUG: [2021-12-04 15:29:20] Compileing code (Get from message).
+DEBUG: [2021-12-04 15:29:21] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 15:29:21] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:29:21] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 15:29:21] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 15:29:21] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:29:21] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 15:29:21] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 15:29:21] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:29:21] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 15:29:21] Judge success : judger real time: 632ms, judger extra time : 615ms  (Get from message).
+DEBUG: [2021-12-04 15:33:35] Load json success. (Get from message).
+DEBUG: [2021-12-04 15:33:35] Initializing result config (Get from message).
+DEBUG: [2021-12-04 15:33:35] Checking judger config (Get from message).
+DEBUG: [2021-12-04 15:33:35] Compileing code (Get from message).
+DEBUG: [2021-12-04 15:33:35] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 15:33:35] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:33:35] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 15:33:35] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 15:33:35] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:33:35] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 15:33:35] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 15:33:35] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:33:35] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 15:33:35] Judge success : judger real time: 623ms, judger extra time : 605ms  (Get from message).
+DEBUG: [2021-12-04 15:35:40] Load json success. (Get from message).
+DEBUG: [2021-12-04 15:35:40] Initializing result config (Get from message).
+DEBUG: [2021-12-04 15:35:40] Checking judger config (Get from message).
+DEBUG: [2021-12-04 15:35:40] Compileing code (Get from message).
+DEBUG: [2021-12-04 15:35:41] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 15:35:41] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:35:41] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 15:35:41] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 15:35:41] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:35:41] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 15:35:41] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 15:35:41] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:35:41] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 15:35:41] Judge success : judger real time: 633ms, judger extra time : 615ms  (Get from message).
+DEBUG: [2021-12-04 15:36:29] Load json success. (Get from message).
+DEBUG: [2021-12-04 15:36:29] Initializing result config (Get from message).
+DEBUG: [2021-12-04 15:36:29] Checking judger config (Get from message).
+DEBUG: [2021-12-04 15:36:29] Compileing code (Get from message).
+DEBUG: [2021-12-04 15:36:29] Begin to judge data 0 (Get from message).
+DEBUG: [2021-12-04 15:36:29] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:36:29] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 15:36:29] Begin to judge data 1 (Get from message).
+DEBUG: [2021-12-04 15:36:29] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:36:29] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 15:36:29] Begin to judge data 2 (Get from message).
+DEBUG: [2021-12-04 15:36:29] Box exit signal : 0, exit code : 0 (Get from message).
+DEBUG: [2021-12-04 15:36:29] Matching output and std output (Get from message).
+DEBUG: [2021-12-04 15:36:29] Judge success : judger real time: 634ms, judger extra time : 617ms  (Get from message).

@@ -3,5 +3,5 @@
 #include <seccomp.h>
 #include "judger_config.h"
 int loadSeccompRules(const JudgeConfig *config);
-int loadSeccompRulesForSPJ(const JudgeConfig *config);
+int loadSeccompRulesForSPJ(JudgeConfig *config);
 #endif

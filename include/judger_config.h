@@ -153,6 +153,7 @@ typedef struct TranslatorConfig {
     char** interpreterOptions;  /* 解释器指令，这是提供给runner用解释器运行程序的指令，这里给出一个java的示例。*/
                                  /* java $compilerProductName*/
                                  /*  interpreterOptions[] = {"java", "$compilerProductName", NULL};*/
+    int securityProcessNum; /*安全进程数*/
   
 } TranslatorConfig;   
 

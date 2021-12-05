@@ -4,16 +4,41 @@
 
 int loadSeccompRules(const JudgeConfig *config) {
 
-       int syscalls_blacklist[] = {SCMP_SYS(clone),
-                                SCMP_SYS(fork), SCMP_SYS(vfork),
-                                SCMP_SYS(kill), 
-#ifdef __NR_execveat
-                                SCMP_SYS(execveat)
-#endif
+       int syscalls_blacklist[] = {
+                                SCMP_SYS(kill), /* can not kill process */
+                                SCMP_SYS(msgsnd), /* can not send message */
+
+                                /*add clone() in blacklist will cause jmv can not initialize*/
+                                /*please use the 'security process number' parameter in JudgerConfig limit process number*/
+                                SCMP_SYS(fork),
+                                SCMP_SYS(vfork),
+
+                                SCMP_SYS(socket), /* can not create socket  */
+                                SCMP_SYS(connect), /* can not connect remote host */
+                                SCMP_SYS(accept), /* can not accept socket request */
+                                SCMP_SYS(send), /* can not send from socket */
+                                SCMP_SYS(sendto), /* can not send from UDP*/
+                                SCMP_SYS(listen), /*can not listen port*/
+
+                                SCMP_SYS(setpriority), /* can not set process priority */
+                                SCMP_SYS(modify_ldt), /*can not set ldt*/
+                                SCMP_SYS(sched_setparam), /*can not set process param*/
+
+                                SCMP_SYS(chdir), /*can not change work dir*/
+                                SCMP_SYS(mkdir), /*can not make dir*/
+                                SCMP_SYS(mknod), /*can not make node*/
+                                SCMP_SYS(umount), /*can not umount file system*/
+                                SCMP_SYS(setrlimit), /*can not set resource limit*/
+                                SCMP_SYS(adjtimex), /*can not set system clock*/
+                                SCMP_SYS(stime), /*can not set time*/
+                                SCMP_SYS(setuid), /*can not set uid*/
+                                SCMP_SYS(setgid) /*can not set gid*/
+
                                };
     int syscalls_blacklist_length = sizeof(syscalls_blacklist) / sizeof(int);
     scmp_filter_ctx ctx = NULL;
-    // load seccomp rules
+
+
     ctx = seccomp_init(SCMP_ACT_ALLOW);
     if (!ctx) {
         return -1;
@@ -23,27 +48,32 @@ int loadSeccompRules(const JudgeConfig *config) {
             return -1;
         }
     }
-    // use SCMP_ACT_KILL for socket, python will be killed immediately
-    if (seccomp_rule_add(ctx, SCMP_ACT_ERRNO(EACCES), SCMP_SYS(socket), 0) != 0) {
-        return -1;
-    }
-    // add extra rule for execve
+    /* process can not execute file except the pending program*/
     if (seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(execve), 1, SCMP_A0(SCMP_CMP_NE, (scmp_datum_t)(config->translator->interpreterPath))) != 0) {
         return -1;
     }
-    // do not allow "w" and "rw" using open
-    if (seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(open), 1, SCMP_CMP(1, SCMP_CMP_MASKED_EQ, O_WRONLY, O_WRONLY)) != 0) {
-        return -1;
-    }
-    if (seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(open), 1, SCMP_CMP(1, SCMP_CMP_MASKED_EQ, O_RDWR, O_RDWR)) != 0) {
-        return -1;
-    }
-    // do not allow "w" and "rw" using openat
-    if (seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(openat), 1, SCMP_CMP(2, SCMP_CMP_MASKED_EQ, O_WRONLY, O_WRONLY)) != 0) {
-        return -1;
-    }
-    if (seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(openat), 1, SCMP_CMP(2, SCMP_CMP_MASKED_EQ, O_RDWR, O_RDWR)) != 0) {
-        return -1;
+
+    if (config->iOMode == FILE_IO) { /*if IO mode is file io, process only is allowed to open default file_IO_mode files.*/
+        if (seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(open), 1, SCMP_A0(SCMP_CMP_EQ, (scmp_datum_t)(FILEIO_INPUT_PATH))) != 0) {
+            return -1;
+        }
+        if (seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(open), 1, SCMP_A0(SCMP_CMP_EQ, (scmp_datum_t)(FILEIO_OUTPUT_PATH))) != 0) {
+            return -1;
+        }
+        if (seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(openat), 1, SCMP_A1(SCMP_CMP_EQ, (scmp_datum_t)(FILEIO_INPUT_PATH))) != 0) {
+            return -1;
+        }
+        if (seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(openat), 1, SCMP_A1(SCMP_CMP_EQ, (scmp_datum_t)(FILEIO_OUTPUT_PATH))) != 0) {
+            return -1;
+        }
+
+    } else { /*if IO mode is std io, process is not allowed to open any file.*/
+//        if (seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(open), 0 ) != 0) {
+//            return -1;
+//        }
+//        if (seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(openat), 0 ) != 0) {
+//            return -1;
+//        }
     }
 
     if (seccomp_load(ctx) != 0) {
@@ -53,6 +83,10 @@ int loadSeccompRules(const JudgeConfig *config) {
     return 0;
 }
 
-int loadSeccompRulesForSPJ(const JudgeConfig *config) {
-    return loadSeccompRules(config);
+int loadSeccompRulesForSPJ(JudgeConfig *config) {
+    int c_mode = config->iOMode;
+    config->iOMode = STD_IO;
+    int res = loadSeccompRules(config);
+    config->iOMode = c_mode;
+    return res;
 }

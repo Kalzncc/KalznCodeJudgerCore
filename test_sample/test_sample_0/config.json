@@ -1,8 +1,8 @@
 {
     "maxCharBuffer" : 10000000,
     "taskID":"100031",
-    "workSpacePath":"/mnt/d/liunx/judger/KalznCodeJudger-1/test_sample/test_sample_0/",
-    "logPath":      "/mnt/d/liunx/judger/KalznCodeJudger-1/test_sample/test_sample_0/log.log",
+    "workSpacePath":"/home/kalzn/project/git/JudgerCore/test_sample/test_sample_0",
+    "logPath":      "/home/kalzn/project/git/JudgerCore/test_sample/test_sample_0/log.log",
     "judgeMode":0,
     "strictMode":1,
     "isSPJ":0,

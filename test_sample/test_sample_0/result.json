@@ -1,60 +1,60 @@
 {
 	"taskID":	100031,
-	"doneTime":	"2021-10-24 17:25:40",
-	"judgeTime":	6620,
-	"extraTime":	672,
+	"doneTime":	"2021-12-05 18:51:47",
+	"judgeTime":	6739,
+	"extraTime":	471,
 	"result":	[{
 			"time":	0,
-			"realTime":	3,
-			"memory":	1660,
+			"realTime":	2,
+			"memory":	3568,
 			"signal":	0,
 			"code":	0,
 			"result":	0,
 			"detail":	"No info"
 		}, {
-			"time":	15,
-			"realTime":	3,
-			"memory":	1660,
-			"signal":	0,
-			"code":	0,
-			"result":	0,
-			"detail":	"No info"
-		}, {
-			"time":	0,
-			"realTime":	3,
-			"memory":	1660,
+			"time":	1,
+			"realTime":	1,
+			"memory":	3516,
 			"signal":	0,
 			"code":	0,
 			"result":	0,
 			"detail":	"No info"
 		}, {
 			"time":	0,
-			"realTime":	4,
-			"memory":	1660,
+			"realTime":	2,
+			"memory":	3564,
 			"signal":	0,
 			"code":	0,
 			"result":	0,
 			"detail":	"No info"
 		}, {
-			"time":	0,
-			"realTime":	3,
-			"memory":	1660,
+			"time":	1,
+			"realTime":	2,
+			"memory":	3608,
 			"signal":	0,
 			"code":	0,
 			"result":	0,
 			"detail":	"No info"
 		}, {
-			"time":	2937,
-			"realTime":	2942,
-			"memory":	1660,
+			"time":	1,
+			"realTime":	2,
+			"memory":	3564,
 			"signal":	0,
 			"code":	0,
 			"result":	0,
 			"detail":	"No info"
 		}, {
-			"time":	2890,
-			"realTime":	2990,
-			"memory":	1660,
+			"time":	3155,
+			"realTime":	3170,
+			"memory":	3572,
+			"signal":	0,
+			"code":	0,
+			"result":	0,
+			"detail":	"No info"
+		}, {
+			"time":	3087,
+			"realTime":	3089,
+			"memory":	3548,
 			"signal":	0,
 			"code":	0,
 			"result":	0,

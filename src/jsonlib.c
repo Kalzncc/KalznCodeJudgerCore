@@ -106,7 +106,7 @@ int loadJudgeConfig(const char *jsonStr, JudgeConfig *config, char *logPath) {
         return 1;
     }
     readNonNegativeIntJson(transJson, "mode",&(config->translator->mode), COMPILER_MODE);
-
+    readNonNegativeIntJson(transJson, "securityProcessNum", &(config->translator->securityProcessNum), 1);
     if (config->translator->mode == COMPILER_MODE || config->translator->mode == COMPILER_INTERPRETER_MODE) {
         if (readStringJson(transJson, "compilerPath", stringVal, NULL)) {
             logSystemErrorWithMessage(logPath,INVALID_JUDGE_CONFIG, "Necessary attribute not is found or invalid : compilerPath");

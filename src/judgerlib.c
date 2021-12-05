@@ -109,7 +109,14 @@ RunConfig* judge(const JudgeConfig *config) {
         result->result = ACCEPTED;
         return result;
     }
-
+    int kill_status;
+    pid_t boxID;
+    pid_t killerID;
+    FILE *fpTar, *fpOr;
+    char ch;
+    int status;
+    struct rusage resourceuUsage;
+    struct timeval boxStartTime, boxExitTime;
     for (curCase = 0; curCase < config->caseNumber; curCase++) {
 #ifdef __DEBUG
     char buffer[MAX_DEBUG_INFO_LENGTH];
@@ -124,27 +131,24 @@ RunConfig* judge(const JudgeConfig *config) {
             createSystemError( &result[curCase], INVALID_JUDGE_CONFIG, "Resource limit is invalid", config->logPath);
         }
         if (config->iOMode == FILE_IO) {
-            FILE *fpTar, *fpOr;
             if ((fpTar = fopen(FILEIO_INPUT_PATH, "w")) == NULL || (fpOr = fopen(config->inputData[curCase], "r") )== NULL) {
                 createSystemError(&result[curCase], FILE_IO_INIT_FAILED, "Can't copy file in File IO Mode", config->logPath);
                 return result;
             }
-            char ch;
             while((ch = fgetc(fpOr)) != EOF) fputc(ch, fpTar);
             if (fclose(fpTar)!=0 || fclose(fpOr) != 0) {
                 createSystemError(&result[curCase], FILE_IO_INIT_FAILED, "Can't close file in File IO Mode", config->logPath);
                 return result;
             }
         }
-        pid_t boxID = fork();
+        boxID = fork();
         if (boxID<0) {
             createSystemError(&result[curCase], FORK_BOX_FAILED, "Can't fork box proccess", config->logPath);
             return result;
         } else if (boxID == 0) {
             run(config, curCase);
         } else {
-            
-            pid_t killerID = fork();
+            killerID = fork();
             if (killerID < 0) {
                 kill(boxID, SIGKILL);
                 createSystemError(&result[curCase], FORK_KILLER_FAILED, "Can't fork killer proccess", config->logPath);
@@ -153,9 +157,7 @@ RunConfig* judge(const JudgeConfig *config) {
                 monitor(boxID, config->maxCPUTime[curCase]);
             } else {
                 
-                int status;
-                struct rusage resourceuUsage;
-                struct timeval boxStartTime, boxExitTime;
+
                 gettimeofday(&boxStartTime, NULL);
                 if (wait4(boxID, &status, 0, &resourceuUsage) == -1) {
                     kill(killerID, SIGKILL);
@@ -164,9 +166,9 @@ RunConfig* judge(const JudgeConfig *config) {
                 }
                 gettimeofday(&boxExitTime, NULL);
                 result[curCase].useRealTime = (boxExitTime.tv_sec * 1000 + boxExitTime.tv_usec / 1000 - (boxStartTime.tv_sec * 1000 + boxStartTime.tv_usec / 1000));
-                
+
                 kill(killerID, SIGKILL);
-                
+                waitpid(killerID, &kill_status, 0);
                 check(&result[curCase], status, &resourceuUsage,  config->maxCPUTime[curCase], config->maxMemory[curCase],  config->logPath);
                 if (result[curCase].result == SYSTEM_ERROR) return result;
                 

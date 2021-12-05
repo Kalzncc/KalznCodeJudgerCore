@@ -1,8 +1,8 @@
 {
 	"taskID":	100031,
-	"doneTime":	"2021-10-24 18:48:59",
-	"judgeTime":	1,
-	"extraTime":	1,
+	"doneTime":	"2021-12-04 13:29:40",
+	"judgeTime":	0,
+	"extraTime":	0,
 	"result":	[{
 			"time":	0,
 			"realTime":	0,
@@ -10,23 +10,7 @@
 			"signal":	0,
 			"code":	0,
 			"result":	9,
-			"detail":	"No root"
-		}, {
-			"time":	0,
-			"realTime":	0,
-			"memory":	0,
-			"signal":	0,
-			"code":	0,
-			"result":	8,
-			"detail":	"No info"
-		}, {
-			"time":	0,
-			"realTime":	0,
-			"memory":	0,
-			"signal":	0,
-			"code":	0,
-			"result":	8,
-			"detail":	"No info"
+			"detail":	"Can't access workspace."
 		}, {
 			"time":	0,
 			"realTime":	0,
